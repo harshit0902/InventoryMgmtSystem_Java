@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
 
-
+import Display from "./display";
 
 
 function App() {
