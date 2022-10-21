@@ -3,12 +3,12 @@ package com.harshit.miniproject.model;
 public class Item {
     private int itemID;
     private String itemName;
-    private int quantity;
+    protected int quantity;
     private double price;
     private int quality1;
     private int quality2;
     private int quality3;
-
+    
     public Item() {
         itemID = 0;
         itemName = null;
@@ -88,4 +88,8 @@ public class Item {
     public void setQuality3(int quality3) {
         this.quality3 = quality3;
     }
+    
+    /*public void decQuantity(int count) {
+        quantity -= count;
+    }*/
 }

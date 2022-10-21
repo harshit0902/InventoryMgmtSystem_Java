@@ -42,6 +42,6 @@ public class Cart extends Item {
     }
 
     public void changeQuantity(int count) {
-        it.quantity -= count;
+        quantity -= count;
     }
 }
