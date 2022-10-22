@@ -23,19 +23,19 @@ function App() {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response.data)
-            if (response.data.length == 1 && capcthaEntered === capctha) {
+            if (response.data.length === 1 && capcthaEntered === capctha) {
                 obj = Object.values(response.data);
                 localStorage.setItem("email", email);
                 localStorage.setItem("name", obj[0].name);
                 localStorage.setItem("uid", obj[0].uid);
 
-                if (obj[0].type == 'admin') {
+                if (obj[0].type === 'admin') {
                     window.location.href = "http://localhost:3000/admin_homepage"
                 } else {
                     window.location.href = "http://localhost:3000/homepage2"
                 }
 
-            } else if (response.data == 'invalid') {
+            } else if (response.data === 'invalid') {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
                 localStorage.setItem("name", "");
@@ -97,13 +97,13 @@ function App() {
                     </center>
     */}
                 </div>
-                {userdetails.map((value, key) => {
+                {/*userdetails.map((value, key) => {
                     return <div>
                         <Display
                             Email={value.Email}
                             Password={value.Password} />
                     </div>
-                })}
+                })*/}
                 {/* <table border='10px'>
                         <tr>
                             <th>Email</th>
@@ -125,5 +125,3 @@ function App() {
 }
 
 export default App;
-
-

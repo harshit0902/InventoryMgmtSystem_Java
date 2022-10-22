@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Axios from "axios";
 
@@ -17,7 +16,7 @@ function App() {
     const [address, setAddress] = useState("");
     const [userdetails, setUserdetails] = useState([]);
     const [message, setMessage] = useState("");
-
+    const [account, setAcc]= useState("");
     const savedetail = () => {
         if (emailregex.test(email) && mobno.length == 10 &&  password===confpassword) {
             Axios.post('http://localhost:3001/signup', {
@@ -25,7 +24,10 @@ function App() {
                 email: email,
                 password: password,
                 mobno: mobno,
-                address: address
+                address: address,
+                account: account                
+                
+
             }).then((response) => {
                 // setUserdetails(response.data);
                 console.log(response)
@@ -54,6 +56,11 @@ function App() {
                     <label>Enter Name: </label>
                     <input type="text" placeholder='Enter Text Here'
                         onChange={(event) => { setName(event.target.value) }}></input>
+                </div>
+                <div>
+                    <label>Enter Account type: </label>
+                    <input type="text" placeholder='Enter "Buyer" or "Seller" '
+                        onChange={(event) => { setAcc(event.target.value) }}></input>
                 </div>
                 <div>
                     <label>Enter Email id: </label>
@@ -94,7 +101,7 @@ function App() {
                 </center>
                 {message}
             </div>
-            {userdetails.map((value, key) => {
+            {/*userdetails.map((value, key) => {
                 return <div>
                     <Display
                         Name={value.Name}
@@ -102,9 +109,10 @@ function App() {
                         Password={value.Password}
                         Conf_Password={value.Conf_Password}
                         Mob_No={value.Mobile_Number}
-                        Address={value.Address} />
+                        Address={value.Address} 
+                        Account={value.Account}/>
                 </div>
-            })}
+            })*/}
             
         </div>
     );
