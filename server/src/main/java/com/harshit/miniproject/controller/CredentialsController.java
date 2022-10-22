@@ -1,21 +1,13 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.authority.UserAccountDesignation;
-import com.harshit.miniproject.model.DiscussionIndex;
 import com.harshit.miniproject.repository.CredentialsJpaRepository;
-import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
-import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
 import com.harshit.miniproject.service.CredentialsService;
-import com.harshit.miniproject.service.DiscussionIndexService;
-import com.harshit.miniproject.service.DiscussionTextService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
@@ -39,7 +31,7 @@ public class CredentialsController {
         this.credentialsJpaRepository = credentialsJpaRepository;
     }
 
-    @GetMapping("/listAll")
+    /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){
 
         return discussionIndexService.listAllDiscussion();
@@ -52,10 +44,16 @@ public class CredentialsController {
         return ResponseEntity.ok(siz);
     }
 
-    @PostMapping("/insertchat")
-    public void insertDiscussionChat(@RequestParam String Text,@RequestParam Long dissID,@RequestParam Integer userID){
-        DiscussionText obj = new DiscussionText(Text,dissID,userID);
-        discussionIndexService.insertIntoDiscussionText(obj);
+    @PostMapping("/signup")
+    public void insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam, String mobNo, @RequestParam String address, @RequestParam String typeOfAcc){
+        Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
+        int res = credentialsService.checkIfEmailExists(user);
+
+        if(res == 1)
+            CredentialsService.insertIntoCredentials(user);
+
+        //DiscussionText obj = new DiscussionText(Text,dissID,userID);
+        //discussionIndexService.insertIntoDiscussionText(obj);
     }
 
     //    @GetMapping("/tester")
@@ -76,6 +74,6 @@ public class CredentialsController {
     @PostMapping("/insertDiscusssion")
     public void insertDiscussion(@RequestParam Long userid ,@RequestParam Long discussionId,@RequestParam String discussionName,@RequestParam String description){
         discussionIndexService.insertDiscussion(discussionId,userid,discussionName,description, UserAccountDesignation.PROFESSOR);
-    }
+    }*/
 }
 

@@ -1,6 +1,5 @@
-package com.harshit.miniproject.controller;
+/*package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.authority.UserAccountDesignation;
 import com.harshit.miniproject.model.DiscussionIndex;
 import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
 import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
@@ -83,4 +82,4 @@ public class DiscussionController {
     }
 
 
-}
+}*/

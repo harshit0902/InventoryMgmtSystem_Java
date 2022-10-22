@@ -1,4 +1,4 @@
-package com.harshit.miniproject.authority;
+/*package com.harshit.miniproject.authority;
 
 public enum UserAccountPermission {
     ;
@@ -11,4 +11,4 @@ public enum UserAccountPermission {
     public String getPermission() {
         return permission;
     }
-}
+}*/

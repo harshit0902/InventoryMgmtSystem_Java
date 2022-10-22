@@ -1,4 +1,4 @@
-package com.harshit.miniproject.model;
+/*package com.harshit.miniproject.model;
 
 
 
@@ -93,4 +93,4 @@ public class DiscussionIndex {
     public void setAccessClass(UserAccountDesignation accessClass) {
         AccessClass = accessClass;
     }
-}
+}*/

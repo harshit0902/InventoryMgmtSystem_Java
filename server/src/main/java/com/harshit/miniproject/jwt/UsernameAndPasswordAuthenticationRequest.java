@@ -1,4 +1,4 @@
-package com.harshit.miniproject.jwt;
+/*package com.harshit.miniproject.jwt;
 
 public class UsernameAndPasswordAuthenticationRequest {
 
@@ -22,4 +22,4 @@ public class UsernameAndPasswordAuthenticationRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+}*/

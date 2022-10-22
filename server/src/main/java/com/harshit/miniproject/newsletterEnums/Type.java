@@ -1,4 +1,4 @@
-package com.harshit.miniproject.newsletterEnums;
+/*package com.harshit.miniproject.newsletterEnums;
 
 public enum Type {
     HEALTH,
@@ -7,4 +7,4 @@ public enum Type {
     TECHNOLOGY,
     FINANCE,
     AGROBASED;
-}
+}*/

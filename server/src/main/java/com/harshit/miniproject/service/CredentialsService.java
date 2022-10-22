@@ -1,24 +1,14 @@
 package com.harshit.miniproject.service;
 
-import com.harshit.miniproject.authority.UserAccountDesignation;
-import com.harshit.miniproject.model.DiscussionIndex;
+import com.harshit.miniproject.model.Credentials;
 import com.harshit.miniproject.repository.CredentialsJpaRepository;
-import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
-import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
-import com.mongodb.client.DistinctIterable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class CredentialsService {
@@ -33,6 +23,17 @@ public class CredentialsService {
     @Autowired
     public CredentialsService(CredentialsJpaRepository credentialsJpaRepository) {
         this.credentialsJpaRepository = credentialsJpaRepository;
+    }
+
+    public int checkIfEmailExists(Credentials user) {
+        if(mongoTemplate.getCollection("Credentials").equals(user))
+            return 0;
+        else
+            return 1;
+    }
+
+    public void insertIntoCredentials(Credentials user){
+        mongoOperations.insert(user, "Credentials");
     }
 
     /*public List<DiscussionIndex> listAllDiscussion(){

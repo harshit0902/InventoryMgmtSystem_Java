@@ -1,4 +1,4 @@
-package com.harshit.miniproject.repository;
+/*package com.harshit.miniproject.repository;
 
 import com.harshit.miniproject.model.DiscussionIndex;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +11,4 @@ import java.util.List;
 public interface DiscussionIndexJpaRepository extends JpaRepository<DiscussionIndex,Long> {
 
     List<DiscussionIndex> findAllByDiscussionId(Long discussionID);
-}
+}*/

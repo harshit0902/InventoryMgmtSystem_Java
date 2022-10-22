@@ -1,4 +1,4 @@
-package com.harshit.miniproject.authority;
+/*package com.harshit.miniproject.authority;
 
 import com.google.common.collect.Sets;
 import org.springframework.security.core.GrantedAuthority;
@@ -35,4 +35,4 @@ public enum UserAccountDesignation {
 
         return permissions;
     }
-}
+}*/

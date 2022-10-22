@@ -1,4 +1,4 @@
-package com.harshit.miniproject.jwt;
+/*package com.harshit.miniproject.jwt;
 
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +21,4 @@ public class JwtSecretKey {
     public SecretKey getSecretKey() {
         return Keys.hmacShaKeyFor(jwtConfiguration.getSecretKey().getBytes());
     }
-}
+}*/

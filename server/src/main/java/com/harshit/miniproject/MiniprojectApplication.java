@@ -1,8 +1,5 @@
 package com.harshit.miniproject;
 
-import com.harshit.miniproject.authority.UserAccountDesignation;
-import com.harshit.miniproject.relational.UserAccount;
-import com.harshit.miniproject.repository.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 @ConfigurationPropertiesScan
 public class MiniprojectApplication implements CommandLineRunner {
     @Autowired
-    private UserAccountRepository repository;
+    //private UserAccountRepository repository;
     public static void main(String[] args) {
         SpringApplication.run(MiniprojectApplication.class, args);
     }
@@ -22,9 +19,9 @@ public class MiniprojectApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println("start");
-        UserAccount u1 = new UserAccount("1","vishnu","vishnu", UserAccountDesignation.STUDENT);
+        //UserAccount u1 = new UserAccount("1","vishnu","vishnu", UserAccountDesignation.STUDENT);
 
-        repository.save(u1);
+        //repository.save(u1);
         System.out.println("finished CMD Line Runner");
     }
 

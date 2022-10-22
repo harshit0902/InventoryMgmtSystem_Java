@@ -1,4 +1,4 @@
-package com.harshit.miniproject.security;
+/*package com.harshit.miniproject.security;
 
 import com.harshit.miniproject.jwt.JwtConfiguration;
 import com.harshit.miniproject.jwt.JwtTokenVerifier;
@@ -72,4 +72,4 @@ public class ApplicationSecurityConfiguration {
         };
     }
 
-}
+}*/

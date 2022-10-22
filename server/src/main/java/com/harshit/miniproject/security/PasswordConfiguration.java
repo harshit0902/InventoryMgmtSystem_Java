@@ -1,4 +1,4 @@
-package com.harshit.miniproject.security;
+/*package com.harshit.miniproject.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,4 +12,4 @@ public class PasswordConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(10);
     }
-}
+}*/

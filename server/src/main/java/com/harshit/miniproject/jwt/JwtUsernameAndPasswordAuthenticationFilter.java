@@ -1,4 +1,4 @@
-package com.harshit.miniproject.jwt;
+/*package com.harshit.miniproject.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
@@ -64,4 +64,4 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 
         response.addHeader(jwtConfiguration.getAuthorizationHeader(), jwtConfiguration.getTokenPrefix() + token);
     }
-}
+}*/

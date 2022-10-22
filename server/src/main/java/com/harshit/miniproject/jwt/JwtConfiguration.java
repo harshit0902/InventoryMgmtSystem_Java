@@ -1,4 +1,4 @@
-package com.harshit.miniproject.jwt;
+/*package com.harshit.miniproject.jwt;
 
 import com.google.common.net.HttpHeaders;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -37,4 +37,4 @@ public class JwtConfiguration {
     public String getAuthorizationHeader() {
         return HttpHeaders.AUTHORIZATION;
     }
-}
+}*/

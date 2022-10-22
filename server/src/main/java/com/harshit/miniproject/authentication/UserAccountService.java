@@ -1,4 +1,4 @@
-package com.harshit.miniproject.authentication;
+/*package com.harshit.miniproject.authentication;
 
 import com.harshit.miniproject.exception.UserAlreadyExistsException;
 import com.harshit.miniproject.relational.UserAccount;
@@ -27,4 +27,4 @@ public class UserAccountService implements UserAccountDetails {
     public UserAccount saveUser(UserAccount user) throws UserAlreadyExistsException {
         return userAccountDao.addUser(user);
     }
-}
+}*/

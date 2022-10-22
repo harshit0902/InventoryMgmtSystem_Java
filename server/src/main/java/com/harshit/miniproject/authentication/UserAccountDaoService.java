@@ -1,17 +1,17 @@
-package com.harshit.miniproject.authentication;
+/*package com.harshit.miniproject.authentication;
 
 import com.harshit.miniproject.exception.UserAlreadyExistsException;
-import com.harshit.miniproject.relational.UserAccount;
+//import com.harshit.miniproject.relational.UserAccount;
 import com.harshit.miniproject.repository.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Repository
-public class UserAccountDaoService implements UserAccountDao {
+public class UserAccountDaoService /*implements UserAccountDao {
 
     private final UserAccountRepository userAccountRepository;
     private final PasswordEncoder passwordEncoder;
@@ -41,4 +41,4 @@ public class UserAccountDaoService implements UserAccountDao {
             throw new UserAlreadyExistsException(String.format("User with id %s already exists", user.getUsername()));
         }
     }
-}
+}*/

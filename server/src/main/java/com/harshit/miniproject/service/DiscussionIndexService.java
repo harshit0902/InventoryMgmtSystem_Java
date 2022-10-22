@@ -1,9 +1,8 @@
-package com.harshit.miniproject.service;
+/*package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.authority.UserAccountDesignation;
 import com.harshit.miniproject.model.DiscussionIndex;
 import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
-import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
 import com.mongodb.client.DistinctIterable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -89,4 +88,4 @@ public class DiscussionIndexService {
         DiscussionIndex vals = new DiscussionIndex(id,discussionId,discussionName,text,instant,accessClass);
         discussionIndexJpaRepository.save(vals);
     }
-}
+}*/

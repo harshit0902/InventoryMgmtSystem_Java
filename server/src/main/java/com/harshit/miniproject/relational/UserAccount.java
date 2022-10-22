@@ -1,4 +1,4 @@
-package com.harshit.miniproject.relational;
+/*package com.harshit.miniproject.relational;
 
 import javax.persistence.*;
 
@@ -104,4 +104,4 @@ public class UserAccount implements UserDetails {
                 ", designation=" + designation +
                 '}';
     }
-}
+}*/
