@@ -2,6 +2,7 @@ package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.authority.UserAccountDesignation;
 import com.harshit.miniproject.model.DiscussionIndex;
+import com.harshit.miniproject.repository.CredentialsJpaRepository;
 import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
 import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
 import com.mongodb.client.DistinctIterable;
@@ -27,14 +28,11 @@ public class CredentialsService {
     MongoTemplate mongoTemplate;
 
     Timestamp instant= Timestamp.from(Instant.now());
-    private final DiscussionIndexJpaRepository discussionIndexJpaRepository;
-    @Autowired
-    private final DiscussionTextJpaRepository discussionTextJpaRepository;
+    private final CredentialsJpaRepository credentialsJpaRepository;
 
     @Autowired
-    public DiscussionIndexService(DiscussionIndexJpaRepository discussionIndexJpaRepository, DiscussionTextJpaRepository discussionTextJpaRepository) {
-        this.discussionIndexJpaRepository = discussionIndexJpaRepository;
-        this.discussionTextJpaRepository = discussionTextJpaRepository;
+    public CredentialsService(CredentialsJpaRepository credentialsJpaRepository) {
+        this.credentialsJpaRepository = credentialsJpaRepository;
     }
 
     /*public List<DiscussionIndex> listAllDiscussion(){

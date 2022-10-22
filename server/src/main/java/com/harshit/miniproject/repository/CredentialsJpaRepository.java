@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CredentialsJpaRepository extends JpaRepository<Credentials,Long> {
+public interface CredentialsJpaRepository extends JpaRepository<Credentials,String> {
 
     //List<DiscussionIndex> findAllByDiscussionId(Long discussionID);
 }

@@ -2,6 +2,7 @@ package com.harshit.miniproject.controller;
 
 import com.harshit.miniproject.authority.UserAccountDesignation;
 import com.harshit.miniproject.model.DiscussionIndex;
+import com.harshit.miniproject.repository.CredentialsJpaRepository;
 import com.harshit.miniproject.repository.DiscussionIndexJpaRepository;
 import com.harshit.miniproject.repository.DiscussionTextJpaRepository;
 import com.harshit.miniproject.service.CredentialsService;
@@ -29,19 +30,13 @@ public class CredentialsController {
     Timestamp instant = new Timestamp(date.getTime());
     @Autowired
     private final CredentialsService credentialsService;
-    private final DiscussionTextService discussionTextService;
 
-    private final DiscussionTextJpaRepository discussionTextJpaRepository;
-
-    private final DiscussionIndexJpaRepository discussionIndexJpaRepository;
-
+    private final CredentialsJpaRepository credentialsJpaRepository;
 
     @Autowired
-    public DiscussionController(DiscussionIndexService discussionIndexService, DiscussionTextService discussionTextService, DiscussionTextJpaRepository discussionTextJpaRepository, DiscussionIndexJpaRepository discussionIndexJpaRepository) {
-        this.discussionIndexService = discussionIndexService;
-        this.discussionTextService = discussionTextService;
-        this.discussionTextJpaRepository = discussionTextJpaRepository;
-        this.discussionIndexJpaRepository = discussionIndexJpaRepository;
+    public CredentialsController(CredentialsService credentialsService, CredentialsJpaRepository credentialsJpaRepository) {
+        this.credentialsService = credentialsService;
+        this.credentialsJpaRepository = credentialsJpaRepository;
     }
 
     @GetMapping("/listAll")
