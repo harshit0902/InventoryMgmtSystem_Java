@@ -5,21 +5,21 @@ public class Item {
     private String itemName;
     protected int quantity;
     private double price;
-    private int quality1;
-    private int quality2;
-    private int quality3;
-    
+    private Quality quality1;
+    private Quality quality2;
+    private Quality quality3;
+
     public Item() {
         itemID = 0;
         itemName = null;
         quantity = 0;
         price = 0.0;
-        quality1 = 0;
-        quality2 = 0;
-        quality3 = 0;
+        quality1 = null;
+        quality2 = null;
+        quality3 = null;
     }
 
-    public Item(int itemID, String itemName, int quantity, double price, int quality1, int quality2, int quality3) {
+    public Item(int itemID, String itemName, int quantity, double price, Quality quality1, Quality quality2, Quality quality3) {
         this.itemID = itemID;
         this.itemName = itemName;
         this.quantity = quantity;
@@ -27,10 +27,6 @@ public class Item {
         this.quality1 = quality1;
         this.quality2 = quality2;
         this.quality3 = quality3;
-    }
-
-    public Item displayItemDetails() {
-        return null;
     }
 
     public int getItemID() {
@@ -65,27 +61,27 @@ public class Item {
         this.price = price;
     }
 
-    public int getQuality1() {
+    public Quality getQuality1() {
         return quality1;
     }
 
-    public void setQuality1(int quality1) {
+    public void setQuality1(Quality quality1) {
         this.quality1 = quality1;
     }
 
-    public int getQuality2() {
+    public Quality getQuality2() {
         return quality2;
     }
 
-    public void setQuality2(int quality2) {
+    public void setQuality2(Quality quality2) {
         this.quality2 = quality2;
     }
 
-    public int getQuality3() {
+    public Quality getQuality3() {
         return quality3;
     }
 
-    public void setQuality3(int quality3) {
+    public void setQuality3(Quality quality3) {
         this.quality3 = quality3;
     }
     
