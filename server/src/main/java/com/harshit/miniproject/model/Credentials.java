@@ -1,8 +1,7 @@
 package com.harshit.miniproject.model;
 
-import lombok.Data;
 import org.springframework.data.annotation.Id;
-@Data
+
 public class Credentials {
     private String username;
     @Id
@@ -12,7 +11,7 @@ public class Credentials {
     private String address;
     private String typeOfAcc;
 
-    /*public Credentials() {
+    public Credentials() {
         username = null;
         email = null;
         password = null;
@@ -28,6 +27,11 @@ public class Credentials {
         this.mobNo = mobNo;
         this.address = address;
         this.typeOfAcc = typeOfAcc;
+    }
+
+    public Credentials(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
     public String getUsername() {
@@ -76,5 +80,5 @@ public class Credentials {
 
     public void setTypeOfAcc(String typeOfAcc) {
         this.typeOfAcc = typeOfAcc;
-    }*/
+    }
 }

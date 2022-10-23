@@ -5,10 +5,13 @@ import com.harshit.miniproject.repository.CredentialsJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.List;
 
 @Service
 public class CredentialsService {
@@ -35,6 +38,55 @@ public class CredentialsService {
     public void insertIntoCredentials(Credentials user) {
         mongoOperations.insert(user, "Credentials");
     }
+
+    public int getUserLogin(String email, String password) {
+        /*Criteria c1 = new Criteria();
+        c1 = c1.where("email").is(email);
+        Query q1 = new Query(c1);*/
+        Query q1 = new Query();
+        q1.addCriteria(Criteria.where("email").is("abcd@gmail.com"));
+        System.out.println(q1);
+        List<Credentials> em = mongoOperations.find(q1, Credentials.class);
+        System.out.println(em);
+
+        /*Criteria c2 = new Criteria();
+        c2 = c2.where("password").is(password);
+        Query q2 = new Query(c2);*/
+        Query q2 = new Query();
+        q2.addCriteria(Criteria.where("password").is("abc"));
+        System.out.println(q2);
+        List<Credentials> pass = mongoOperations.find(q2, Credentials.class);
+        System.out.println(pass);
+
+        if(em.isEmpty())
+            return 0;
+        else
+            return 1;
+    }
+
+    /*public int getUserEmail(String email) {
+        Criteria c1 = new Criteria();
+        c1 = c1.and("email").is(email);
+        Query qry = new Query(c1);
+        List<Credentials> em = mongoOperations.find(qry, Credentials.class);
+
+        if(em.isEmpty())
+            return 0;
+        else
+            return 1;
+    }
+
+    public int getUserPassword(String password) {
+        Criteria c2 = new Criteria();
+        c2 = c2.and("password").is(password);
+        Query qry = new Query(c2);
+        List<Credentials> pass = mongoOperations.find(qry, Credentials.class);
+
+        if(pass.isEmpty())
+            return 0;
+        else
+            return 1;
+    }*/
 
     /*public List<DiscussionIndex> listAllDiscussion(){
         return discussionIndexJpaRepository.findAll();

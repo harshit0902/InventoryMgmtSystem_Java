@@ -44,6 +44,18 @@ public class CredentialsController {
         //discussionIndexService.insertIntoDiscussionText(obj);
     }
 
+    @GetMapping("/login")
+    public String loginUser(@RequestBody Credentials user) {
+        System.out.println(user.getEmail());
+        System.out.println(user.getPassword());
+        //System.out.println(getType(email));
+        //System.out.println(getType(password));
+        if(credentialsService.getUserLogin(user.getEmail(), user.getPassword()) == 1)
+            return "Success";
+        else
+            return "Failure";
+    }
+
     /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){
 
