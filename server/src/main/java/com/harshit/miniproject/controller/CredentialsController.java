@@ -33,8 +33,8 @@ public class CredentialsController {
     }
 
     @PostMapping("/signup")
-    public void insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam String mobNo, @RequestParam String address, @RequestParam String typeOfAcc){
-        Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
+    public void insertUser(@RequestBody Credentials user){
+        //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
         int res = credentialsService.checkIfEmailExists(user);
 
         if(res == 1)
