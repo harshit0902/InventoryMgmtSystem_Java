@@ -4,8 +4,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 @Data
 public class Credentials {
-    @Id
     private String username;
+    @Id
     private String email;
     private String password;
     private String mobNo;

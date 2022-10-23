@@ -35,10 +35,10 @@ public class CredentialsController {
     @PostMapping("/signup")
     public void insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
-        int res = credentialsService.checkIfEmailExists(user);
+        //int res = credentialsService.checkIfEmailExists(user);
 
-        if(res == 1)
-            credentialsService.insertIntoCredentials(user);
+        //if(res == 1)
+        credentialsService.insertIntoCredentials(user);
 
         //DiscussionText obj = new DiscussionText(Text,dissID,userID);
         //discussionIndexService.insertIntoDiscussionText(obj);

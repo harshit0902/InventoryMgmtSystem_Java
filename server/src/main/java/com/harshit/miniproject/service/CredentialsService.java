@@ -25,12 +25,12 @@ public class CredentialsService {
         this.credentialsJpaRepository = credentialsJpaRepository;
     }
 
-    public int checkIfEmailExists(Credentials user) {
+    /*public int checkIfEmailExists(Credentials user) {
         if(mongoTemplate.getCollection("Credentials").equals(user))
             return 0;
         else
             return 1;
-    }
+    }*/
 
     public void insertIntoCredentials(Credentials user) {
         mongoOperations.insert(user, "Credentials");
