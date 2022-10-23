@@ -1,6 +1,9 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.annotation.Id;
+
 public class Credentials {
+    @Id
     private String username;
     private String email;
     private String password;
