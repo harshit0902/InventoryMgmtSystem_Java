@@ -32,7 +32,7 @@ public class CredentialsService {
             return 1;
     }
 
-    public void insertIntoCredentials(Credentials user){
+    public void insertIntoCredentials(Credentials user) {
         mongoOperations.insert(user, "Credentials");
     }
 

@@ -1,5 +1,6 @@
 package com.harshit.miniproject.controller;
 
+import com.harshit.miniproject.model.Credentials;
 import com.harshit.miniproject.repository.CredentialsJpaRepository;
 import com.harshit.miniproject.service.CredentialsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,18 @@ public class CredentialsController {
         this.credentialsJpaRepository = credentialsJpaRepository;
     }
 
+    @PostMapping("/signup")
+    public void insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam String mobNo, @RequestParam String address, @RequestParam String typeOfAcc){
+        Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
+        int res = credentialsService.checkIfEmailExists(user);
+
+        if(res == 1)
+            credentialsService.insertIntoCredentials(user);
+
+        //DiscussionText obj = new DiscussionText(Text,dissID,userID);
+        //discussionIndexService.insertIntoDiscussionText(obj);
+    }
+
     /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){
 
@@ -42,18 +55,6 @@ public class CredentialsController {
         Long siz = discussionIndexService.getCountofUsersUnique();
         System.out.println(siz);
         return ResponseEntity.ok(siz);
-    }
-
-    @PostMapping("/signup")
-    public void insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam, String mobNo, @RequestParam String address, @RequestParam String typeOfAcc){
-        Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
-        int res = credentialsService.checkIfEmailExists(user);
-
-        if(res == 1)
-            CredentialsService.insertIntoCredentials(user);
-
-        //DiscussionText obj = new DiscussionText(Text,dissID,userID);
-        //discussionIndexService.insertIntoDiscussionText(obj);
     }
 
     //    @GetMapping("/tester")

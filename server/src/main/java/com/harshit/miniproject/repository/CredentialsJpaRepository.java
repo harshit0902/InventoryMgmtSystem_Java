@@ -10,5 +10,4 @@ import java.util.List;
 @Repository
 public interface CredentialsJpaRepository extends MongoRepository<Credentials,String> {
 
-    //List<DiscussionIndex> findAllByDiscussionId(Long discussionID);
 }
