@@ -1,7 +1,9 @@
 package com.harshit.miniproject.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Credentials")
 public class Credentials {
     private String username;
     @Id

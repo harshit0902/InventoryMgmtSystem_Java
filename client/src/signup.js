@@ -1,8 +1,5 @@
 import { useState } from "react";
 import Axios from "axios";
-
-
-
 import Display from "./display";
 
 function App() {
@@ -19,15 +16,13 @@ function App() {
     const [account, setAcc]= useState("");
     const savedetail = () => {
         if (emailregex.test(email) && mobno.length == 10 &&  password===confpassword) {
-            Axios.post('http://localhost:8000/api/credentials/signup', {
-                name: name,
+            Axios.post('http://localhost:9090/api/credentials/signup', {
+                username: name,
                 email: email,
                 password: password,
-                mobno: mobno,
+                mobNo: mobno,
                 address: address,
-                account: account                
-                
-
+                typeOfAcc: account
             }).then((response) => {
                 // setUserdetails(response.data);
                 console.log(response)

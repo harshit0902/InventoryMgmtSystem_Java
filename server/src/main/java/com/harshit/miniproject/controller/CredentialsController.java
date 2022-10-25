@@ -33,12 +33,17 @@ public class CredentialsController {
     }
 
     @PostMapping("/signup")
-    public void insertUser(@RequestBody Credentials user){
+    public String insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
         //int res = credentialsService.checkIfEmailExists(user);
 
         //if(res == 1)
-        credentialsService.insertIntoCredentials(user);
+        int ans = credentialsService.insertIntoCredentials(user);
+
+        if(ans == 1)
+            return "success";
+        else
+            return "failure";
 
         //DiscussionText obj = new DiscussionText(Text,dissID,userID);
         //discussionIndexService.insertIntoDiscussionText(obj);

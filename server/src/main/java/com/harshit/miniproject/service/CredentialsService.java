@@ -35,33 +35,43 @@ public class CredentialsService {
             return 1;
     }*/
 
-    public void insertIntoCredentials(Credentials user) {
-        mongoOperations.insert(user, "Credentials");
+    public int insertIntoCredentials(Credentials user) {
+        Credentials result = mongoOperations.insert(user, "Credentials");
+
+        if(result == null)
+            return 0;
+        else
+            return 1;
     }
 
     public int getUserLogin(String email, String password) {
-        /*Criteria c1 = new Criteria();
-        c1 = c1.where("email").is(email);
-        Query q1 = new Query(c1);*/
         Query q1 = new Query();
-        q1.addCriteria(Criteria.where("email").is("abcd@gmail.com"));
-        System.out.println(q1);
-        List<Credentials> em = mongoOperations.find(q1, Credentials.class);
-        System.out.println(em);
+        q1.addCriteria(Criteria.where("email").is(email));
+        //System.out.println(q1);
+        Credentials em = mongoOperations.findOne(q1, Credentials.class);
+        //System.out.println(em.getPassword());
+        //System.out.println(password);
+
+        if(em == null)
+            return 0;
+
+        else {
+            if(em.getPassword().equals(password))
+                return 1;
+            else
+                return 0;
+        }
 
         /*Criteria c2 = new Criteria();
         c2 = c2.where("password").is(password);
         Query q2 = new Query(c2);*/
-        Query q2 = new Query();
+        /*Query q2 = new Query();
         q2.addCriteria(Criteria.where("password").is("abc"));
         System.out.println(q2);
-        List<Credentials> pass = mongoOperations.find(q2, Credentials.class);
-        System.out.println(pass);
+        List<Credentials> pass = mongoOperations.findAll(Credentials.class);
+        System.out.println(pass);*/
 
-        if(em.isEmpty())
-            return 0;
-        else
-            return 1;
+
     }
 
     /*public int getUserEmail(String email) {
