@@ -54,8 +54,10 @@ function App() {
                 </div>
                 <div>
                     <label>Enter Account type: </label>
-                    <input type="radio" name="account" value="Buyer" onChange={(event) => { setAcc(event.target.value) }}></input>
-                    <input type="radio" name="account" value="Buyer" onChange={(event) => { setAcc(event.target.value) }}></input>
+                    <label for="buy">Buyer </label>
+                    <input type="radio" id="buy" name="account" value="Buyer" onChange={(event) => { setAcc(event.target.value) }}></input>
+                    <label for="sell">Seller</label>
+                    <input type="radio" id="sell" name="account" value="Seller" onChange={(event) => { setAcc(event.target.value) }}></input>
                 </div>
                 <div>
                     <label>Enter Email id: </label>
