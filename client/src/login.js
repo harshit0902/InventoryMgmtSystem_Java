@@ -17,13 +17,13 @@ function App() {
         setCaptcha(Math.random().toString(36).substring(2, 8))
     }
     const savedetail = () => {
-        Axios.get('http://localhost:9090/api/credentials/login', {
+        Axios.post('http://localhost:9090/api/credentials/login', {
             email: email,
             password: password
         }).then((response) => {
             // setUserdetails(response.data);
-            console.log(response.data)
-            if (response.data.length === "Success" && capcthaEntered === capctha) {
+            //console.log(response.data)
+            if (response.data === "Success" && capcthaEntered === capctha) {
                 /*obj = Object.values(response.data);
                 localStorage.setItem("email", email);
                 localStorage.setItem("name", obj[0].name);

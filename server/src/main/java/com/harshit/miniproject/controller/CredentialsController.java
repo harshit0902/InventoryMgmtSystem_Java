@@ -49,7 +49,7 @@ public class CredentialsController {
         //discussionIndexService.insertIntoDiscussionText(obj);
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String loginUser(@RequestBody Credentials user) {
         System.out.println(user.getEmail());
         System.out.println(user.getPassword());
