@@ -23,8 +23,8 @@ function App() {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response.data)
-            if (response.data.length === 1 && capcthaEntered === capctha) {
-                obj = Object.values(response.data);
+            if (response.data.length === "Success" && capcthaEntered === capctha) {
+                /*obj = Object.values(response.data);
                 localStorage.setItem("email", email);
                 localStorage.setItem("name", obj[0].name);
                 localStorage.setItem("uid", obj[0].uid);
@@ -39,10 +39,14 @@ function App() {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
                 localStorage.setItem("name", "");
-            } else {
+            }*/
+            console.log("Success");
+            }
+
+            else {
                 console.log("error")
-                localStorage.setItem("email", "");
-                localStorage.setItem("name", "");
+                /*localStorage.setItem("email", "");
+                localStorage.setItem("name", "");*/
             }
         });
     }
