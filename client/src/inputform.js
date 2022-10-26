@@ -1,4 +1,26 @@
 import React, { Component } from 'react'
+const iquality = () =>{
+if (topic==="a"){
+	return <aquality />;
+	
+}else if(topic==="b"){
+return <bquality />;
+}
+}
+const aquality = () =>{
+	<select value={quality} onChange={this.handleQualityChange}>
+						<option value="q1">q1</option>
+						<option value="q2">q2</option>
+						<option value="q3">q3</option>
+					</select>
+}
+const bquality = () =>{
+	<select value={quality} onChange={this.handleQualityChange}>
+						<option value="q4">q4</option>
+						<option value="q5">q5</option>
+						<option value="q6">q6</option>
+					</select>
+}
 
 class Form extends Component {
 	constructor(props) {
@@ -61,11 +83,8 @@ class Form extends Component {
 				</div>
 				<div>
 					<label>Choose Quality</label>
-					<select value={quality} onChange={this.handleQualityChange}>
-						<option value="q1">q1</option>
-						<option value="q2">q2</option>
-						<option value="q3">q3</option>
-					</select>
+                    <iquality />				
+					
 				</div>
                 
 				
