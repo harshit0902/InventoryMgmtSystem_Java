@@ -2,8 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles';
 
 import Login from './login'
-
+import Iform from './inputform'
 import Signup from './signup'
+import Cotton from './cotton'
 
 // import Header from "./navbar1";
 // import Footer from "./footer";
@@ -39,8 +40,8 @@ function App() {
                 <Route path='/login' element={<Login />}></Route>
                 
                 <Route path='/signup' element={<Signup />}></Route>
-                
-                
+                <Route path='/inputform' element={<Iform />}></Route>
+                <Route path='/cotton' element={<Cotton />}></Route>
             </Routes>
         </div>
         </div>

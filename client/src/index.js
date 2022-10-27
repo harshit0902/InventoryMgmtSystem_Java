@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './inputform';
+import App from './cotton';
 import Login from './login'
 import Signup from './signup'
-import Form from './inputform'
+
+import Cotton from './cotton'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -17,7 +18,9 @@ root.render(
                       <Route path='/' element={<App />}></Route>
                       <Route path='/login' element={<Login />}></Route>
                       <Route path='/signup' element={<Signup />}></Route>
-                      <Route path='/inputform' element={<Form />}></Route>
+                     
+                      
+                      <Route path='/cotton' element={<Cotton />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

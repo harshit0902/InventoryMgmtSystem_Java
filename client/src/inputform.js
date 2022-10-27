@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 const iquality = () =>{
-if (topic==="a"){
-	return <aquality />;
+if (item==="a"){
+	 <aquality />
 	
-}else if(topic==="b"){
-return <bquality />;
+}else if(item==="b"){
+ <bquality />
 }
 }
 const aquality = () =>{
@@ -27,7 +27,7 @@ class Form extends Component {
 		super(props)
 
 		this.state = {
-			topic: 'a',
+			item: 'a',
             qty: '5',
 			quality: 'q1'
 			
@@ -58,7 +58,7 @@ class Form extends Component {
 	}
 
 	render() {
-		const { item,qty, quality } = this.state
+		const { item,qty } = this.state
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<div>
