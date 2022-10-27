@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Axios from "axios";
-import Display from "./display";
+// import Axios from "axios";
+// import Display from "./display";
 
 function App() {
     const [itemname, setItemname] = useState("");
@@ -8,19 +8,22 @@ function App() {
     const [q1, setQ1] = useState("");
     const [q2, setQ2] = useState("");
     const [q3, setQ3] = useState("");
+    const [item,setItem] =useState(<p></p>)
     //const emailregex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
    /* const [address, setAddress] = useState("");
     const [message, setMessage] = useState("");
     const [account, setAcc]= useState("");*/
-    const [itemdetails, setItemdetails] = useState([]);
+    // const [itemdetails, setItemdetails] = useState([]);
 
     /*const cottonQuality1 = () => {
 
     }*/
 
     const chooseQuality = () => {
+        console.log(itemname);
         if(itemname === "Cotton") {
             const cq1 = <div>
+                <label>Enter CQ1: </label>
                 <input type="number" placeholder='Enter Value Here'
                        onChange={(event) => { setQ1(event.target.value) }}></input>
             </div>
@@ -37,12 +40,12 @@ function App() {
                        onChange={(event) => { setQ3(event.target.value) }}></input>
             </div>
 
-            return {cq1, cq2, cq3};
+            setItem(<div>{cq1}{cq2}{cq3}</div>)
         }
 
         else if(itemname === "Jute") {
-            return (
-                <div>
+            
+            const result=  <div>
                     <label>Enter JQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
@@ -58,7 +61,8 @@ function App() {
                     <label>Enter JQ3: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+                </div> ;
+            setItem(<div>{result}</div>)
         }
 
         else if(itemname === "Coffee") {
@@ -69,19 +73,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter CfQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter CfQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter CfQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter CfQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Steel") {
@@ -92,19 +96,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter SQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter SQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter SQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter SQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Aluminium") {
@@ -115,19 +119,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter AQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter AQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter AQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter AQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Copper") {
@@ -138,19 +142,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter CpQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter CpQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter CpQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter CpQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Wood") {
@@ -161,19 +165,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter WQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter WQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter WQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter WQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Wheat") {
@@ -184,19 +188,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter WhQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter WhQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter WhQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter WhQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Bajra") {
@@ -207,19 +211,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter BQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter BQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter BQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter BQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
 
         else if(itemname === "Ragi") {
@@ -230,19 +234,19 @@ function App() {
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div> );
 
-            return (
-                <div>
-                    <label>Enter RQ2: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ2(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter RQ2: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ2(event.target.value) }}></input>
+            //     </div> );
 
-            return (
-                <div>
-                    <label>Enter RQ3: </label>
-                    <input type="number" placeholder='Enter Value Here'
-                           onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> );
+            // return (
+            //     <div>
+            //         <label>Enter RQ3: </label>
+            //         <input type="number" placeholder='Enter Value Here'
+            //                onChange={(event) => { setQ3(event.target.value) }}></input>
+            //     </div> );
         }
     }
 
@@ -282,7 +286,7 @@ function App() {
                 <div>
                     <label>Select Item Name: </label>
                     <select id="itemName" className="form-select" aria-label="Default select example"
-                            onChange={(event) => {
+                            onClick={(event) => {
                                 setItemname(event.target.value)
                             }}>
                         <option selected>Select</option>
@@ -303,15 +307,15 @@ function App() {
                     <input type="number" placeholder='Enter Quantity Here'
                            onChange={(event) => { setQty(event.target.value) }}></input>
                 </div>
-                <div>
+                {/* <div>
                     {chooseQuality}
-                </div>
+                </div> */}
             </div>
             <br></br>
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button /*onClick={savedetail}*/>Place Order</button>
+                    <button onClick={chooseQuality}>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
@@ -327,7 +331,7 @@ function App() {
                         Account={value.Account}/>
                 </div>
             })*/}
-
+            {item}
         </div>
     );
 }
