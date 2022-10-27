@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './signup';
+import App from './specialrequestform';
 import Login from './login'
 import Signup from './signup'
+import SpecialRequestForm from "./specialrequestform";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
                       <Route path='/' element={<App />}></Route>
                       <Route path='/login' element={<Login />}></Route>
                       <Route path='/signup' element={<Signup />}></Route>
+                      <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>
