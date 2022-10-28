@@ -1,3 +1,4 @@
+import { checkboxClasses } from "@mui/material";
 import { useState } from "react";
 
 
@@ -13,36 +14,51 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    if(q1>9000&&q1<15000){
+   function Check1() {
+    if((q1>9000 && q1<15000)){
       console.log("success");
+      
       
     }  else{
       console.log("failure");
-      alert("Input Invalid1"); 
-      }
-   if(q2>9000&&q2<15000){
+      alert("Invalid Quality 1");
+
+    }}
+   function Check2(){
+    if((q2>9000 && q2<15000)){
+      console.log("success");
+      
+      
+    }  else{
+      console.log("failure");
+      alert("Invalid Quality 2");
+
+    }
+  }
+    function Check3(){
+      if((q3>9000 && q3<15000)){
         console.log("success");
+        
         
       }  else{
         console.log("failure");
-        alert("Input Invalid2"); 
-     }  
-  if(q3>9000&&q3<15000){
+        alert("Invalid Quality 3");
+  
+      }
+    }
+      function Checkqty(){
+        if((qty1>0 && qty1 <=25)){
           console.log("success");
+          
           
         }  else{
           console.log("failure");
-          alert("Input Invalid3"); 
-    } 
-    if(qty1<=25){
-      console.log("success");
-      
-    }  else{
-      console.log("failure");
-      alert("Input Invalid4"); 
-      }
+          alert("Invalid Quality 2");
     
-
+        }
+      
+      }
+   
 return (
     
       
@@ -63,8 +79,8 @@ return (
       <div>
 
         <input type="number" placeholder='Quality 1'
-          onChange={(event) => { setquality1(event.target.value); } }></input>
-          
+         onChange={(event) => { setquality1(event.target.value); } } ></input>
+           
 
            <br></br>
       </div>
@@ -81,7 +97,12 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
-      <button>Add to Cart</button>
+      <button onClick={() => {
+        Check1()
+        Check2()
+        Check3()
+        Checkqty()
+       } }>Add to Cart</button>
       <button>Special Request?</button>
 
     </div></>
