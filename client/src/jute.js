@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 
@@ -65,7 +64,7 @@ return (
       <><div>
     <center>
       <h1 id="cot">
-        Order Cotton
+        Order Jute
       </h1>
     </center>
   </div><div id="details">

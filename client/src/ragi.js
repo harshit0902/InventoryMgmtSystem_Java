@@ -65,7 +65,7 @@ return (
       <><div>
     <center>
       <h1 id="cot">
-        Order Cotton
+        Order Ragi
       </h1>
     </center>
   </div><div id="details">
