@@ -292,11 +292,12 @@ function App() {
                     {chooseQuality}
                 </div> */}
             </div>
+            {item}
             <br></br>
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={}>Place Order</button>
+                    <button>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
@@ -312,7 +313,7 @@ function App() {
                         Account={value.Account}/>
                 </div>
             })*/}
-            {item}
+            
         </div>
     );
 }
