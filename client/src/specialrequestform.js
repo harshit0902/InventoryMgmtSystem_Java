@@ -20,7 +20,7 @@ function App() {
     }*/
 
     const chooseQuality = (text) => {
-        console.log(itemname);
+        //console.log(itemname);
         if(text === "Cotton") {
             const cq1 = <div>
                 <label>Enter CQ1: </label>
@@ -44,48 +44,45 @@ function App() {
         }
 
         else if(text === "Jute") {
-            
-            const result=  <div>
+            const jq1 =  <div>
                     <label>Enter JQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
+            </div>
 
-
-
-                    <label>Enter JQ2: </label>
+            const jq2 = <div>
+                <label>Enter JQ2: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ2(event.target.value) }}></input>
+            </div>
 
-
-
-                    <label>Enter JQ3: </label>
+            const jq3 = <div>
+                <label>Enter JQ3: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ3(event.target.value) }}></input>
-                </div> ;
-            setItem(<div>{result}</div>)
+                </div>
+            setItem(<div>{jq1}{jq2}{jq3}</div>)
         }
 
         else if(text === "Coffee") {
-            return (
-                <div>
+                const cfq1 = <div>
                     <label>Enter CfQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter CfQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                const cfq2 = <div>
+                     <label>Enter CfQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter CfQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const cfq3 = <div>
+                     <label>Enter CfQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{cfq1}{cfq2}{cfq3}</div>)
         }
 
         else if(text === "Steel") {
@@ -255,6 +252,7 @@ function App() {
         setItemname(text);
         chooseQuality(text);
     }
+
     return (
         <div id="Users">
 
@@ -298,7 +296,7 @@ function App() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={chooseQuality}>Place Order</button>
+                    <button onClick={}>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
