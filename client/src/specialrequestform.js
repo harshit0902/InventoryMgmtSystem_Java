@@ -297,7 +297,7 @@ function App() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={}>Place Order</button>
+                    <button>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
