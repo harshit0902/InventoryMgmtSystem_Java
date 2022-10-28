@@ -19,9 +19,9 @@ function App() {
 
     }*/
 
-    const chooseQuality = () => {
+    const chooseQuality = (text) => {
         console.log(itemname);
-        if(itemname === "Cotton") {
+        if(text === "Cotton") {
             const cq1 = <div>
                 <label>Enter CQ1: </label>
                 <input type="number" placeholder='Enter Value Here'
@@ -43,7 +43,7 @@ function App() {
             setItem(<div>{cq1}{cq2}{cq3}</div>)
         }
 
-        else if(itemname === "Jute") {
+        else if(text === "Jute") {
             
             const result=  <div>
                     <label>Enter JQ1: </label>
@@ -65,7 +65,7 @@ function App() {
             setItem(<div>{result}</div>)
         }
 
-        else if(itemname === "Coffee") {
+        else if(text === "Coffee") {
             return (
                 <div>
                     <label>Enter CfQ1: </label>
@@ -88,7 +88,7 @@ function App() {
             //     </div> );
         }
 
-        else if(itemname === "Steel") {
+        else if(text === "Steel") {
             return (
                 <div>
                     <label>Enter SQ1: </label>
@@ -250,28 +250,11 @@ function App() {
         }
     }
 
-    /*const savedetail = () => {
-        if (emailregex.test(email) && mobno.length == 10 &&  password===confpassword) {
-            Axios.post('http://localhost:9090/api/credentials/signup', {
-                username: name,
-                email: email,
-                password: password,
-                mobNo: mobno,
-                address: address,
-                typeOfAcc: account
-            }).then((response) => {
-                // setUserdetails(response.data);
-                console.log(response)
-                if (response.data == 'success') {
-                    window.location.href = "http://localhost:3000/login";
-                }
-            });
-        } else {
-            setMessage('Signup not correct');
-        }
-    }*/
-
-
+    function fun1(text)
+    {
+        setItemname(text);
+        chooseQuality(text);
+    }
     return (
         <div id="Users">
 
@@ -287,9 +270,9 @@ function App() {
                     <label>Select Item Name: </label>
                     <select id="itemName" className="form-select" aria-label="Default select example"
                             onClick={(event) => {
-                                setItemname(event.target.value)
+                                fun1(event.target.value)
                             }}>
-                        <option selected>Select</option>
+                        <option value="Select">Select</option>
                         <option value="Cotton">Cotton</option>
                         <option value="Jute">Jute</option>
                         <option value="Coffee">Coffee</option>
