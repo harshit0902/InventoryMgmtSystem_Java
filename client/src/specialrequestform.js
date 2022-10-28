@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Axios from "axios";
 // import Axios from "axios";
 // import Display from "./display";
 
@@ -15,9 +16,21 @@ function App() {
     const [account, setAcc]= useState("");*/
     // const [itemdetails, setItemdetails] = useState([]);
 
-    /*const cottonQuality1 = () => {
-
-    }*/
+    const savedetail = () => {
+        Axios.post('http://localhost:9090/api/buy/special', {
+            itemName: itemname,
+            quantity: qty,
+            quality1: q1,
+            quality2: q2,
+            quality3: q3,
+        }).then((response) => {
+            // setUserdetails(response.data);
+            console.log(response)
+            if (response.data == 'success') {
+                window.location.href = "http://localhost:3000/login";
+            }
+        });
+    }
 
     const chooseQuality = (text) => {
         //console.log(itemname);
@@ -86,164 +99,150 @@ function App() {
         }
 
         else if(text === "Steel") {
-            return (
-                <div>
+                const sq1 = <div>
                     <label>Enter SQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter SQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                const sq2 = <div>
+                     <label>Enter SQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter SQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                const sq3 = <div>
+                     <label>Enter SQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{sq1}{sq2}{sq3}</div>)
         }
 
         else if(itemname === "Aluminium") {
-            return (
-                <div>
+                const aq1 = <div>
                     <label>Enter AQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter AQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+               const aq2 = <div>
+                     <label>Enter AQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter AQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+               const aq3 = <div>
+                     <label>Enter AQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{aq1}{aq2}{aq3}</div>)
         }
 
         else if(itemname === "Copper") {
-            return (
-                <div>
+                const cpq1 = <div>
                     <label>Enter CpQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter CpQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                const cpq2 = <div>
+                     <label>Enter CpQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter CpQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const cpq3 = <div>
+                     <label>Enter CpQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{cpq1}{cpq2}{cpq3}</div>)
         }
 
         else if(itemname === "Wood") {
-            return (
-                <div>
+                const wq1 = <div>
                     <label>Enter WQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter WQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                 const wq2 = <div>
+                     <label>Enter WQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter WQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const wq3 = <div>
+                     <label>Enter WQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{wq1}{wq2}{wq3}</div>)
         }
 
         else if(itemname === "Wheat") {
-            return (
-                <div>
+                const whq1 = <div>
                     <label>Enter WhQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter WhQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                 const whq2 = <div>
+                     <label>Enter WhQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter WhQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const whq3 = <div>
+                     <label>Enter WhQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{whq1}{whq2}{whq3}</div>)
         }
 
         else if(itemname === "Bajra") {
-            return (
-                <div>
+                const bq1 = <div>
                     <label>Enter BQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter BQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                 const bq2 = <div>
+                     <label>Enter BQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter BQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const bq3 = <div>
+                     <label>Enter BQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{bq1}{bq2}{bq3}</div>)
         }
 
         else if(itemname === "Ragi") {
-            return (
-                <div>
+                const rq1 = <div>
                     <label>Enter RQ1: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
-                </div> );
+                </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter RQ2: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ2(event.target.value) }}></input>
-            //     </div> );
+                 const rq2 = <div>
+                     <label>Enter RQ2: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ2(event.target.value) }}></input>
+                 </div>
 
-            // return (
-            //     <div>
-            //         <label>Enter RQ3: </label>
-            //         <input type="number" placeholder='Enter Value Here'
-            //                onChange={(event) => { setQ3(event.target.value) }}></input>
-            //     </div> );
+                 const rq3 = <div>
+                     <label>Enter RQ3: </label>
+                     <input type="number" placeholder='Enter Value Here'
+                            onChange={(event) => { setQ3(event.target.value) }}></input>
+                 </div>
+            setItem(<div>{rq1}{rq2}{rq3}</div>)
         }
     }
 
@@ -297,7 +296,7 @@ function App() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={}>Place Order</button>
+                    <button onClick>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
@@ -313,7 +312,7 @@ function App() {
                         Account={value.Account}/>
                 </div>
             })*/}
-            
+
         </div>
     );
 }
