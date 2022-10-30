@@ -1,9 +1,12 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+@Document(collection = "BuyerInvoice")
 public class BuyerInvoice {
     private int custID;
     private int billNo;
@@ -11,6 +14,7 @@ public class BuyerInvoice {
     private Date issueDate;
     private double totalAmt;
     private String status;
+    private Boolean special;
 
     public BuyerInvoice() {
         custID = 0;
@@ -19,15 +23,17 @@ public class BuyerInvoice {
         issueDate = null;
         totalAmt = 0;
         status = null;
+        special = null;
     }
 
-    public BuyerInvoice(int custID, int billNo, ArrayList<Item> it, Date issueDate, double totalAmt, String status) {
+    public BuyerInvoice(int custID, int billNo, ArrayList<Item> it, Date issueDate, double totalAmt, String status, Boolean special) {
         this.custID = custID;
         this.billNo = billNo;
         this.it = it;
         this.issueDate = issueDate;
         this.totalAmt = totalAmt;
         this.status = status;
+        this.special = special;
     }
 
     public int getCustID() {
@@ -76,6 +82,14 @@ public class BuyerInvoice {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(Boolean special) {
+        this.special = special;
     }
 
     public void generateInvoice() {

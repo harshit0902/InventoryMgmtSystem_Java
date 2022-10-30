@@ -1,17 +1,28 @@
 package com.harshit.miniproject.model;
 
 public class Payment {
+    private int billNo;
     private Boolean transactionStatus;
     private double totalCost;
 
     public Payment() {
+        billNo = 0;
         transactionStatus = null;
         totalCost = 0.0;
     }
 
-    public Payment(Boolean transactionStatus, double totalCost) {
+    public Payment(int billNo, Boolean transactionStatus, double totalCost) {
+        this.billNo = billNo;
         this.transactionStatus = transactionStatus;
         this.totalCost = totalCost;
+    }
+
+    public int getBillNo() {
+        return billNo;
+    }
+
+    public void setBillNo(int billNo) {
+        this.billNo = billNo;
     }
 
     public Boolean getTransactionStatus() {

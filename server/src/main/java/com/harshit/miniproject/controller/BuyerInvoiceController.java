@@ -1,8 +1,8 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.Credentials;
-import com.harshit.miniproject.repository.CredentialsJpaRepository;
-import com.harshit.miniproject.service.CredentialsService;
+import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
+import com.harshit.miniproject.service.BuyerInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +12,8 @@ import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RequestMapping("api/credentials")
-public class CredentialsController {
+@RequestMapping("api/buy")
+public class BuyerInvoiceController {
 
     @Autowired
     MongoOperations mongoOperations;
@@ -22,17 +22,26 @@ public class CredentialsController {
     // getting the object of the Timestamp class
     Timestamp instant = new Timestamp(date.getTime());
     @Autowired
-    private final CredentialsService credentialsService;
+    private final BuyerInvoiceService buyerInvoiceService;
 
-    private final CredentialsJpaRepository credentialsJpaRepository;
+    private final BuyerInvoiceJpaRepository buyerInvoiceJpaRepository;
 
     @Autowired
-    public CredentialsController(CredentialsService credentialsService, CredentialsJpaRepository credentialsJpaRepository) {
-        this.credentialsService = credentialsService;
-        this.credentialsJpaRepository = credentialsJpaRepository;
+    public BuyerInvoiceController(BuyerInvoiceService buyerInvoiceService, BuyerInvoiceJpaRepository buyerInvoiceJpaRepository) {
+        this.buyerInvoiceService = buyerInvoiceService;
+        this.buyerInvoiceJpaRepository = buyerInvoiceJpaRepository;
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/special")
+    public String specialOrder(@RequestBody BuyerInvoice special){
+        int ans = buyerInvoiceService.insertIntoBuyerInvoice(special);
+        if(ans == 1)
+            return "success";
+        else
+            return "failure";
+    }
+
+    /*@PostMapping("/signup")
     public String insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
         //int res = credentialsService.checkIfEmailExists(user);
@@ -59,7 +68,7 @@ public class CredentialsController {
             return "Success";
         else
             return "Failure";
-    }
+    }*/
 
     /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){

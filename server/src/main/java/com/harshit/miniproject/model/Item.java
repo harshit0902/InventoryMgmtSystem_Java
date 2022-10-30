@@ -1,26 +1,24 @@
 package com.harshit.miniproject.model;
 
 public class Item {
-    private int itemID;
+    private int itemID = (int) Math.random();
     private String itemName;
     protected int quantity;
     private double price;
-    private Quality quality1;
-    private Quality quality2;
-    private Quality quality3;
+    private int quality1;
+    private int quality2;
+    private int quality3;
 
     public Item() {
-        itemID = 0;
         itemName = null;
         quantity = 0;
         price = 0.0;
-        quality1 = null;
-        quality2 = null;
-        quality3 = null;
+        quality1 = 0;
+        quality2 = 0;
+        quality3 = 0;
     }
 
-    public Item(int itemID, String itemName, int quantity, double price, Quality quality1, Quality quality2, Quality quality3) {
-        this.itemID = itemID;
+    public Item(String itemName, int quantity, double price, int quality1, int quality2, int quality3) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.price = price;
@@ -61,27 +59,27 @@ public class Item {
         this.price = price;
     }
 
-    public Quality getQuality1() {
+    public int getQuality1() {
         return quality1;
     }
 
-    public void setQuality1(Quality quality1) {
+    public void setQuality1(int quality1) {
         this.quality1 = quality1;
     }
 
-    public Quality getQuality2() {
+    public int getQuality2() {
         return quality2;
     }
 
-    public void setQuality2(Quality quality2) {
+    public void setQuality2(int quality2) {
         this.quality2 = quality2;
     }
 
-    public Quality getQuality3() {
+    public int getQuality3() {
         return quality3;
     }
 
-    public void setQuality3(Quality quality3) {
+    public void setQuality3(int quality3) {
         this.quality3 = quality3;
     }
     
