@@ -1,5 +1,8 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Item")
 public class Item {
     private int itemID = (int) Math.random();
     private String itemName;
@@ -16,6 +19,14 @@ public class Item {
         quality1 = 0;
         quality2 = 0;
         quality3 = 0;
+    }
+
+    public Item(String itemName, int quantity, int quality1, int quality2, int quality3) {
+        this.itemName = itemName;
+        this.quantity = quantity;
+        this.quality1 = quality1;
+        this.quality2 = quality2;
+        this.quality3 = quality3;
     }
 
     public Item(String itemName, int quantity, double price, int quality1, int quality2, int quality3) {

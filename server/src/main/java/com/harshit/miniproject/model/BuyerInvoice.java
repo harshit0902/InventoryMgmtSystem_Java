@@ -9,7 +9,7 @@ import java.util.Date;
 @Document(collection = "BuyerInvoice")
 public class BuyerInvoice {
     private int custID;
-    private int billNo;
+    private int billNo = (int)(Math.random()*(1000-1+1)+1);
     private ArrayList<Item> it = new ArrayList<Item>();
     private Date issueDate;
     private double totalAmt;

@@ -36,8 +36,8 @@ public class ItemController {
     }
 
     @PostMapping("/special")
-    public String specialOrder(@RequestBody BuyerInvoice special){
-        int ans = buyerInvoiceService.insertIntoBuyerInvoice(special);
+    public String specialOrder(@RequestBody Item item){
+        int ans = itemService.insertIntoItem(item);
         if(ans == 1)
             return "success";
         else
