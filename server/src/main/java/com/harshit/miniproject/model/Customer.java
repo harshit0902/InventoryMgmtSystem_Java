@@ -2,14 +2,14 @@ package com.harshit.miniproject.model;
 import java.util.Date;
 
 public class Customer {
-    private String custID;
+    private String custEmail;
     private String custName;
     private String custPhoneNum;
     private String custAddress;
     private int tot_order;
 
     public Customer() {
-        custID = null;
+        custEmail = null;
         custName = null;
         custPhoneNum= null;
         custAddress = null;
@@ -17,19 +17,19 @@ public class Customer {
     }
 
     public Customer(String custID, String custName, String custPhoneNum, String custAddress, int tot_order) {
-        this.custID = custID;
+        this.custEmail = custID;
         this.custName = custName;
         this.custPhoneNum = custPhoneNum;
         this.custAddress = custAddress;
         this.tot_order = tot_order;
     }
 
-    public String getCustID() {
-        return custID;
+    public String getcustEmail() {
+        return custEmail;
     }
 
-    public void setCustID(String custID) {
-        this.custID = custID;
+    public void setcustEmail(String custcustEmail) {
+        this.custEmail = custEmail;
     }
 
     public String getCustName() {

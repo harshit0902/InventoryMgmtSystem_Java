@@ -1,6 +1,7 @@
 package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.model.Item;
 import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -35,6 +36,19 @@ public class BuyerInvoiceService {
             return 0;
         else
             return 1;
+    }
+
+    public double findPrice(int itemNo) {
+        Query q1 = new Query();
+        q1.addCriteria(Criteria.where("itemID").is(itemNo));
+        Item item = mongoOperations.findOne(q1, Item.class);
+        if(item != null)
+        {
+            System.out.println(item.getPrice());
+            return item.getPrice();
+        }
+        else
+            return 0.0;
     }
 
     /*public int checkIfEmailExists(Credentials user) {

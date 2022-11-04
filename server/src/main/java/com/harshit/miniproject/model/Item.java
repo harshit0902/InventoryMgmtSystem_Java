@@ -1,10 +1,12 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Item")
 public class Item {
-    private int itemID = (int) Math.random();
+    @Id
+    private int itemID;
     private String itemName;
     protected int quantity;
     private double price;
@@ -19,6 +21,17 @@ public class Item {
         quality1 = 0;
         quality2 = 0;
         quality3 = 0;
+    }
+
+    public Item(String itemName, int quantity) {
+        this.itemName = itemName;
+        this.quantity = quantity;
+    }
+
+    public Item(int itemID, String itemName, int quantity) {
+        this.itemID = itemID;
+        this.itemName = itemName;
+        this.quantity = quantity;
     }
 
     public Item(String itemName, int quantity, int quality1, int quality2, int quality3) {

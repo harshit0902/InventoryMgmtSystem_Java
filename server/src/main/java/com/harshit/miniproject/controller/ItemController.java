@@ -1,4 +1,4 @@
-package com.harshit.miniproject.controller;
+/*package com.harshit.miniproject.controller;
 
 import com.harshit.miniproject.model.BuyerInvoice;
 import com.harshit.miniproject.model.Item;
@@ -42,7 +42,7 @@ public class ItemController {
             return "success";
         else
             return "failure";
-    }
+    }*/
 
     /*@PostMapping("/signup")
     public String insertUser(@RequestBody Credentials user){
@@ -105,4 +105,4 @@ public class ItemController {
     public void insertDiscussion(@RequestParam Long userid ,@RequestParam Long discussionId,@RequestParam String discussionName,@RequestParam String description){
         discussionIndexService.insertDiscussion(discussionId,userid,discussionName,description, UserAccountDesignation.PROFESSOR);
     }*/
-}
+//}

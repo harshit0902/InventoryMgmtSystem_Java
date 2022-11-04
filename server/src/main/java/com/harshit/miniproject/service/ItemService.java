@@ -1,4 +1,4 @@
-package com.harshit.miniproject.service;
+/*package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.model.Item;
 import com.harshit.miniproject.repository.ItemJpaRepository;
@@ -35,14 +35,14 @@ public class ItemService {
             return 1;
     }*/
 
-    public int insertIntoItem(Item item) {
+    /*public int insertIntoItem(Item item) {
         Item result = mongoOperations.insert(item, "Item");
 
         if(result == null)
             return 0;
         else
             return 1;
-    }
+    }*/
 
     /*public int getUserLogin(String email, String password) {
         Query q1 = new Query();
@@ -146,4 +146,4 @@ public class ItemService {
         DiscussionIndex vals = new DiscussionIndex(id,discussionId,discussionName,text,instant,accessClass);
         discussionIndexJpaRepository.save(vals);
     }*/
-}
+//}
