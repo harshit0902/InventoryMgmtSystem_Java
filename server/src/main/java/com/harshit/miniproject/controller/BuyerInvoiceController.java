@@ -39,37 +39,37 @@ public class BuyerInvoiceController {
     @PostMapping("/special")
     public String specialOrder(@RequestBody Item special){
         int itemNo = 0;
-
-        if(special.getItemName() == "Cotton")
+        System.out.println(special.getItemName());
+        if(special.getItemName().equals("Cotton"))
             itemNo = 1;
-        else if(special.getItemName() == "Jute")
+        else if(special.getItemName().equals("Jute"))
             itemNo = 2;
-        else if(special.getItemName() == "Coffee")
+        else if(special.getItemName().equals("Coffee"))
             itemNo = 3;
-        else if(special.getItemName() == "Steel")
+        else if(special.getItemName().equals("Steel"))
             itemNo = 4;
-        else if(special.getItemName() == "Aluminium")
+        else if(special.getItemName().equals("Aluminium"))
             itemNo = 5;
-        else if(special.getItemName() == "Copper")
+        else if(special.getItemName().equals("Copper"))
             itemNo = 6;
-        else if(special.getItemName() == "Wood")
+        else if(special.getItemName().equals("Wood"))
             itemNo = 7;
-        else if(special.getItemName() == "Wheat")
+        else if(special.getItemName().equals("Wheat"))
             itemNo = 8;
-        else if(special.getItemName() == "Bajra")
+        else if(special.getItemName().equals("Bajra"))
             itemNo = 9;
-        else if(special.getItemName() == "Ragi")
+        else if(special.getItemName().equals("Ragi"))
             itemNo = 10;
 
         Item it = new Item(itemNo, special.getItemName(), special.getQuantity());
         ArrayList<Item> item = new ArrayList<Item>();
         item.add(it);
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
 
         double price = buyerInvoiceService.findPrice(itemNo);
-
+        System.out.println(price);
         BuyerInvoice splorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), price*it.getQuantity(), "Order Processing", true);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(splorder);
         if(ans == 1)

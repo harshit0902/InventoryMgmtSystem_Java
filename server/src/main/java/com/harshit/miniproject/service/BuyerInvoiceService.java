@@ -42,6 +42,7 @@ public class BuyerInvoiceService {
         Query q1 = new Query();
         q1.addCriteria(Criteria.where("itemID").is(itemNo));
         Item item = mongoOperations.findOne(q1, Item.class);
+        System.out.println(item);
         if(item != null)
         {
             System.out.println(item.getPrice());
