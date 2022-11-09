@@ -5,6 +5,8 @@ import { useState } from "react";
 
 
 function App() {
+  
+
     
     const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);
@@ -14,6 +16,27 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
+    const steelarr = [];
+    //const [textarr,setTextArr]=useState([])
+    //setTextArr([...textarr,{parsedobj }]);
+    function localstorage1()
+    {const steelData={
+      quantity : qty1,
+      quality_1 : q1 ,
+      quality_2 : q2,
+      quality_3 : q3
+    };
+    const jsonobj = JSON.stringify(steelData);
+    console.log(jsonobj);
+    localStorage.setItem("steelData",jsonobj);
+    
+    const dtr= localStorage.getItem("steelData");
+
+    const parsedobj =JSON.parse(dtr);
+    console.log(parsedobj);
+    console.log(parsedobj.quality_1);
+    
+  }
    function Check1() {
     if((q1>9000 && q1<15000)){
       console.log("success");
@@ -56,9 +79,8 @@ function App() {
           alert("Invalid Quality 2");
     
         }
-      
+        
       }
-   
 return (
     
       
@@ -102,7 +124,13 @@ return (
         Check2()
         Check3()
         Checkqty()
-       } }>Add to Cart</button>
+
+       } 
+       }>check</button>
+       <button onClick={() => {
+        localstorage1()
+             }}>Add to cart</button>
+
       <button>Special Request?</button>
 
     </div></>

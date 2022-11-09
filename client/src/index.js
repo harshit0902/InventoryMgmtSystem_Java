@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './signup';
+import App from './cart';
 import Login from './login'
 import Signup from './signup'
 
@@ -17,6 +17,8 @@ import Wood from './wood'
 import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
+import Cart from './cart'
+import Itemlistnew from './itemlistnew'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -38,8 +40,8 @@ root.render(
                       <Route path='/wheat' element={<Wheat />}></Route>
                       <Route path='/bajra' element={<Bajra />}></Route>
                       <Route path='/ragi' element={<Ragi />}></Route>
-                      
-                      
+                      <Route path='/cart' element={<Cart />}></Route>
+                      <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>
