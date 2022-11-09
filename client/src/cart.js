@@ -27,8 +27,13 @@ function val() {
     let i = 'steel';
     // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
     const cart1 = {
-     q_1 : parsedobj.quality_1 ,
-     q_2 : parsedobj.quality_2
+     itemNAme : "steel",
+      q_1 : parsedobj.quality_1 ,
+     q_2 : parsedobj.quality_2 ,
+              
+          itemNAme : "Cotton"
+
+
     } 
     // console.log(cart);
     // cart[0].itemName = 'Steel';
@@ -44,7 +49,7 @@ function val() {
 
     const parsedobj1 =JSON.parse(ctr);
     console.log(parsedobj1);
-    console.log(parsedobj1.q_1,parsedobj1.q_2);
+    console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
 }
 
 return (
