@@ -89,7 +89,17 @@ return (
        }>check</button>
 
       <button onClick={val}>Hello</button>
-
+      {
+        cart.map((val)=>{
+          return <>
+            <div>
+              {val.itemName}
+              <br></br>
+              {val.q1}
+            </div>
+          </>
+        })
+       }
 
        {/* cart[0].itemName = "Steel"; */}
 
