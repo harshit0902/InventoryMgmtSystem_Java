@@ -8,16 +8,16 @@ import java.util.Date;
 
 @Document(collection = "BuyerInvoice")
 public class BuyerInvoice {
-    private int custID;
-    private int billNo;
-    private ArrayList<Item> it = new ArrayList<Item>();
-    private Date issueDate;
+    private String custEmail;
+    private int billNo = (int)(Math.random()*(1000-1+1)+1);
+    private ArrayList<Item> it;
+    private String issueDate;
     private double totalAmt;
     private String status;
     private Boolean special;
 
     public BuyerInvoice() {
-        custID = 0;
+        custEmail = null;
         billNo = 0;
         it = null;
         issueDate = null;
@@ -26,9 +26,8 @@ public class BuyerInvoice {
         special = null;
     }
 
-    public BuyerInvoice(int custID, int billNo, ArrayList<Item> it, Date issueDate, double totalAmt, String status, Boolean special) {
-        this.custID = custID;
-        this.billNo = billNo;
+    public BuyerInvoice(String custEmail, ArrayList<Item> it, String issueDate, double totalAmt, String status, Boolean special) {
+        this.custEmail = custEmail;
         this.it = it;
         this.issueDate = issueDate;
         this.totalAmt = totalAmt;
@@ -36,12 +35,12 @@ public class BuyerInvoice {
         this.special = special;
     }
 
-    public int getCustID() {
-        return custID;
+    public String getcustEmail() {
+        return custEmail;
     }
 
-    public void setCustID(int custID) {
-        this.custID = custID;
+    public void setcustEmail(String custEmail) {
+        this.custEmail = custEmail;
     }
 
     public int getBillNo() {
@@ -60,11 +59,11 @@ public class BuyerInvoice {
         this.it = it;
     }
 
-    public Date getIssueDate() {
+    public String getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 

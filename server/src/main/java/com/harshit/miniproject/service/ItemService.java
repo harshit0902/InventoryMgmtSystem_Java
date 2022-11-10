@@ -1,8 +1,7 @@
-package com.harshit.miniproject.service;
+/*package com.harshit.miniproject.service;
 
-import com.harshit.miniproject.model.BuyerInvoice;
 import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
+import com.harshit.miniproject.repository.ItemJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -15,41 +14,18 @@ import java.time.Instant;
 import java.util.List;
 
 @Service
-public class BuyerInvoiceService {
+public class ItemService {
     @Autowired
     MongoOperations mongoOperations;
     @Autowired
     MongoTemplate mongoTemplate;
 
     Timestamp instant= Timestamp.from(Instant.now());
-    private final BuyerInvoiceJpaRepository buyerInvoiceJpaRepository;
+    private final ItemJpaRepository itemJpaRepository;
 
     @Autowired
-    public BuyerInvoiceService(BuyerInvoiceJpaRepository buyerInvoiceJpaRepository) {
-        this.buyerInvoiceJpaRepository = buyerInvoiceJpaRepository;
-    }
-
-    public int insertIntoBuyerInvoice(BuyerInvoice special) {
-        BuyerInvoice result = mongoOperations.insert(special, "BuyerInvoice");
-
-        if(result == null)
-            return 0;
-        else
-            return 1;
-    }
-
-    public double findPrice(int itemNo) {
-        Query q1 = new Query();
-        q1.addCriteria(Criteria.where("itemID").is(itemNo));
-        Item item = mongoOperations.findOne(q1, Item.class);
-        System.out.println(item);
-        if(item != null)
-        {
-            System.out.println(item.getPrice());
-            return item.getPrice();
-        }
-        else
-            return 0.0;
+    public ItemService(ItemJpaRepository itemJpaRepository) {
+        this.itemJpaRepository = itemJpaRepository;
     }
 
     /*public int checkIfEmailExists(Credentials user) {
@@ -59,16 +35,16 @@ public class BuyerInvoiceService {
             return 1;
     }*/
 
-    /*public int insertIntoCredentials(Credentials user) {
-        Credentials result = mongoOperations.insert(user, "Credentials");
+    /*public int insertIntoItem(Item item) {
+        Item result = mongoOperations.insert(item, "Item");
 
         if(result == null)
             return 0;
         else
             return 1;
-    }
+    }*/
 
-    public int getUserLogin(String email, String password) {
+    /*public int getUserLogin(String email, String password) {
         Query q1 = new Query();
         q1.addCriteria(Criteria.where("email").is(email));
         //System.out.println(q1);
@@ -94,7 +70,6 @@ public class BuyerInvoiceService {
         System.out.println(q2);
         List<Credentials> pass = mongoOperations.findAll(Credentials.class);
         System.out.println(pass);*/
-
 
     /*public int getUserEmail(String email) {
         Criteria c1 = new Criteria();
@@ -171,4 +146,4 @@ public class BuyerInvoiceService {
         DiscussionIndex vals = new DiscussionIndex(id,discussionId,discussionName,text,instant,accessClass);
         discussionIndexJpaRepository.save(vals);
     }*/
-}
+//}

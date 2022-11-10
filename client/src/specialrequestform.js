@@ -20,9 +20,9 @@ function App1() {
         Axios.post('http://localhost:9090/api/buy/special', {
             itemName: itemname,
             quantity: qty,
-            quality1: q1,
+            /*quality1: q1,
             quality2: q2,
-            quality3: q3,
+            quality3: q3,*/
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
@@ -296,7 +296,7 @@ function App1() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick>Place Order</button>
+                    <button onClick={savedetail}>Place Order</button>
                 </center>
                 {/*{message}*/}
             </div>
