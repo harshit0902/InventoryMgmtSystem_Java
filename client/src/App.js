@@ -2,6 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles';
 
 import Login from './login'
+
+import Cart from './cart'
+
 import Signup from './signup'
 import Cotton from './cotton'
 import Jute from './jute'
@@ -13,8 +16,13 @@ import Wood from './wood'
 import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
+
+
+import Itemlistnew from './itemlistnew'
+
 import SpecialRequestForm from './specialrequestform'
 import Cart from './cart';
+
 
 // import Header from "./navbar1";
 // import Footer from "./footer";
@@ -51,6 +59,7 @@ function App2() {
                 <Route path='/cotton' element={<Cotton />}></Route>
                 <Route path='/jute' element={<Jute />}></Route>
                 <Route path='/coffee' element={<Coffee />}></Route>
+              
                 <Route path='/coffee' element={<Coffee />}></Route>
                 <Route path='/steel' element={<Steel />}></Route>
                 <Route path='/aluminium' element={<Aluminium />}></Route>
@@ -59,9 +68,15 @@ function App2() {
                 <Route path='/wheat' element={<Wheat />}></Route>
                 <Route path='/bajra' element={<Bajra />}></Route>
                 <Route path='/ragi' element={<Ragi />}></Route>
+
+                <Route path='/cart' element={<Cart />}></Route>
+                <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
+            </Routes>
+
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
             <Cart />
+
         </div>
         </div>
            
