@@ -1,5 +1,7 @@
-
 import { useState } from "react";
+
+let cart=[];
+//import { useState } from "react";
 
 function App() { 
 
@@ -14,6 +16,36 @@ function App() {
     //const cart = [];
     // const [cart,setCart]=useState([]);
     //setCart([...textarr,{parsedobj }]);
+    // function localstorage1() {
+    
+    // console.log(parsedobj); 
+  // }
+// function val() {
+//     const dtr= localStorage.getItem("steelData");
+//     console.log(dtr);
+//     const parsedobj =JSON.parse(dtr);
+//     let i = 'steel';
+//     // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+//     const cart1 = {
+//      itemNAme : "steel",
+//       q_1 : parsedobj.quality_1 ,
+//      q_2 : parsedobj.quality_2 ,
+              
+//           itemNAme : "Cotton"
+
+
+//     } 
+//     // console.log(cart);
+//     // cart[0].itemName = 'Steel';
+//     // cart[0].qty = parsedobj.quantity;
+//     // console.log(cart1[0].itemName);
+//     // console.log(cart1[0].qty);
+//     console.log(cart1);
+//     const jsonobj1 = JSON.stringify(cart1);
+//     console.log(jsonobj1);
+//     localStorage.setItem("cart1",jsonobj1);
+    
+//     const ctr= localStorage.getItem("cart1");
     
 /*function val() {
     const dtr= localStorage.getItem("steelData");
@@ -47,10 +79,17 @@ function App() {
     console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
 }*/
 
-    const [cart,setCart]=useState([]);
+//     const parsedobj1 =JSON.parse(ctr);
+//     console.log(parsedobj1);
+//     console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
+// }
+// let [cart,setCart]=useState([]);
     function val() {
         let i = 'steel';
-        setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+        // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+        cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
+        // console.log(cart);
+        cart[0].itemName='Wheat';
         console.log(cart);
         /*const ctr= localStorage.getItem("steelData");
         const parsedobj1 =JSON.parse(ctr);
@@ -71,27 +110,22 @@ return (
       </h1>
     </center>
   </div><div id="details">
-      <div>
-        {/* setCart([...cart, {itemName:"abcd" , qty:0, q1:0, q2:0, q3:0}]);   */}
-      </div>
 
-      <button onClick={() => {
-        // localstorage1()
-        val()
-        // val()
-        // val()
-        // val()
-        // val()
-        // val()
-        // val()
-        // val()
-        // val()
-        // val()
-       }
-       }>check</button>
-
+      <button onClick={val}>check</button>
         {/* <button onClick={val}>Hello</button> */}
 
+      <button onClick={val}>Hello</button>
+      {
+        cart.map((val)=>{
+          return <>
+            <div>
+              {val.itemName}
+              <br></br>
+              {val.q1}
+            </div>
+          </>
+        })
+       }
 
        {/* cart[0].itemName = "Steel"; */}
 
