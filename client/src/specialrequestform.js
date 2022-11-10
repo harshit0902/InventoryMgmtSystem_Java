@@ -3,7 +3,7 @@ import Axios from "axios";
 // import Axios from "axios";
 // import Display from "./display";
 
-function App() {
+function App1() {
     const [itemname, setItemname] = useState("");
     const [qty, setQty] = useState("");
     const [q1, setQ1] = useState("");
@@ -317,4 +317,4 @@ function App() {
     );
 }
 
-export default App;
+export default App1;
