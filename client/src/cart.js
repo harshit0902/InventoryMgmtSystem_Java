@@ -89,7 +89,17 @@ return (
         // val()
        }
        }>check</button>
-
+       {
+        cart.map((val)=>{
+          return <>
+            <div>
+              {val.itemName}
+              <br></br>
+              {val.q1}
+            </div>
+          </>
+        })
+       }
         {/* <button onClick={val}>Hello</button> */}
 
 
@@ -103,6 +113,3 @@ return (
 }
 
 export default App;
-
-
-
