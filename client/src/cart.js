@@ -58,6 +58,8 @@ function val() {
         let i = 'steel';
         setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
         console.log(cart);
+        cart[0].itemName = 'Wood';
+        {cart[0].itemName}
     }
 
 
@@ -69,9 +71,6 @@ return (
       </h1>
     </center>
   </div><div id="details">
-      <div>
-        {/* setCart([...cart, {itemName:"abcd" , qty:0, q1:0, q2:0, q3:0}]);   */}
-      </div>
 
       <button onClick={() => {
         // localstorage1()
