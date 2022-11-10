@@ -1,9 +1,6 @@
 
 import { useState } from "react";
 
-
-
-
 function App() {
     
     const [qty, setqty] = useState(0);
