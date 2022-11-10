@@ -1,8 +1,11 @@
-package com.harshit.miniproject.controller;
+/*package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.Credentials;
-import com.harshit.miniproject.repository.CredentialsJpaRepository;
-import com.harshit.miniproject.service.CredentialsService;
+import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.model.Item;
+import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
+import com.harshit.miniproject.repository.ItemJpaRepository;
+import com.harshit.miniproject.service.BuyerInvoiceService;
+import com.harshit.miniproject.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +15,8 @@ import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RequestMapping("api/credentials")
-public class CredentialsController {
+@RequestMapping("api/buy")
+public class ItemController {
 
     @Autowired
     MongoOperations mongoOperations;
@@ -22,17 +25,26 @@ public class CredentialsController {
     // getting the object of the Timestamp class
     Timestamp instant = new Timestamp(date.getTime());
     @Autowired
-    private final CredentialsService credentialsService;
+    private final ItemService itemService;
 
-    private final CredentialsJpaRepository credentialsJpaRepository;
+    private final ItemJpaRepository itemJpaRepository;
 
     @Autowired
-    public CredentialsController(CredentialsService credentialsService, CredentialsJpaRepository credentialsJpaRepository) {
-        this.credentialsService = credentialsService;
-        this.credentialsJpaRepository = credentialsJpaRepository;
+    public ItemController(ItemService itemService, ItemJpaRepository itemJpaRepository) {
+        this.itemService = itemService;
+        this.itemJpaRepository = itemJpaRepository;
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/special")
+    public String specialOrder(@RequestBody Item item){
+        int ans = itemService.insertIntoItem(item);
+        if(ans == 1)
+            return "success";
+        else
+            return "failure";
+    }*/
+
+    /*@PostMapping("/signup")
     public String insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
         //int res = credentialsService.checkIfEmailExists(user);
@@ -59,7 +71,7 @@ public class CredentialsController {
             return "Success";
         else
             return "Failure";
-    }
+    }*/
 
     /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){
@@ -93,5 +105,4 @@ public class CredentialsController {
     public void insertDiscussion(@RequestParam Long userid ,@RequestParam Long discussionId,@RequestParam String discussionName,@RequestParam String description){
         discussionIndexService.insertDiscussion(discussionId,userid,discussionName,description, UserAccountDesignation.PROFESSOR);
     }*/
-}
-
+//}

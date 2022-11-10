@@ -1,19 +1,23 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.Credentials;
-import com.harshit.miniproject.repository.CredentialsJpaRepository;
-import com.harshit.miniproject.service.CredentialsService;
+import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.model.Item;
+import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
+import com.harshit.miniproject.service.BuyerInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RequestMapping("api/credentials")
-public class CredentialsController {
+@RequestMapping("api/buy")
+public class BuyerInvoiceController {
 
     @Autowired
     MongoOperations mongoOperations;
@@ -22,17 +26,59 @@ public class CredentialsController {
     // getting the object of the Timestamp class
     Timestamp instant = new Timestamp(date.getTime());
     @Autowired
-    private final CredentialsService credentialsService;
+    private final BuyerInvoiceService buyerInvoiceService;
 
-    private final CredentialsJpaRepository credentialsJpaRepository;
+    private final BuyerInvoiceJpaRepository buyerInvoiceJpaRepository;
 
     @Autowired
-    public CredentialsController(CredentialsService credentialsService, CredentialsJpaRepository credentialsJpaRepository) {
-        this.credentialsService = credentialsService;
-        this.credentialsJpaRepository = credentialsJpaRepository;
+    public BuyerInvoiceController(BuyerInvoiceService buyerInvoiceService, BuyerInvoiceJpaRepository buyerInvoiceJpaRepository) {
+        this.buyerInvoiceService = buyerInvoiceService;
+        this.buyerInvoiceJpaRepository = buyerInvoiceJpaRepository;
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/special")
+    public String specialOrder(@RequestBody Item special){
+        int itemNo = 0;
+        System.out.println(special.getItemName());
+        if(special.getItemName().equals("Cotton"))
+            itemNo = 1;
+        else if(special.getItemName().equals("Jute"))
+            itemNo = 2;
+        else if(special.getItemName().equals("Coffee"))
+            itemNo = 3;
+        else if(special.getItemName().equals("Steel"))
+            itemNo = 4;
+        else if(special.getItemName().equals("Aluminium"))
+            itemNo = 5;
+        else if(special.getItemName().equals("Copper"))
+            itemNo = 6;
+        else if(special.getItemName().equals("Wood"))
+            itemNo = 7;
+        else if(special.getItemName().equals("Wheat"))
+            itemNo = 8;
+        else if(special.getItemName().equals("Bajra"))
+            itemNo = 9;
+        else if(special.getItemName().equals("Ragi"))
+            itemNo = 10;
+
+        Item it = new Item(itemNo, special.getItemName(), special.getQuantity());
+        ArrayList<Item> item = new ArrayList<Item>();
+        item.add(it);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        double price = buyerInvoiceService.findPrice(itemNo);
+        System.out.println(price);
+        BuyerInvoice splorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), price*it.getQuantity(), "Order Processing", true);
+        int ans = buyerInvoiceService.insertIntoBuyerInvoice(splorder);
+        if(ans == 1)
+            return "success";
+        else
+            return "failure";
+    }
+
+    /*@PostMapping("/signup")
     public String insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
         //int res = credentialsService.checkIfEmailExists(user);
@@ -59,7 +105,7 @@ public class CredentialsController {
             return "Success";
         else
             return "Failure";
-    }
+    }*/
 
     /*@GetMapping("/signup")
     public @ResponseBody List<DiscussionIndex> discussionList(){

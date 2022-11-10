@@ -5,6 +5,7 @@ import { useState } from "react";
 
 
 function App() { 
+
     /*const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);
     const [quality2, setquality2] = useState(0);
@@ -52,6 +53,14 @@ function val() {
     console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
 }
 
+    const [cart,setCart]=useState([]);
+    function val() {
+        let i = 'steel';
+        setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+        console.log(cart);
+    }
+
+
 return (
     <><div>
     <center>
@@ -63,6 +72,7 @@ return (
       <div>
         {/* setCart([...cart, {itemName:"abcd" , qty:0, q1:0, q2:0, q3:0}]);   */}
       </div>
+
       <button onClick={() => {
         // localstorage1()
         val()
@@ -78,6 +88,9 @@ return (
        }
        }>check</button>
 
+      <button onClick={val}>Hello</button>
+
+
        {/* cart[0].itemName = "Steel"; */}
 
       {/* <button>Special Request?</button> */}
@@ -86,4 +99,8 @@ return (
 
 )
 }
+
 export default App;
+
+export default App;
+
