@@ -32,9 +32,9 @@ function App() {
     
     const dtr= localStorage.getItem("steelData");
 
-    const parsedobj =JSON.parse(dtr);
-    console.log(parsedobj);
-    console.log(parsedobj.quality_1);
+    const steelobj =JSON.parse(dtr);
+    console.log(steelobj);
+    console.log(steelobj.quality_1);
     
   }
    function Check1() {
