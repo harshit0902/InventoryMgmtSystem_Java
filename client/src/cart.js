@@ -3,7 +3,28 @@ import { useState } from "react";
 let cart=[];
 //import { useState } from "react";
 
-function App() { 
+function App() {
+
+    const cott= localStorage.getItem("cottData");
+    const cottobj =JSON.parse(cott);
+    const jut= localStorage.getItem("jutData");
+    const jutobj =JSON.parse(jut);
+    const coff= localStorage.getItem("coffData");
+    const coffobj =JSON.parse(coff);
+    const steel= localStorage.getItem("steelData");
+    const steelobj =JSON.parse(steel);
+    const alum= localStorage.getItem("alumData");
+    const alumobj =JSON.parse(alum);
+    const copp= localStorage.getItem("coppData");
+    const coppobj =JSON.parse(copp);
+    const woo= localStorage.getItem("wooData");
+    const wooobj =JSON.parse(woo);
+    const whe= localStorage.getItem("wheData");
+    const wheobj =JSON.parse(whe);
+    const baj= localStorage.getItem("bajData");
+    const bajobj =JSON.parse(baj);
+    const rag= localStorage.getItem("ragData");
+    const ragobj =JSON.parse(rag);
 
     /*const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);
@@ -122,26 +143,6 @@ function App() {
         cart.push({itemName:i8, qty:0, q1:0, q2:0, q3:0});
         cart.push({itemName:i9, qty:0, q1:0, q2:0, q3:0});
         cart.push({itemName:i10, qty:0, q1:0, q2:0, q3:0});
-        const cott= localStorage.getItem("cottData");
-        const cottobj =JSON.parse(cott);
-        const jut= localStorage.getItem("jutData");
-        const jutobj =JSON.parse(jut);
-        const coff= localStorage.getItem("coffData");
-        const coffobj =JSON.parse(coff);
-        const steel= localStorage.getItem("steelData");
-        const steelobj =JSON.parse(steel);
-        const alum= localStorage.getItem("alumData");
-        const alumobj =JSON.parse(alum);
-        const copp= localStorage.getItem("coppData");
-        const coppobj =JSON.parse(copp);
-        const woo= localStorage.getItem("wooData");
-        const wooobj =JSON.parse(woo);
-        const whe= localStorage.getItem("wheData");
-        const wheobj =JSON.parse(whe);
-        const baj= localStorage.getItem("bajData");
-        const bajobj =JSON.parse(baj);
-        const rag= localStorage.getItem("ragData");
-        const ragobj =JSON.parse(rag);
         cart[0].itemName='Cotton';
         cart[1].itemName='Jute';
         cart[2].itemName='Coffee';
