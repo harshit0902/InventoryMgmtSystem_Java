@@ -1,10 +1,8 @@
 import { useState } from "react";
-
-let cart=[];
 //import { useState } from "react";
 
 function App() { 
-
+  let [cart,setCart]=useState([]);
     /*const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);
     const [quality2, setquality2] = useState(0);
@@ -87,7 +85,8 @@ function App() {
     function val() {
         let i = 'steel';
         // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
-        cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
+        // cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
+        setCart([...cart,{itemName:i, qty:0, q1:0, q2:0, q3:0}])
         // console.log(cart);
         cart[0].itemName='Wheat';
         console.log(cart);
