@@ -102,17 +102,26 @@ function App() {
     //}
 
     function multiple() {
-        //let i = 'abcd';
-        cart.push({itemName:'a', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'b', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'c', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'d', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'e', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'f', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'g', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'h', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'i', qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:'j', qty:0, q1:0, q2:0, q3:0});
+        let i1 = 'a';
+        let i2 = 'b';
+        let i3 = 'c';
+        let i4 = 'd';
+        let i5 = 'e';
+        let i6 = 'f';
+        let i7 = 'g';
+        let i8 = 'h';
+        let i9 = 'i';
+        let i10 = 'j';
+        cart.push({itemName:i1, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i2, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i3, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i4, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i5, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i6, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i7, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i8, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i9, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i10, qty:0, q1:0, q2:0, q3:0});
         const cott= localStorage.getItem("cottData");
         const cottobj =JSON.parse(cott);
         const jut= localStorage.getItem("jutData");
@@ -204,7 +213,7 @@ return (
   </div>
 
         <button onClick={multiple}>check</button>
-        {/* <button onClick={val}>Hello</button> */}
+        <button onClick={display}>Hello</button>
 
         {/*<button onClick={val}>Hello</button>
       {
