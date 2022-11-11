@@ -89,7 +89,6 @@ function App() {
         // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
         cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
         // console.log(cart);
-        cart[0].itemName='Wheat';
         console.log(cart);
         /*const ctr= localStorage.getItem("steelData");
         const parsedobj1 =JSON.parse(ctr);
@@ -112,12 +111,28 @@ function App() {
         val();
         val();
         val();
+        cart[0].itemName='A';
+        cart[1].itemName='B';
+        cart[2].itemName='C';
+        cart[3].itemName='D';
+        cart[4].itemName='E';
+        cart[5].itemName='F';
+        cart[6].itemName='G';
+        cart[7].itemName='H';
+        cart[8].itemName='I';
+        cart[9].itemName='J';
+        cart[0].qty=5;
+        cart[2].qty=15;
+        cart[4].qty=25;
+        cart[6].qty=35;
+        cart[8].qty=45;
     }
 
     function display() {
         for(let i=0 ; i<cart.length ; i++)
         {
-            console.log(cart[i].itemName);
+            if(cart[i].qty > 0)
+                console.log(cart[i].itemName);
         }
     }
 
