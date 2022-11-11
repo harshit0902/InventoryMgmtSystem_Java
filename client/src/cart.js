@@ -84,7 +84,7 @@ function App() {
 //     console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
 // }
 // let [cart,setCart]=useState([]);
-    function val() {
+    /*function val() {
         let i = 'steel';
         // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
         cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
@@ -99,19 +99,20 @@ function App() {
         cart[0].q2 = parsedobj1.quality_2;
         cart[0].q3 = parsedobj1.quality_3;
         console.log(cart);*/
-    }
+    //}
 
     function multiple() {
-        val();
-        val();
-        val();
-        val();
-        val();
-        val();
-        val();
-        val();
-        val();
-        val();
+        //let i = 'abcd';
+        cart.push({itemName:'a', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'b', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'c', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'d', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'e', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'f', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'g', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'h', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'i', qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:'j', qty:0, q1:0, q2:0, q3:0});
         const cott= localStorage.getItem("cottData");
         const cottobj =JSON.parse(cott);
         const jut= localStorage.getItem("jutData");
@@ -205,7 +206,7 @@ return (
         <button onClick={multiple}>check</button>
         {/* <button onClick={val}>Hello</button> */}
 
-      <button onClick={val}>Hello</button>
+        {/*<button onClick={val}>Hello</button>
       {
         cart.map((val)=>{
           return <>
@@ -216,7 +217,7 @@ return (
             </div>
           </>
         })
-       }
+       }*/}
 
        {/* cart[0].itemName = "Steel"; */}
 
