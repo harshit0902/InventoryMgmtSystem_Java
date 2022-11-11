@@ -193,13 +193,20 @@ function App() {
         cart[7].q3=wheobj.quality_3;
         cart[8].q3=bajobj.quality_3;
         cart[9].q3=ragobj.quality_3;
+        for(let i=0 ; i<cart.length ; i++)
+        {
+            if(cart[i].qty > 0){
+              console.log(cart[i].qty+1);
+                console.log(cart[i].itemName);}
+        }
     }
 
     function display() {
         for(let i=0 ; i<cart.length ; i++)
         {
-            if(cart[i].qty > 0)
-                console.log(cart[i].itemName);
+            if(cart[i].qty > 0){
+              console.log(cart[i].qty+1);
+                console.log(cart[i].itemName);}
         }
     }
 
