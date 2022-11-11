@@ -90,89 +90,7 @@ function App() {
         // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
         cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
         // console.log(cart);
-        cart[0].itemName='Cotton';
-        const cott= localStorage.getItem("cottData");
-        const cottobj =JSON.parse(cott);
-        cart[0].qty= cottobj.quantity;
-        cart[0].q1= cottobj.quality_1;
-        cart[0].q2= cottobj.quality_2;
-        cart[0].q3= cottobj.quality_3;
-
-        cart[1].itemName='Jute';
-        const jut= localStorage.getItem("jutData");
-        const jutobj =JSON.parse(jut);
-        cart[1].qty= jutobj.quantity;
-        cart[1].q1= jutobj.quality_1;
-        cart[1].q2= jutobj.quality_2;
-        cart[1].q3= jutobj.quality_3;
-
-        cart[2].itemName='Coffee';
-        const coff= localStorage.getItem("coffData");
-        const coffobj =JSON.parse(coff);
-        cart[2].qty= coffobj.quantity;
-        cart[2].q1= coffobj.quality_1;
-        cart[2].q2= coffobj.quality_2;
-        cart[2].q3= coffobj.quality_3;
-
-        cart[3].itemName='Steel';
-        const steel= localStorage.getItem("steelData");
-        const steelobj =JSON.parse(steel);
-        cart[3].qty= steelobj.quantity;
-        cart[3].q1= steelobj.quality_1;
-        cart[3].q2= steelobj.quality_2;
-        cart[3].q3= steelobj.quality_3;
-
-
-        cart[4].itemName='Aluminium';
-        const alum= localStorage.getItem("alumData");
-        const alumobj =JSON.parse(alum);
-        cart[4].qty= alumobj.quantity;
-        cart[4].q1= alumobj.quality_1;
-        cart[4].q2= alumobj.quality_2;
-        cart[4].q3= alumobj.quality_3;
-        
-        
-        cart[5].itemName='Copper';
-        const copp= localStorage.getItem("coppData");
-        const coppobj =JSON.parse(copp);
-        cart[5].qty= coppobj.quantity;
-        cart[5].q1= coppobj.quality_1;
-        cart[5].q2= coppobj.quality_2;
-        cart[5].q3= coppobj.quality_3;
-
-        cart[6].itemName='Wood';
-        const woo= localStorage.getItem("wooData");
-        const wooobj =JSON.parse(woo);
-        cart[6].qty= wooobj.quantity;
-        cart[6].q1= wooobj.quality_1;
-        cart[6].q2= wooobj.quality_2;
-        cart[6].q3= wooobj.quality_3;
-        
-        cart[7].itemName='Wheat';
-        const whe= localStorage.getItem("wheData");
-        const wheobj =JSON.parse(whe);
-        cart[7].qty= wheobj.quantity;
-        cart[7].q1= wheobj.quality_1;
-        cart[7].q2= wheobj.quality_2;
-        cart[7].q3= wheobj.quality_3;
-        
-        cart[8].itemName='Bajra';
-        const baj= localStorage.getItem("bajData");
-        const bajobj =JSON.parse(baj);
-        cart[8].qty= bajobj.quantity;
-        cart[8].q1= bajobj.quality_1;
-        cart[8].q2= bajobj.quality_2;
-        cart[8].q3= bajobj.quality_3;
-       
-        cart[9].itemName='Ragi';
-        const rag= localStorage.getItem("ragData");
-        const ragobj =JSON.parse(rag);
-        cart[9].qty= ragobj.quantity;
-        cart[9].q1= ragobj.quality_1;
-        cart[9].q2= ragobj.quality_2;
-        cart[9].q3= ragobj.quality_3;
-
-
+        cart[0].itemName='Wheat';
         console.log(cart);
         /*const ctr= localStorage.getItem("bajData");
         const parsedobj1 =JSON.parse(ctr);
@@ -184,6 +102,42 @@ function App() {
         console.log(cart);*/
     }
 
+    function multiple() {
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        cart[0].itemName='A';
+        cart[1].itemName='B';
+        cart[2].itemName='C';
+        cart[3].itemName='D';
+        cart[4].itemName='E';
+        cart[5].itemName='F';
+        cart[6].itemName='G';
+        cart[7].itemName='H';
+        cart[8].itemName='I';
+        cart[9].itemName='J';
+        cart[0].qty=5;
+        cart[2].qty=15;
+        cart[4].qty=25;
+        cart[6].qty=35;
+        cart[8].qty=45;
+    }
+
+    function display() {
+        for(let i=0 ; i<cart.length ; i++)
+        {
+            if(cart[i].qty > 0)
+                console.log(cart[i].itemName);
+        }
+    }
+
 
 return (
     <><div>
@@ -192,24 +146,29 @@ return (
         Cart
       </h1>
     </center>
-  </div><div id="details">
+  </div>
 
-      <button onClick={val}>check</button>
+        <button onClick={multiple}>check</button>
         {/* <button onClick={val}>Hello</button> */}
 
-      <button onClick= {val}{
-       for(val.qty)
-       {
-        console.log(val.qty)
+      <button onClick={val}>Hello</button>
+      {
+        cart.map((val)=>{
+          return <>
+            <div>
+              {val.itemName}
+              <br></br>
+              {val.q1}
+            </div>
+          </>
+        })
        }
-       }>Hello</button>
-      
 
        {/* cart[0].itemName = "Steel"; */}
 
-      {/* <button>Special Request?</button> */}
+        {/* <button>Special Request?</button> */}
 
-    </div></>
+    </>
 
 )
 }
