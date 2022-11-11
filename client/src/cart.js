@@ -101,6 +101,26 @@ function App() {
         console.log(cart);*/
     }
 
+    function multiple() {
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+        val();
+    }
+
+    function display() {
+        for(let i=0 ; i<cart.length ; i++)
+        {
+            console.log(cart[i].itemName);
+        }
+    }
+
 
 return (
     <><div>
@@ -109,29 +129,18 @@ return (
         Cart
       </h1>
     </center>
-  </div><div id="details">
+  </div>
 
-      <button onClick={val}>check</button>
+        <button onClick={multiple}>check</button>
         {/* <button onClick={val}>Hello</button> */}
 
-      <button onClick={val}>Hello</button>
-      {
-        cart.map((val)=>{
-          return <>
-            <div>
-              {val.itemName}
-              <br></br>
-              {val.q1}
-            </div>
-          </>
-        })
-       }
+        <button onClick={display}>Hello</button>
 
-       {/* cart[0].itemName = "Steel"; */}
+        {/* cart[0].itemName = "Steel"; */}
 
-      {/* <button>Special Request?</button> */}
+        {/* <button>Special Request?</button> */}
 
-    </div></>
+    </>
 
 )
 }
