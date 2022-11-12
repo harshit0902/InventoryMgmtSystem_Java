@@ -143,6 +143,7 @@ function App() {
         cart.push({itemName:i8, qty:0, q1:0, q2:0, q3:0});
         cart.push({itemName:i9, qty:0, q1:0, q2:0, q3:0});
         cart.push({itemName:i10, qty:0, q1:0, q2:0, q3:0});
+        console.log(cart);
         cart[0].itemName='Cotton';
         cart[1].itemName='Jute';
         cart[2].itemName='Coffee';
@@ -193,12 +194,12 @@ function App() {
         cart[7].q3=wheobj.quality_3;
         cart[8].q3=bajobj.quality_3;
         cart[9].q3=ragobj.quality_3;
-        for(let i=0 ; i<cart.length ; i++)
+        /*for(let i=0 ; i<cart.length ; i++)
         {
             if(cart[i].qty > 0){
               console.log(cart[i].qty+1);
                 console.log(cart[i].itemName);}
-        }
+        }*/
     }
 
     function display() {
