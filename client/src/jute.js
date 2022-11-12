@@ -13,18 +13,24 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    function localstorage1()
-    {const jutData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
+    const jutData={
+      quantity : 0,
+      quality_1 : 0 ,
+      quality_2 : 0,
+      quality_3 : 0
     };
     const jsonobjjut = JSON.stringify(jutData);
     console.log(jsonobjjut);
     localStorage.setItem("jutData",jsonobjjut);
     
-    
+    function localstorage1()
+    {jutData.quantity = qty1;
+      jutData.quality_1 = q1;
+      jutData.quality_2 = q2;
+      jutData.quality_3 = q3;
+      const jsonobjjut = JSON.stringify(jutData);
+      console.log(jsonobjjut);
+      localStorage.setItem("jutData",jsonobjjut);
     
   }
    function Check1() {

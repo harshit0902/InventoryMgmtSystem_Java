@@ -14,22 +14,25 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    function localstorage1()
-    {const coppData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
+    
+    const coppData={
+      quantity : 0,
+      quality_1 : 0 ,
+      quality_2 : 0,
+      quality_3 : 0
     };
     const jsonobjcopp = JSON.stringify(coppData);
     console.log(jsonobjcopp);
     localStorage.setItem("coppData",jsonobjcopp);
     
-    const copp= localStorage.getItem("coppData");
-
-    const coppobj =JSON.parse(copp);
-    console.log(coppobj);
-    console.log(coppobj.quality_1);
+    function localstorage1()
+    {coppData.quantity = qty1;
+      coppData.quality_1 = q1;
+      coppData.quality_2 = q2;
+      coppData.quality_3 = q3;
+      const jsonobjcopp = JSON.stringify(coppData);
+      console.log(jsonobjcopp);
+      localStorage.setItem("coppData",jsonobjcopp);
     
   }
    function Check1() {

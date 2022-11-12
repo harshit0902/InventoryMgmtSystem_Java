@@ -14,22 +14,24 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    function localstorage1()
-    {const ragData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
+    const ragData={
+      quantity : 0,
+      quality_1 : 0 ,
+      quality_2 : 0,
+      quality_3 : 0
     };
     const jsonobjrag = JSON.stringify(ragData);
     console.log(jsonobjrag);
     localStorage.setItem("ragData",jsonobjrag);
     
-    const rag= localStorage.getItem("ragData");
-
-    const ragobj =JSON.parse(rag);
-    console.log(ragobj);
-    console.log(ragobj.quality_1);
+    function localstorage1()
+    {ragData.quantity = qty1;
+      ragData.quality_1 = q1;
+      ragData.quality_2 = q2;
+      ragData.quality_3 = q3;
+      const jsonobjrag = JSON.stringify(ragData);
+      console.log(jsonobjrag);
+      localStorage.setItem("ragData",jsonobjrag);
     
   }
    function Check1() {

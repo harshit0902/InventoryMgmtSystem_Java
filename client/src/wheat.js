@@ -14,22 +14,24 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    function localstorage1()
-    {const wheData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
+    const wheData={
+      quantity : 0,
+      quality_1 : 0 ,
+      quality_2 : 0,
+      quality_3 : 0
     };
     const jsonobjwhe = JSON.stringify(wheData);
     console.log(jsonobjwhe);
     localStorage.setItem("wheData",jsonobjwhe);
     
-    const whe= localStorage.getItem("wheData");
-
-    const wheobj =JSON.parse(whe);
-    console.log(wheobj);
-    console.log(wheobj.quality_1);
+    function localstorage1()
+    {wheData.quantity = qty1;
+      wheData.quality_1 = q1;
+      wheData.quality_2 = q2;
+      wheData.quality_3 = q3;
+      const jsonobjwhe = JSON.stringify(wheData);
+      console.log(jsonobjwhe);
+      localStorage.setItem("wheData",jsonobjwhe);
     
   }
    function Check1() {

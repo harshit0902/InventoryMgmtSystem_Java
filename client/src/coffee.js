@@ -14,18 +14,24 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    function localstorage1()
-    {const coffData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
+    const coffData={
+      quantity : 0,
+      quality_1 : 0 ,
+      quality_2 : 0,
+      quality_3 : 0
     };
     const jsonobjcoff = JSON.stringify(coffData);
     console.log(jsonobjcoff);
     localStorage.setItem("coffData",jsonobjcoff);
     
-    
+    function localstorage1()
+    {coffData.quantity = qty1;
+      coffData.quality_1 = q1;
+      coffData.quality_2 = q2;
+      coffData.quality_3 = q3;
+      const jsonobjcoff = JSON.stringify(coffData);
+      console.log(jsonobjcoff);
+      localStorage.setItem("coffData",jsonobjcoff);
     
   }
    function Check1() {
