@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjwoo);
     localStorage.setItem("wooData",jsonobjwoo);
     
-    function localstorage1()
+    function localstorage7()
     {wooData.quantity = qty1;
       wooData.quality_1 = q1;
       wooData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage7()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

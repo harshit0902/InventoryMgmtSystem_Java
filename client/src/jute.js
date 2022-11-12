@@ -23,7 +23,7 @@ function App() {
     console.log(jsonobjjut);
     localStorage.setItem("jutData",jsonobjjut);
     
-    function localstorage1()
+    function localstorage2()
     {jutData.quantity = qty1;
       jutData.quality_1 = q1;
       jutData.quality_2 = q2;
@@ -123,7 +123,7 @@ return (
         Checkqty()
        } }>check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage2()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

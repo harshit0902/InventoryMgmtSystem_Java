@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjrag);
     localStorage.setItem("ragData",jsonobjrag);
     
-    function localstorage1()
+    function localstorage10()
     {ragData.quantity = qty1;
       ragData.quality_1 = q1;
       ragData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage10()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

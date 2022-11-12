@@ -26,7 +26,7 @@ function App() {
     console.log(jsonobjsteel);
     localStorage.setItem("steelData",jsonobjsteel);
     
-    function localstorage1()
+    function localstorage4()
     {steelData.quantity = qty1;
       steelData.quality_1 = q1;
       steelData.quality_2 = q2;
@@ -127,7 +127,7 @@ return (
        } 
        }>check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage4()
              }}>Add to cart</button>
 
       <button>Special Request?</button>

@@ -25,7 +25,7 @@ function App() {
     console.log(jsonobjcopp);
     localStorage.setItem("coppData",jsonobjcopp);
     
-    function localstorage1()
+    function localstorage6()
     {coppData.quantity = qty1;
       coppData.quality_1 = q1;
       coppData.quality_2 = q2;
@@ -125,7 +125,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage6()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

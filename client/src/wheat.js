@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjwhe);
     localStorage.setItem("wheData",jsonobjwhe);
     
-    function localstorage1()
+    function localstorage8()
     {wheData.quantity = qty1;
       wheData.quality_1 = q1;
       wheData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage8()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

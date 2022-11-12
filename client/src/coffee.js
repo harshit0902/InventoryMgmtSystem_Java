@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjcoff);
     localStorage.setItem("coffData",jsonobjcoff);
     
-    function localstorage1()
+    function localstorage3()
     {coffData.quantity = qty1;
       coffData.quality_1 = q1;
       coffData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage3()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

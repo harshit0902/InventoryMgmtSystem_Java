@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjbaj);
     localStorage.setItem("bajData",jsonobjbaj);
     
-    function localstorage1()
+    function localstorage9()
     {bajData.quantity = qty1;
       bajData.quality_1 = q1;
       bajData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage9()
              }}>Add to cart</button>
       <button>Special Request?</button>
 

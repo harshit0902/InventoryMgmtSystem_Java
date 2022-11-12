@@ -24,7 +24,7 @@ function App() {
     console.log(jsonobjalum);
     localStorage.setItem("alumData",jsonobjalum);
     
-    function localstorage1()
+    function localstorage5()
     {alumData.quantity = qty1;
       alumData.quality_1 = q1;
       alumData.quality_2 = q2;
@@ -124,7 +124,7 @@ return (
         Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage5()
              }}>Add to cart</button>
       <button>Special Request?</button>
 
