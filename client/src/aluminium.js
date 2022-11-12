@@ -14,15 +14,9 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    const alumData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjalum = JSON.stringify(alumData);
-    console.log(jsonobjalum);
-    localStorage.setItem("alumData",jsonobjalum);
+    
+    const alum= localStorage.getItem("alumData");
+    const alumData =JSON.parse(alum);
     
     function localstorage5()
     {alumData.quantity = qty1;

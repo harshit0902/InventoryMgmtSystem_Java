@@ -16,16 +16,9 @@ function App() {
     const steelarr = [];
     //const [textarr,setTextArr]=useState([])
     //setTextArr([...textarr,{parsedobj }]);
-    const steelData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjsteel = JSON.stringify(steelData);
-    console.log(jsonobjsteel);
-    localStorage.setItem("steelData",jsonobjsteel);
-    
+    const steel= localStorage.getItem("steelData");
+    const steelData =JSON.parse(steel);
+
     function localstorage4()
     {steelData.quantity = qty1;
       steelData.quality_1 = q1;

@@ -14,15 +14,9 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    const coffData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjcoff = JSON.stringify(coffData);
-    console.log(jsonobjcoff);
-    localStorage.setItem("coffData",jsonobjcoff);
+    
+    const coff= localStorage.getItem("coffData");
+    const coffData =JSON.parse(coff);
     
     function localstorage3()
     {coffData.quantity = qty1;

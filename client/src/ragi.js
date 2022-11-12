@@ -14,15 +14,9 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    const ragData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjrag = JSON.stringify(ragData);
-    console.log(jsonobjrag);
-    localStorage.setItem("ragData",jsonobjrag);
+    
+    const rag= localStorage.getItem("ragData");
+    const ragData =JSON.parse(rag);
     
     function localstorage10()
     {ragData.quantity = qty1;

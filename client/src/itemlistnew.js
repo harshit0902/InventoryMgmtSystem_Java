@@ -16,7 +16,100 @@ function App() {
     const jsonobjcott = JSON.stringify(cottData);
     console.log(jsonobjcott);
     localStorage.setItem("cottData",jsonobjcott);
-    
+
+    const jutData={
+      quantity : 0,
+      quality_1 : 0,
+      quality_2 : 0,
+      quality_3 : 0
+  };
+  const jsonobjjut = JSON.stringify(jutData);
+  console.log(jsonobjjut);
+  localStorage.setItem("jutData",jsonobjjut);
+
+  const coffData={
+    quantity : 0,
+    quality_1 : 0,
+    quality_2 : 0,
+    quality_3 : 0
+};
+const jsonobjcoff = JSON.stringify(coffData);
+console.log(jsonobjcoff);
+localStorage.setItem("coffData",jsonobjcoff);
+
+const steelData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjsteel = JSON.stringify(steelData);
+console.log(jsonobjsteel);
+localStorage.setItem("steelData",jsonobjsteel);
+
+const alumData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjalum = JSON.stringify(alumData);
+console.log(jsonobjalum);
+localStorage.setItem("alumData",jsonobjalum);
+
+const coppData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjcopp = JSON.stringify(coppData);
+console.log(jsonobjcopp);
+localStorage.setItem("coppData",jsonobjcopp);
+
+const wooData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjwoo = JSON.stringify(wooData);
+console.log(jsonobjwoo);
+localStorage.setItem("wooData",jsonobjwoo);
+
+const wheData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjwhe = JSON.stringify(wheData);
+console.log(jsonobjwhe);
+localStorage.setItem("wheData",jsonobjwhe);
+
+const bajData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjbaj = JSON.stringify(bajData);
+console.log(jsonobjbaj);
+localStorage.setItem("bajData",jsonobjbaj);
+
+
+const ragData={
+  quantity : 0,
+  quality_1 : 0,
+  quality_2 : 0,
+  quality_3 : 0
+};
+const jsonobjrag = JSON.stringify(ragData);
+console.log(jsonobjrag);
+localStorage.setItem("ragData",jsonobjrag);
+
+
+   
 return (
     
       

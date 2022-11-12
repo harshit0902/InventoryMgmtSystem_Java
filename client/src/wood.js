@@ -14,16 +14,10 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    const wooData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjwoo = JSON.stringify(wooData);
-    console.log(jsonobjwoo);
-    localStorage.setItem("wooData",jsonobjwoo);
-    
+   
+    const woo= localStorage.getItem("wooData");
+    const wooData =JSON.parse(woo);
+
     function localstorage7()
     {wooData.quantity = qty1;
       wooData.quality_1 = q1;

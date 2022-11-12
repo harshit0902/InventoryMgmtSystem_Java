@@ -14,15 +14,9 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
-    const bajData={
-      quantity : 0,
-      quality_1 : 0 ,
-      quality_2 : 0,
-      quality_3 : 0
-    };
-    const jsonobjbaj = JSON.stringify(bajData);
-    console.log(jsonobjbaj);
-    localStorage.setItem("bajData",jsonobjbaj);
+    
+    const baj= localStorage.getItem("bajData");
+    const bajData =JSON.parse(baj);
     
     function localstorage9()
     {bajData.quantity = qty1;
