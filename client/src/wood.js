@@ -14,6 +14,20 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
+   
+    const woo= localStorage.getItem("wooData");
+    const wooData =JSON.parse(woo);
+
+    function localstorage7()
+    {wooData.quantity = qty1;
+      wooData.quality_1 = q1;
+      wooData.quality_2 = q2;
+      wooData.quality_3 = q3;
+      const jsonobjwoo = JSON.stringify(wooData);
+      console.log(jsonobjwoo);
+      localStorage.setItem("wooData",jsonobjwoo);
+    
+  }
    function Check1() {
     if((q1>9000 && q1<15000)){
       console.log("success");
@@ -102,7 +116,10 @@ return (
         Check2()
         Check3()
         Checkqty()
-       } }>Add to Cart</button>
+       } }>Check</button>
+       <button onClick={() => {
+        localstorage7()
+             }}>Add to cart</button>
       <button>Special Request?</button>
 
     </div></>

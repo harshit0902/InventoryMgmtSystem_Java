@@ -13,6 +13,20 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
+   
+    const jut= localStorage.getItem("jutData");
+    const jutData =JSON.parse(jut);
+    
+    function localstorage2()
+    {jutData.quantity = qty1;
+      jutData.quality_1 = q1;
+      jutData.quality_2 = q2;
+      jutData.quality_3 = q3;
+      const jsonobjjut = JSON.stringify(jutData);
+      console.log(jsonobjjut);
+      localStorage.setItem("jutData",jsonobjjut);
+    
+  }
    function Check1() {
     if((q1>9000 && q1<15000)){
       console.log("success");
@@ -101,7 +115,10 @@ return (
         Check2()
         Check3()
         Checkqty()
-       } }>Add to Cart</button>
+       } }>check</button>
+       <button onClick={() => {
+        localstorage2()
+             }}>Add to cart</button>
       <button>Special Request?</button>
 
     </div></>

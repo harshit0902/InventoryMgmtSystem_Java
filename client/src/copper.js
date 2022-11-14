@@ -14,6 +14,20 @@ function App() {
     let q2=parseInt(quality2);
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
+    
+    const copp= localStorage.getItem("coppData");
+    const coppData =JSON.parse(copp);
+    
+    function localstorage6()
+    {coppData.quantity = qty1;
+      coppData.quality_1 = q1;
+      coppData.quality_2 = q2;
+      coppData.quality_3 = q3;
+      const jsonobjcopp = JSON.stringify(coppData);
+      console.log(jsonobjcopp);
+      localStorage.setItem("coppData",jsonobjcopp);
+    
+  }
    function Check1() {
     if((q1>9000 && q1<15000)){
       console.log("success");
@@ -102,7 +116,10 @@ return (
         Check2()
         Check3()
         Checkqty()
-       } }>Add to Cart</button>
+       } }>Check</button>
+       <button onClick={() => {
+        localstorage6()
+             }}>Add to cart</button>
       <button>Special Request?</button>
 
     </div></>

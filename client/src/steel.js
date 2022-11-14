@@ -1,9 +1,6 @@
 
 import { useState } from "react";
 
-
-
-
 function App() {
   
 
@@ -19,22 +16,17 @@ function App() {
     const steelarr = [];
     //const [textarr,setTextArr]=useState([])
     //setTextArr([...textarr,{parsedobj }]);
-    function localstorage1()
-    {const steelData={
-      quantity : qty1,
-      quality_1 : q1 ,
-      quality_2 : q2,
-      quality_3 : q3
-    };
-    const jsonobj = JSON.stringify(steelData);
-    console.log(jsonobj);
-    localStorage.setItem("steelData",jsonobj);
-    
-    const dtr= localStorage.getItem("steelData");
+    const steel= localStorage.getItem("steelData");
+    const steelData =JSON.parse(steel);
 
-    const parsedobj =JSON.parse(dtr);
-    console.log(parsedobj);
-    console.log(parsedobj.quality_1);
+    function localstorage4()
+    {steelData.quantity = qty1;
+      steelData.quality_1 = q1;
+      steelData.quality_2 = q2;
+      steelData.quality_3 = q3;
+      const jsonobjsteel = JSON.stringify(steelData);
+      console.log(jsonobjsteel);
+      localStorage.setItem("steelData",jsonobjsteel);
     
   }
    function Check1() {
@@ -128,7 +120,7 @@ return (
        } 
        }>check</button>
        <button onClick={() => {
-        localstorage1()
+        localstorage4()
              }}>Add to cart</button>
 
       <button>Special Request?</button>
