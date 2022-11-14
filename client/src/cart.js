@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Axios from "axios";
 
 let cart=[];
+let name=[];
+let qty=[];
 //import { useState } from "react";
 
 function App() {
@@ -121,6 +124,19 @@ function App() {
         cart[0].q3 = parsedobj1.quality_3;
         console.log(cart);*/
     //}
+
+    const savedetail = () => {
+        //const data = JSON.stringify(cart);
+        Axios.post('http://localhost:9090/api/buy/normal', {
+            list: cart
+        }).then((response) => {
+            // setUserdetails(response.data);
+            console.log(response)
+            if (response.data == 'success') {
+                window.location.href = "http://localhost:3000/login";
+            }
+        });
+    }
 
     function multiple() {
         let i1 = 'a';

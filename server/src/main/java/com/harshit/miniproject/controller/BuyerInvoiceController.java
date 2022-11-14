@@ -7,12 +7,12 @@ import com.harshit.miniproject.service.BuyerInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.web.bind.annotation.*;
-
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
@@ -72,6 +72,54 @@ public class BuyerInvoiceController {
         System.out.println(price);
         BuyerInvoice splorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), price*it.getQuantity(), "Order Processing", true);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(splorder);
+        if(ans == 1)
+            return "success";
+        else
+            return "failure";
+    }
+
+    @PostMapping("/normal")
+    public String specialOrder(@RequestBody ArrayList<Item> normal){
+        //JSONObject obj = new JSONObject(normal);
+        ArrayList<Item> item = new ArrayList<Item>();
+        double total=0;
+        for(Item i : normal) {
+            int itemNo = 0;
+            System.out.println(i.getItemName());
+            if (i.getItemName().equals("Cotton"))
+                itemNo = 1;
+            else if (i.getItemName().equals("Jute"))
+                itemNo = 2;
+            else if (i.getItemName().equals("Coffee"))
+                itemNo = 3;
+            else if (i.getItemName().equals("Steel"))
+                itemNo = 4;
+            else if (i.getItemName().equals("Aluminium"))
+                itemNo = 5;
+            else if (i.getItemName().equals("Copper"))
+                itemNo = 6;
+            else if (i.getItemName().equals("Wood"))
+                itemNo = 7;
+            else if (i.getItemName().equals("Wheat"))
+                itemNo = 8;
+            else if (i.getItemName().equals("Bajra"))
+                itemNo = 9;
+            else if (i.getItemName().equals("Ragi"))
+                itemNo = 10;
+
+            Item it = new Item(itemNo, i.getItemName(), i.getQuantity());
+            item.add(it);
+
+            double price = buyerInvoiceService.findPrice(itemNo);
+            System.out.println(price);
+            total+=price*i.getQuantity();
+        }
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), total, "Order Processing", false);
+        int ans = buyerInvoiceService.insertIntoBuyerInvoice(normalorder);
         if(ans == 1)
             return "success";
         else
