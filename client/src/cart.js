@@ -132,8 +132,8 @@ function App() {
             }
         }
 
-        const pass = {"it":cart}
-        console.log(send);
+        const pass = {"it":send}
+        console.log(pass);
         Axios.post('http://localhost:9090/api/buy/normal', {
             list: pass
         }).then((response) => {
