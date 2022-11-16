@@ -2,6 +2,7 @@ package com.harshit.miniproject.controller;
 
 import com.harshit.miniproject.model.BuyerInvoice;
 import com.harshit.miniproject.model.Item;
+import com.harshit.miniproject.model.ItemList;
 import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
 import com.harshit.miniproject.service.BuyerInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,11 +80,13 @@ public class BuyerInvoiceController {
     }
 
     @PostMapping("/normal")
-    public String specialOrder(@RequestBody ArrayList<Item> normal){
+    public String normalOrder(@RequestBody ItemList normal){
         //JSONObject obj = new JSONObject(normal);
+        System.out.println(normal.getIt());
         ArrayList<Item> item = new ArrayList<Item>();
+        ArrayList<Item> nor = normal.getIt();
         double total=0;
-        for(Item i : normal) {
+        for(Item i : nor) {
             int itemNo = 0;
             System.out.println(i.getItemName());
             if (i.getItemName().equals("Cotton"))

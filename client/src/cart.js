@@ -2,8 +2,7 @@ import { useState } from "react";
 import Axios from "axios";
 
 let cart=[];
-let name=[];
-let qty=[];
+let send=[];
 //import { useState } from "react";
 
 function App() {
@@ -126,9 +125,17 @@ function App() {
     //}
 
     const savedetail = () => {
-        //const data = JSON.stringify(cart);
+        for(let i=0 ; i<cart.length ; i++)
+        {
+            if(cart[i].qty > 0){
+                send.push(cart[i]);
+            }
+        }
+
+        const pass = {"it":cart}
+        console.log(send);
         Axios.post('http://localhost:9090/api/buy/normal', {
-            list: cart
+            list: pass
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
@@ -238,7 +245,7 @@ return (
   </div>
 
         <button onClick={multiple}>check</button>
-        <button onClick={display}>Hello</button>
+        <button onClick={savedetail}>Hello</button>
 
         {/*<button onClick={val}>Hello</button>
       {
