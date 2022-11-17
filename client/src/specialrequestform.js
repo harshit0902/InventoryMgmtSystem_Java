@@ -17,7 +17,7 @@ function App1() {
     // const [itemdetails, setItemdetails] = useState([]);
 
     const savedetail = () => {
-        Axios.post('http://localhost:9090/api/buy/special', {
+        Axios.post('http://localhost:9091/api/buy/special', {
             itemName: itemname,
             quantity: qty,
             /*quality1: q1,

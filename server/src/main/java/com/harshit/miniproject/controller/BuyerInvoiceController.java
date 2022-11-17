@@ -85,43 +85,45 @@ public class BuyerInvoiceController {
         System.out.println(normal.getIt());
         ArrayList<Item> item = new ArrayList<Item>();
         ArrayList<Item> nor = normal.getIt();
-        double total=0;
+        double tot=0;
+        int num = 0;
         for(Item i : nor) {
-            int itemNo = 0;
+
             System.out.println(i.getItemName());
             if (i.getItemName().equals("Cotton"))
-                itemNo = 1;
+                num = 1;
             else if (i.getItemName().equals("Jute"))
-                itemNo = 2;
+                num = 2;
             else if (i.getItemName().equals("Coffee"))
-                itemNo = 3;
+                num = 3;
             else if (i.getItemName().equals("Steel"))
-                itemNo = 4;
+                num = 4;
             else if (i.getItemName().equals("Aluminium"))
-                itemNo = 5;
+                num = 5;
             else if (i.getItemName().equals("Copper"))
-                itemNo = 6;
+                num = 6;
             else if (i.getItemName().equals("Wood"))
-                itemNo = 7;
+                num = 7;
             else if (i.getItemName().equals("Wheat"))
-                itemNo = 8;
+                num = 8;
             else if (i.getItemName().equals("Bajra"))
-                itemNo = 9;
+                num = 9;
             else if (i.getItemName().equals("Ragi"))
-                itemNo = 10;
+                num = 10;
 
-            Item it = new Item(itemNo, i.getItemName(), i.getQuantity());
+            Item it = new Item(num, i.getItemName(), i.getQuantity());
             item.add(it);
 
-            double price = buyerInvoiceService.findPrice(itemNo);
+            double price = buyerInvoiceService.findPrice(num);
             System.out.println(price);
-            total+=price*i.getQuantity();
+            System.out.println(i.getQuantity());
+            tot+=price*i.getQuantity();
         }
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
 
-        BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), total, "Order Processing", false);
+        BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), tot, "Order Processing", false);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(normalorder);
         if(ans == 1)
             return "success";

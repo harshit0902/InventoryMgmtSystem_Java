@@ -28,14 +28,14 @@ function App() {
     const rag= localStorage.getItem("ragData");
     const ragobj =JSON.parse(rag);
 
-    /*const [qty, setqty] = useState(0);
+    /*const [quantity, setquantity] = useState(0);
     const [quality1, setquality1] = useState(0);
     const [quality2, setquality2] = useState(0);
     const [quality3, setquality3] = useState(0);
-    let q1=parseInt(quality1);
-    let q2=parseInt(quality2);
-    let q3=parseInt(quality3);
-    let qty1=parseInt(qty);*/
+    let quality1=parseInt(quality1);
+    let quality2=parseInt(quality2);
+    let quality3=parseInt(quality3);
+    let quantity1=parseInt(quantity);*/
     //const cart = [];
     // const [cart,setCart]=useState([]);
     //setCart([...textarr,{parsedobj }]);
@@ -48,7 +48,7 @@ function App() {
 //     console.log(dtr);
 //     const parsedobj =JSON.parse(dtr);
 //     let i = 'steel';
-//     // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+//     // setCart([...cart, {itemName:i, quantity:0, quality1:0, quality2:0, quality3:0}]); 
 //     const cart1 = {
 //      itemNAme : "steel",
 //       q_1 : parsedobj.quality_1 ,
@@ -60,9 +60,9 @@ function App() {
 //     } 
 //     // console.log(cart);
 //     // cart[0].itemName = 'Steel';
-//     // cart[0].qty = parsedobj.quantity;
+//     // cart[0].quantity = parsedobj.quantity;
 //     // console.log(cart1[0].itemName);
-//     // console.log(cart1[0].qty);
+//     // console.log(cart1[0].quantity);
 //     console.log(cart1);
 //     const jsonobj1 = JSON.stringify(cart1);
 //     console.log(jsonobj1);
@@ -75,7 +75,7 @@ function App() {
     console.log(dtr);
     const parsedobj =JSON.parse(dtr);
     let i = 'steel';
-    // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
+    // setCart([...cart, {itemName:i, quantity:0, quality1:0, quality2:0, quality3:0}]); 
     const cart1 = {
      itemNAme : "steel",
       q_1 : parsedobj.quality_1 ,
@@ -87,9 +87,9 @@ function App() {
     }*/ 
     // console.log(cart);
     // cart[0].itemName = 'Steel';
-    // cart[0].qty = parsedobj.quantity;
+    // cart[0].quantity = parsedobj.quantity;
     // console.log(cart1[0].itemName);
-    // console.log(cart1[0].qty);
+    // console.log(cart1[0].quantity);
     /*console.log(cart1);
     const jsonobj1 = JSON.stringify(cart1);
     console.log(jsonobj1);
@@ -109,25 +109,25 @@ function App() {
 // let [cart,setCart]=useState([]);
     /*function val() {
         let i = 'steel';
-        // setCart([...cart, {itemName:i, qty:0, q1:0, q2:0, q3:0}]); 
-        cart.push({itemName:i, qty:0, q1:0, q2:0, q3:0});
+        // setCart([...cart, {itemName:i, quantity:0, quality1:0, quality2:0, quality3:0}]); 
+        cart.push({itemName:i, quantity:0, quality1:0, quality2:0, quality3:0});
         // console.log(cart);
         cart[0].itemName='Wheat';
         console.log(cart);
         /*const ctr= localStorage.getItem("bajData");
         const parsedobj1 =JSON.parse(ctr);
         cart[0].itemName = 'baj';
-        cart[0].qty = parsedobj1.quantity;
-        cart[0].q1 = parsedobj1.quality_1;
-        cart[0].q2 = parsedobj1.quality_2;
-        cart[0].q3 = parsedobj1.quality_3;
+        cart[0].quantity = parsedobj1.quantity;
+        cart[0].quality1 = parsedobj1.quality_1;
+        cart[0].quality2 = parsedobj1.quality_2;
+        cart[0].quality3 = parsedobj1.quality_3;
         console.log(cart);*/
     //}
 
     const savedetail = () => {
         for(let i=0 ; i<cart.length ; i++)
         {
-            if(cart[i].qty > 0){
+            if(cart[i].quantity > 0){
                 send.push(cart[i]);
             }
         }
@@ -135,7 +135,7 @@ function App() {
         const pass = {"it":send}
         console.log(send);
         console.log(pass);
-        Axios.post('http://localhost:9090/api/buy/normal', {
+        Axios.post('http://localhost:9091/api/buy/normal', {
             it: send
         }).then((response) => {
             // setUserdetails(response.data);
@@ -157,16 +157,16 @@ function App() {
         let i8 = 'h';
         let i9 = 'i';
         let i10 = 'j';
-        cart.push({itemName:i1, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i2, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i3, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i4, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i5, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i6, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i7, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i8, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i9, qty:0, q1:0, q2:0, q3:0});
-        cart.push({itemName:i10, qty:0, q1:0, q2:0, q3:0});
+        cart.push({itemName:i1, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i2, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i3, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i4, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i5, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i6, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i7, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i8, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i9, quantity:0, quality1:0, quality2:0, quality3:0});
+        cart.push({itemName:i10, quantity:0, quality1:0, quality2:0, quality3:0});
         console.log(cart);
         cart[0].itemName='Cotton';
         cart[1].itemName='Jute';
@@ -178,50 +178,50 @@ function App() {
         cart[7].itemName='Wheat';
         cart[8].itemName='Bajra';
         cart[9].itemName='Ragi';
-        cart[0].qty=cottobj.quantity;
-        cart[1].qty=jutobj.quantity;
-        cart[2].qty=coffobj.quantity;
-        cart[3].qty=steelobj.quantity;
-        cart[4].qty=alumobj.quantity;
-        cart[5].qty=coppobj.quantity;
-        cart[6].qty=wooobj.quantity;
-        cart[7].qty=wheobj.quantity;
-        cart[8].qty=bajobj.quantity;
-        cart[9].qty=ragobj.quantity;
-        cart[0].q1=cottobj.quality_1;
-        cart[1].q1=jutobj.quality_1;
-        cart[2].q1=coffobj.quality_1;
-        cart[3].q1=steelobj.quality_1;
-        cart[4].q1=alumobj.quality_1;
-        cart[5].q1=coppobj.quality_1;
-        cart[6].q1=wooobj.quality_1;
-        cart[7].q1=wheobj.quality_1;
-        cart[8].q1=bajobj.quality_1;
-        cart[9].q1=ragobj.quality_1;
-        cart[0].q2=cottobj.quality_2;
-        cart[1].q2=jutobj.quality_2;
-        cart[2].q2=coffobj.quality_2;
-        cart[3].q2=steelobj.quality_2;
-        cart[4].q2=alumobj.quality_2;
-        cart[5].q2=coppobj.quality_2;
-        cart[6].q2=wooobj.quality_2;
-        cart[7].q2=wheobj.quality_2;
-        cart[8].q2=bajobj.quality_2;
-        cart[9].q2=ragobj.quality_2;
-        cart[0].q3=cottobj.quality_3;
-        cart[1].q3=jutobj.quality_3;
-        cart[2].q3=coffobj.quality_3;
-        cart[3].q3=steelobj.quality_3;
-        cart[4].q3=alumobj.quality_3;
-        cart[5].q3=coppobj.quality_3;
-        cart[6].q3=wooobj.quality_3;
-        cart[7].q3=wheobj.quality_3;
-        cart[8].q3=bajobj.quality_3;
-        cart[9].q3=ragobj.quality_3;
+        cart[0].quantity=cottobj.quantity;
+        cart[1].quantity=jutobj.quantity;
+        cart[2].quantity=coffobj.quantity;
+        cart[3].quantity=steelobj.quantity;
+        cart[4].quantity=alumobj.quantity;
+        cart[5].quantity=coppobj.quantity;
+        cart[6].quantity=wooobj.quantity;
+        cart[7].quantity=wheobj.quantity;
+        cart[8].quantity=bajobj.quantity;
+        cart[9].quantity=ragobj.quantity;
+        cart[0].quality1=cottobj.quality_1;
+        cart[1].quality1=jutobj.quality_1;
+        cart[2].quality1=coffobj.quality_1;
+        cart[3].quality1=steelobj.quality_1;
+        cart[4].quality1=alumobj.quality_1;
+        cart[5].quality1=coppobj.quality_1;
+        cart[6].quality1=wooobj.quality_1;
+        cart[7].quality1=wheobj.quality_1;
+        cart[8].quality1=bajobj.quality_1;
+        cart[9].quality1=ragobj.quality_1;
+        cart[0].quality2=cottobj.quality_2;
+        cart[1].quality2=jutobj.quality_2;
+        cart[2].quality2=coffobj.quality_2;
+        cart[3].quality2=steelobj.quality_2;
+        cart[4].quality2=alumobj.quality_2;
+        cart[5].quality2=coppobj.quality_2;
+        cart[6].quality2=wooobj.quality_2;
+        cart[7].quality2=wheobj.quality_2;
+        cart[8].quality2=bajobj.quality_2;
+        cart[9].quality2=ragobj.quality_2;
+        cart[0].quality3=cottobj.quality_3;
+        cart[1].quality3=jutobj.quality_3;
+        cart[2].quality3=coffobj.quality_3;
+        cart[3].quality3=steelobj.quality_3;
+        cart[4].quality3=alumobj.quality_3;
+        cart[5].quality3=coppobj.quality_3;
+        cart[6].quality3=wooobj.quality_3;
+        cart[7].quality3=wheobj.quality_3;
+        cart[8].quality3=bajobj.quality_3;
+        cart[9].quality3=ragobj.quality_3;
         /*for(let i=0 ; i<cart.length ; i++)
         {
-            if(cart[i].qty > 0){
-              console.log(cart[i].qty+1);
+            if(cart[i].quantity > 0){
+              console.log(cart[i].quantity+1);
                 console.log(cart[i].itemName);}
         }*/
     }
@@ -229,8 +229,8 @@ function App() {
     function display() {
         for(let i=0 ; i<cart.length ; i++)
         {
-            if(cart[i].qty > 0){
-              console.log(cart[i].qty+1);
+            if(cart[i].quantity > 0){
+              console.log(cart[i].quantity+1);
                 console.log(cart[i].itemName);}
         }
     }
@@ -255,7 +255,7 @@ return (
             <div>
               {val.itemName}
               <br></br>
-              {val.q1}
+              {val.quality1}
             </div>
           </>
         })
