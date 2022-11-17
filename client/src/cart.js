@@ -133,9 +133,10 @@ function App() {
         }
 
         const pass = {"it":send}
+        console.log(send);
         console.log(pass);
         Axios.post('http://localhost:9090/api/buy/normal', {
-            list: pass
+            it: send
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
