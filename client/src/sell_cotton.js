@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-let error = [];
+
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -12,88 +12,63 @@ function App() {
     let q3=parseInt(quality3);
     let qty1=parseInt(qty);
 
-    const cott= localStorage.getItem("cottData");
-    const cottData =JSON.parse(cott);
+    const sellcott= localStorage.getItem("sellcottData");
+    const sellcottData =JSON.parse(sellcott);
 
-    function localstorage1()
+    function slocalstorage1()
     {
-        cottData.quantity = qty1;
-        cottData.quality_1 = q1;
-        cottData.quality_2 = q2;
-        cottData.quality_3 = q3;
-        const jsonobjcott = JSON.stringify(cottData);
-        console.log(jsonobjcott);
-        localStorage.setItem("cottData",jsonobjcott);
+        sellcottData.quantity = qty1;
+        sellcottData.quality_1 = q1;
+        sellcottData.quality_2 = q2;
+        sellcottData.quality_3 = q3;
+        const jsonobjsellcott = JSON.stringify(sellcottData);
+        console.log(jsonobjsellcott);
+        localStorage.setItem("sellcottData",jsonobjsellcott);
     }
 
    function Check1() {
-    if((q1>9000 && q1<15000)){
-      return true;
+    if((q1>9000 && q1<15000)){    /* variables needed from backend*/
+      console.log("success");
       
       
     }  else{
       console.log("failure");
-      return false;
+      alert("Invalid Quality 1");
 
     }}
    function Check2(){
     if((q2>9000 && q2<15000)){
-        return true;
+      console.log("success");
       
       
     }  else{
       console.log("failure");
-        return false;
+      alert("Invalid Quality 2");
 
     }
   }
     function Check3(){
       if((q3>9000 && q3<15000)){
-          return true;
+        console.log("success");
         
         
       }  else{
         console.log("failure");
-          return false;
+        alert("Invalid Quality 3");
   
       }
     }
       function Checkqty(){
-        if((qty1>0 && qty1 <=25)){
-            return true;
+        if((qty1>0 && qty1 <=25)){           /*variables from backend*/
+          console.log("success");
           
           
         }  else{
           console.log("failure");
-            return false;
+          alert("Invalid Quantity ");
     
         }
       
-      }
-
-      function Check() {
-          if(Check1() && Check2() && Check3() && Checkqty()) {
-              window.location.href = '/itemlistnew'
-          }
-
-          if(!Check1()) {
-              error.push("Error in Quality 1\n");
-          }
-
-          if(!Check2()) {
-              error.push("Error in Quality 2\n");
-          }
-
-          if(!Check3()) {
-              error.push("Error in Quality 3\n");
-          }
-
-          if(!Checkqty()) {
-              error.push("Error in Quantity\n");
-          }
-
-          if(error.length != 0)
-              alert(error);
       }
    
 return (
@@ -102,12 +77,12 @@ return (
       <><div>
     <center>
       <h1 id="cot">
-        Order Cotton
+        Supply Cotton
       </h1>
     </center>
   </div><div id="details">
       <div>
-        <label>Enter Quantity required </label>
+        <label>Enter Quantity to be suppplied </label>
         <input type="number" placeholder='Enter in kg'
           onChange={(event) => { setqty(event.target.value); } }></input>
            <br></br>
@@ -135,12 +110,15 @@ return (
            <br></br>
       </div>
       <button onClick={() => {
-            Check()
+        Check1()
+        Check2()
+        Check3() 
+        Checkqty()
        } }>Check</button>
        <button onClick={() => {
-        localstorage1()
-             }}>Add to cart</button>
-      <button>Special Request?</button>
+        slocalstorage1()
+             }}>Add to supply cart</button>
+      
 
     </div></>
 

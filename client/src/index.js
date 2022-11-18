@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './cart';
+import App from './sellerform';
 import Login from './login'
 import Signup from './signup'
 import SpecialRequestForm from "./specialrequestform";
@@ -19,6 +19,8 @@ import Bajra from './bajra'
 import Ragi from './ragi'
 import Cart from './cart'
 import Itemlistnew from './itemlistnew'
+import SellerForm from './sellerform'
+import SellCotton from './sell_cotton'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -39,12 +41,11 @@ root.render(
                       <Route path='/wheat' element={<Wheat />}></Route>
                       <Route path='/bajra' element={<Bajra />}></Route>
                       <Route path='/ragi' element={<Ragi />}></Route>
-
                       <Route path='/cart' element={<Cart />}></Route>
                       <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
-
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
-
+                      <Route path='/sellerform' element={<SellerForm />}></Route>
+                      <Route path='/sell_cotton' element={<SellCotton />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>
