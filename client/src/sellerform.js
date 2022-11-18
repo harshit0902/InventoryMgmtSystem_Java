@@ -1,11 +1,11 @@
 import React from 'react'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 
-
-function App()
+function SellerForm()
 {
-   
+    const navigate=useNavigate()
    
    
     return (
@@ -20,7 +20,7 @@ function App()
                 Minimum quality required =" variable from backend"
                 Minimum quality required =" variable from backend"
             <button onClick={()=> navigate('./sell_cotton')}>Supply now</button></h6>
-           
+
         </h1>
       </center>
       <center>
@@ -101,3 +101,5 @@ function App()
   )
 
 }
+
+export default SellerForm
