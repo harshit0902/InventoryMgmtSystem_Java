@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-
+let error = [];
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -28,47 +28,72 @@ function App() {
 
    function Check1() {
     if((q1>9000 && q1<15000)){
-      console.log("success");
+      return true;
       
       
     }  else{
       console.log("failure");
-      alert("Invalid Quality 1");
+      return false;
 
     }}
    function Check2(){
     if((q2>9000 && q2<15000)){
-      console.log("success");
+        return true;
       
       
     }  else{
       console.log("failure");
-      alert("Invalid Quality 2");
+        return false;
 
     }
   }
     function Check3(){
       if((q3>9000 && q3<15000)){
-        console.log("success");
+          return true;
         
         
       }  else{
         console.log("failure");
-        alert("Invalid Quality 3");
+          return false;
   
       }
     }
       function Checkqty(){
         if((qty1>0 && qty1 <=25)){
-          console.log("success");
+            return true;
           
           
         }  else{
           console.log("failure");
-          alert("Invalid Quality 2");
+            return false;
     
         }
       
+      }
+
+      function Check() {
+          if(Check1() && Check2() && Check3() && Checkqty()) {
+              window.location.href = '/itemlistnew'
+          }
+
+          if(!Check1()) {
+              error.push("Error in Quality 1\n");
+          }
+
+          if(!Check2()) {
+              error.push("Error in Quality 2\n");
+          }
+
+          if(!Check3()) {
+              error.push("Error in Quality 3\n");
+          }
+
+          if(!Checkqty()) {
+              error.push("Error in Quantity\n");
+          }
+
+          if(error.length != 0)
+              alert(error);
       }
    
 return (
@@ -110,10 +135,7 @@ return (
            <br></br>
       </div>
       <button onClick={() => {
-        Check1()
-        Check2()
-        Check3()
-        Checkqty()
+            Check()
        } }>Check</button>
        <button onClick={() => {
         localstorage1()
