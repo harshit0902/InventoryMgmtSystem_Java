@@ -131,6 +131,17 @@ public class BuyerInvoiceController {
             return "failure";
     }
 
+    @PostMapping("/confirm")
+    public List<BuyerInvoice> confirmOrder(@RequestBody BuyerInvoice user){
+        List<BuyerInvoice> data = new ArrayList<BuyerInvoice>();
+        data = buyerInvoiceService.findData(user.getcustEmail());
+
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
     /*@PostMapping("/signup")
     public String insertUser(@RequestBody Credentials user){
         //Credentials user = new Credentials(username, email, password, mobNo, address, typeOfAcc);
