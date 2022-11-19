@@ -2,6 +2,7 @@ package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.model.BuyerInvoice;
 import com.harshit.miniproject.model.Item;
+import com.harshit.miniproject.model.ItemList;
 import com.harshit.miniproject.repository.BuyerInvoiceJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -50,6 +52,17 @@ public class BuyerInvoiceService {
         }
         else
             return 0.0;
+    }
+
+    public List<BuyerInvoice> findData(String email) {
+        Query q2 = new Query();
+        q2.addCriteria(Criteria.where("custEmail").is(email));
+        List<BuyerInvoice> data = mongoOperations.find(q2, BuyerInvoice.class);
+        System.out.println(data);
+        if(data != null)
+            return data;
+        else
+            return null;
     }
 
     /*public int checkIfEmailExists(Credentials user) {

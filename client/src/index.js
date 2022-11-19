@@ -21,6 +21,7 @@ import Cart from './cart'
 import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
+import BuyerConfirmation from "./buyerconfirmation";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -46,6 +47,7 @@ root.render(
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
                       <Route path='/sellerform' element={<SellerForm />}></Route>
                       <Route path='/sell_cotton' element={<SellCotton />}></Route>
+                      <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>
