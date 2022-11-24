@@ -22,6 +22,7 @@ import Itemlistnew from './itemlistnew'
 
 import SpecialRequestForm from './specialrequestform'
 import Cart from './cart';
+import SellerForm from './sellerform';
 
 
 // import Header from "./navbar1";
@@ -75,7 +76,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <Cart />
+            <SellerForm />
 
         </div>
         </div>
