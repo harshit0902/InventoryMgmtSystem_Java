@@ -26,6 +26,15 @@ public class SellerInvoiceController {
 
     // getting the object of the Timestamp class
     Timestamp instant = new Timestamp(date.getTime());
+    @Autowired
+    private final SellerInvoiceService sellerInvoiceService;
+
+    private final SellerInvoiceJpaRepository sellerInvoiceJpaRepository;
+
+    @Autowired
+    public SellerInvoiceController(SellerInvoiceService sellerInvoiceService, SellerInvoiceJpaRepository sellerInvoiceJpaRepository) {
+        this.sellerInvoiceService = sellerInvoiceService;
+        this.sellerInvoiceJpaRepository = sellerInvoiceJpaRepository;
     }
 
     @PostMapping("/normal")
