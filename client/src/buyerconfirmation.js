@@ -1,11 +1,9 @@
 
 import { useState } from "react";
-import Axios from "axios";
-
-const [buydetails, setBuydetails] = useState([]);
-
+import Axios from "axios"
 
 function App() {
+    const [buydetails, setBuydetails] = useState([]);
 
       return (
         <><div>
@@ -28,10 +26,8 @@ function App() {
         </div>
         <div>
             <button onClick={() => {
-                Check()
             } }>Check</button>
             <button onClick={() => {
-                localstorage3()
             }}>Add to cart</button>
             <button>Special Request?</button>
 
