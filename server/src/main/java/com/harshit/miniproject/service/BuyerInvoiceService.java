@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -63,6 +64,27 @@ public class BuyerInvoiceService {
             return data;
         else
             return null;
+    }
+
+    public void updateItem(int itemNo, int quantity) {
+        //System.out.println("Hi");
+        Query q3 = new Query();
+        q3.addCriteria(Criteria.where("itemID").is(itemNo));
+        Item item = mongoOperations.findOne(q3, Item.class);
+        //System.out.println(item);
+        Update update1 = new Update();
+        System.out.println(item.getQuantity());
+        System.out.println(quantity);
+        int qty = item.getQuantity();
+        int q = qty - quantity;
+        update1.set("quantity", q);
+        mongoOperations.updateFirst(q3, update1, Item.class);
+        if(item != null)
+        {
+            System.out.println(item.getQuantity());
+        }
+        else
+            System.out.println("null");
     }
 
     /*public int checkIfEmailExists(Credentials user) {
