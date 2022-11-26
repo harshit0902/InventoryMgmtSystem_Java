@@ -21,6 +21,15 @@ import Cart from './cart'
 import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
+import SellJute from './sell_jute'
+import SellCoffee from './sell_coffee'
+import SellSteel from './sell_steel'
+import SellAluminium from './sell_aluminium'
+import SellCopper from './sell_copper'
+import SellWood from './sell_wood'
+import SellWheat from './sell_wheat'
+import SellBajra from "./sell_bajra";
+import SellRagi from './sell_ragi'
 import BuyerConfirmation from "./buyerconfirmation";
 import Itemlistnew1 from './itemlistnew1'
 import SellerForm1 from './sellerform1';
@@ -53,6 +62,15 @@ root.render(
                       <Route path='/sellercart' element={<SellerCart />}></Route>
                       <Route path='/sellerform1' element={<SellerForm1 />}></Route>
                       <Route path='/sell_cotton' element={<SellCotton />}></Route>
+                      <Route path='/sell_jute' element={<SellJute />}></Route>
+                      <Route path='/sell_coffee' element={<SellCoffee />}></Route>
+                      <Route path='/sell_steel' element={<SellSteel />}></Route>
+                      <Route path='/sell_aluminium' element={<SellAluminium />}></Route>
+                      <Route path='/sell_copper' element={<SellCopper/>}></Route>
+                      <Route path='/sell_wood' element={<SellWood />}></Route>
+                      <Route path='/sell_wheat' element={<SellWheat />}></Route>
+                      <Route path='/sell_bajra' element={<SellBajra />}></Route>
+                      <Route path='/sell_ragi' element={<SellRagi />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                   </Routes>
               </BrowserRouter>

@@ -141,7 +141,7 @@ function App() {
             // setUserdetails(response.data);
             console.log(response)
             if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
+                //window.location.href = "http://localhost:3000/login";
             }
         });
     }

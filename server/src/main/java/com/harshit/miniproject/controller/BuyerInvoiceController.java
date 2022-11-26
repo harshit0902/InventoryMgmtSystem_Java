@@ -82,14 +82,14 @@ public class BuyerInvoiceController {
     @PostMapping("/normal")
     public String normalOrder(@RequestBody ItemList normal){
         //JSONObject obj = new JSONObject(normal);
-        System.out.println(normal.getIt());
+        //System.out.println(normal.getIt());
         ArrayList<Item> item = new ArrayList<Item>();
         ArrayList<Item> nor = normal.getIt();
         double tot=0;
-        int num = 0;
+        int num=0, num1=0;
         for(Item i : nor) {
 
-            System.out.println(i.getItemName());
+            //System.out.println(i.getItemName());
             if (i.getItemName().equals("Cotton"))
                 num = 1;
             else if (i.getItemName().equals("Jute"))
@@ -115,8 +115,8 @@ public class BuyerInvoiceController {
             item.add(it);
 
             double price = buyerInvoiceService.findPrice(num);
-            System.out.println(price);
-            System.out.println(i.getQuantity());
+            //System.out.println(price);
+            //System.out.println(i.getQuantity());
             tot+=price*i.getQuantity();
         }
 
@@ -125,8 +125,34 @@ public class BuyerInvoiceController {
 
         BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), tot, "Order Processing", false);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(normalorder);
-        if(ans == 1)
+        if(ans == 1) {
+            for(Item i : item) {
+                if (i.getItemName().equals("Cotton"))
+                    num1 = 1;
+                else if (i.getItemName().equals("Jute"))
+                    num1 = 2;
+                else if (i.getItemName().equals("Coffee"))
+                    num1 = 3;
+                else if (i.getItemName().equals("Steel"))
+                    num1 = 4;
+                else if (i.getItemName().equals("Aluminium"))
+                    num1 = 5;
+                else if (i.getItemName().equals("Copper"))
+                    num1 = 6;
+                else if (i.getItemName().equals("Wood"))
+                    num1 = 7;
+                else if (i.getItemName().equals("Wheat"))
+                    num1 = 8;
+                else if (i.getItemName().equals("Bajra"))
+                    num1 = 9;
+                else if (i.getItemName().equals("Ragi"))
+                    num1 = 10;
+
+                //System.out.println(num1);
+                buyerInvoiceService.updateItem(num1, i.getQuantity());
+            }
             return "success";
+        }
         else
             return "failure";
     }

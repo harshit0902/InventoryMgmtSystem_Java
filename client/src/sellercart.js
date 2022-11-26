@@ -30,28 +30,27 @@ function App() {
 
 
 
-    // this part needs to be edited
-    // const savedetail = () => {
-    //     for(let i=0 ; i<cart.length ; i++)
-    //     {
-    //         if(cart[i].quantity > 0){
-    //             send.push(cart[i]);
-    //         }
-    //     }
+     const savedetail = () => {
+         for(let i=0 ; i<cart.length ; i++)
+         {
+             if(cart[i].quantity > 0){
+                 send.push(cart[i]);
+             }
+         }
 
-    //     const pass = {"it":send}
-    //     console.log(send);
-    //     console.log(pass);
-    //     Axios.post('http://localhost:9091/api/buy/normal', {
-    //         it: send
-    //     }).then((response) => {
-    //         // setUserdetails(response.data);
-    //         console.log(response)
-    //         if (response.data == 'success') {
-    //             window.location.href = "http://localhost:3000/login";
-    //         }
-    //     });
-    // }
+         const pass = {"it":send}
+         console.log(send);
+         console.log(pass);
+         Axios.post('http://localhost:9091/api/sell/normal', {
+             it: send
+         }).then((response) => {
+             // setUserdetails(response.data);
+             console.log(response)
+             if (response.data == 'success') {
+                 //window.location.href = "http://localhost:3000/login";
+             }
+         });
+     }
 
     function multiple() {
         let i1 = 'a';
