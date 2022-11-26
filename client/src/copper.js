@@ -75,7 +75,7 @@ function App() {
 
     function Check() {
         if(Check1() && Check2() && Check3() && Checkqty()) {
-            window.location.href = '/itemlistnew'
+            window.location.href = '/itemlistnew1'
         }
 
         if(!Check1()) {

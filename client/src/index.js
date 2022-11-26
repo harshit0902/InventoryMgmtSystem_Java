@@ -22,6 +22,9 @@ import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
 import BuyerConfirmation from "./buyerconfirmation";
+import Itemlistnew1 from './itemlistnew1'
+import SellerForm1 from './sellerform1';
+import SellerCart from './sellercart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -44,8 +47,11 @@ root.render(
                       <Route path='/ragi' element={<Ragi />}></Route>
                       <Route path='/cart' element={<Cart />}></Route>
                       <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
+                      <Route path='/itemlistnew1' element={<Itemlistnew1 />}></Route>
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
                       <Route path='/sellerform' element={<SellerForm />}></Route>
+                      <Route path='/sellercart' element={<SellerCart />}></Route>
+                      <Route path='/sellerform1' element={<SellerForm1 />}></Route>
                       <Route path='/sell_cotton' element={<SellCotton />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                   </Routes>
