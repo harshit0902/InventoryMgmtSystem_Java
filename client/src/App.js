@@ -25,7 +25,8 @@ import Cart from './cart';
 import SellerForm from './sellerform';
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
-
+import Admin from './admin';
+import AddItem from './add_item';
 
 // import Header from "./navbar1";
 // import Footer from "./footer";
@@ -78,7 +79,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <SellerForm />
+            <Admin />
 
         </div>
         </div>
