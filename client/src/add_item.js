@@ -10,7 +10,7 @@ function App() {
     const [quality2, setquality2] = useState(0);
     const [quality3, setquality3] = useState(0);
 
-    const savedetail = () => {
+    const addIten = () => {
         Axios.post('http://localhost:9091/api/admin/add', {
             itemName: name,
             quantity: qty,
