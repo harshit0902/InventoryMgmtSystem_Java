@@ -27,6 +27,8 @@ import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
 import Admin from './admin';
 import AddItem from './add_item';
+import DeleteItem from './delete_item';
+import EditItem from './edit_item';
 
 // import Header from "./navbar1";
 // import Footer from "./footer";
