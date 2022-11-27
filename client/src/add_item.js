@@ -2,7 +2,7 @@ import { useState } from "react";
 import Axios from "axios";
 
 function App() {
-    const [id, setid] = useState(0);
+    //const [id, setid] = useState(0);
     const [name, setname] =useState("");
     const [qty, setqty] = useState(0);
     const [price, setprice] = useState(0);
@@ -12,12 +12,17 @@ function App() {
 
     const savedetail = () => {
         Axios.post('http://localhost:9091/api/admin/add', {
-            it: send
+            itemName: name,
+            quantity: qty,
+            price: price,
+            quality1: quality1,
+            quality2: quality2,
+            quality3: quality3
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
             if (response.data == 'success') {
-                //window.location.href = "http://localhost:3000/login";
+                window.location.href = "http://localhost:3000/login";
             }
         });
     }
