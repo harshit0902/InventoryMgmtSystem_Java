@@ -9,6 +9,12 @@ function App() {
     
       
       <><div>
+         <center>
+      <h1 id="Items_new">
+          <h3> <button id="button-result"><Link id="sign" to='/cart'>Cart</Link></button></h3>
+         
+      </h1>
+    </center>
         <center>
       <h1 id="Items_new">
          Cotton <h3>Quantity available  <button id="button-result"><Link id="sign" to='/cotton'>Order now</Link></button></h3>

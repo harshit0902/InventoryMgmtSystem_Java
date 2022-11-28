@@ -230,8 +230,21 @@ function App() {
         for(let i=0 ; i<cart.length ; i++)
         {
             if(cart[i].quantity > 0){
-              console.log(cart[i].quantity+1);
-                console.log(cart[i].itemName);}
+               console.log(cart[i].quantity+1);
+                 console.log(cart[i].itemName);
+              {cart[i].itemName}
+                
+                {cart[i].quantity}
+                
+                {cart[i].quality1}
+                
+                {cart[i].quality2}
+                
+                {cart[i].quality3}
+              
+                
+            
+            }
         }
     }
 
@@ -247,6 +260,7 @@ return (
 
         <button onClick={multiple}>check</button>
         <button onClick={savedetail}>Hello</button>
+        <button onClick={display}>Hi</button>
 
         {/*<button onClick={val}>Hello</button>
       {
@@ -264,7 +278,7 @@ return (
        {/* cart[0].itemName = "Steel"; */}
 
         {/* <button>Special Request?</button> */}
-
+        
     </>
 
 )
