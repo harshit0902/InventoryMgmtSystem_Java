@@ -1,7 +1,12 @@
 
 import { useState } from "react";
+import React from 'react'
+import {useNavigate} from 'react-router-dom'
 let error = [];
+
 function App() {
+ 
+  const navigate=useNavigate()
     
     const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-
+import { NavLink, Link } from 'react-router-dom'
 let error = [];
 
 
@@ -143,7 +143,7 @@ return (
         localstorage10()
              }}>Add to cart</button>
       <button>Special Request?</button>
-
+      
     </div></>
 
 )
