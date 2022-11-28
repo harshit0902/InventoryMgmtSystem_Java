@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Axios from "axios";
+import {useParams} from "react-router-dom";
 
 function App() {
     const [id, setid] = useState(0);
+    const {ID} = useParams();
 
-    const savedetail = () => {
-        Axios.delete('http://localhost:9091/api/admin/deleteitem', {
-            itemID: id
+    const savedetail = (ID) => {
+        Axios.delete('http://localhost:9091/api/admin/deleteitem/${ID}', {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
@@ -27,10 +28,10 @@ function App() {
     <div>
           <label>Enter Item Id </label>
           <input type="number" placeholder='Item Id'
-            onChange={(event) => { setid(event.target.value); } }></input>
+            onChange={(event) => { setid(parseInt(event.target.value)); } }></input>
              <br></br>
         </div>
-        <button onClick={savedetail}>Delete Item</button>
+        <button onClick={()=>savedetail(id)}>Delete Item</button>
 
 
 </div></>

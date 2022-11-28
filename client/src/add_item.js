@@ -51,21 +51,21 @@ return (
     <div>
       <label>Enter Quantity </label>
       <input type="number" placeholder='Enter in kg'
-        onChange={(event) => { setqty(event.target.value); } }></input>
+        onChange={(event) => { setqty(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
 
         <div>
             <label>Enter Price </label>
             <input type="number" placeholder='Enter in Rs.'
-                   onChange={(event) => { setprice(event.target.value); } }></input>
+                   onChange={(event) => { setprice(parseInt(event.target.value)); } }></input>
             <br></br>
         </div>
     
     <div>
         <label>Enter Quality1 required </label>
       <input type="number" placeholder='Quality 1'
-       onChange={(event) => { setquality1(event.target.value); } } ></input>
+       onChange={(event) => { setquality1(parseInt(event.target.value)); } } ></input>
 
 
          <br></br>
@@ -73,14 +73,14 @@ return (
     <div>
         <label>Enter Quality2 required </label>
       <input type="number" placeholder='Quality 2'
-        onChange={(event) => { setquality2(event.target.value); } }></input>
+        onChange={(event) => { setquality2(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
     
     <div>
         <label>Enter Quality3 required </label>
       <input type="number" placeholder='Quality 3'
-        onChange={(event) => { setquality3(event.target.value); } }></input>
+        onChange={(event) => { setquality3(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
     

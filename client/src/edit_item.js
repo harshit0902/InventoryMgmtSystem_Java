@@ -51,14 +51,14 @@ return (
          <br></br>
     </div>
     <div>
-      <label>Enter Quantity required </label>
+      <label>Enter Quantity </label>
       <input type="number" placeholder='Enter in kg'
         onChange={(event) => { setqty(event.target.value); } }></input>
          <br></br>
     </div>
 
         <div>
-            <label>Enter Price required </label>
+            <label>Enter Price </label>
             <input type="number" placeholder='Enter in Rs.'
                    onChange={(event) => { setprice(event.target.value); } }></input>
             <br></br>

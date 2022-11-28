@@ -61,8 +61,8 @@ public class AdminItemController {
     }
 
     @PostMapping("/deleteitem")
-    public String deleteItem(@RequestBody Item special){
-        int ans = adminItemService.deleteIntoItem(special.getItemID());
+    public String deleteItem(@PathVariable int id){
+        int ans = adminItemService.deleteIntoItem(id);
         if(ans == 1)
             return "success";
         else

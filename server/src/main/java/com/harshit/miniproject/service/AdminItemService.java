@@ -1,6 +1,7 @@
 package com.harshit.miniproject.service;
 
 import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.model.Credentials;
 import com.harshit.miniproject.model.Item;
 import com.harshit.miniproject.model.ItemList;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
@@ -89,10 +90,10 @@ public class AdminItemService {
             return null;
     }
 
-    public List<Item> findCustomers() {
+    public List<Credentials> findCustomers() {
         Query q5 = new Query();
-        q5.addCriteria(Criteria.where("itemID").is(num));
-        List<Item> data = mongoOperations.find(q4, Item.class);
+        q5.addCriteria(Criteria.where("typeOfAcc").is("buyer"));
+        List<Credentials> data = mongoOperations.find(q5, Credentials.class);
         System.out.println(data);
         if(data != null)
             return data;
@@ -100,10 +101,10 @@ public class AdminItemService {
             return null;
     }
 
-    public List<Item> findData() {
-        Query q4 = new Query();
-        List<Item> data = mongoOperations.find(q4, Item.class);
-        System.out.println(data);
+    public List<Credentials> findSuppliers() {
+        Query q6 = new Query();
+        q6.addCriteria(Criteria.where("typeOfAcc").is("seller"));
+        List<Credentials> data = mongoOperations.find(q6, Credentials.class);
         if(data != null)
             return data;
         else
