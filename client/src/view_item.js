@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { useState } from "react";
-const items =[ 
+
+const items =[
     {
         name:"Apple",
         id: 123
@@ -16,19 +17,21 @@ const items =[
     }
 
 ];
-function App()
-{
 
+function ViewItems()
+{
     return (
-        <div >
-            {items.map((item)=>(
-                <div>
-                    <h5> Item name: {item.name}  Id :{item.id}
+        <>
+    <div>
+        {items.map((item)=>(
+                <div key={item.id}>
+                    <h5> Name: {item.name} ID: {item.id}
                     </h5>
                 </div>
             )
-            )}
-        </div>
+        )}
+    </div>
+        </>
     );
 }
-export default App();
+export default ViewItems;
