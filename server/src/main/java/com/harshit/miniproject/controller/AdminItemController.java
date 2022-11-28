@@ -1,6 +1,7 @@
 package com.harshit.miniproject.controller;
 
 import com.harshit.miniproject.model.BuyerInvoice;
+import com.harshit.miniproject.model.Credentials;
 import com.harshit.miniproject.model.Item;
 import com.harshit.miniproject.model.ItemList;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
@@ -39,7 +40,7 @@ public class AdminItemController {
         this.adminItemJpaRepository = adminItemJpaRepository;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/additem")
     public String addItem(@RequestBody Item special){
         Item it = new Item(val++, special.getItemName(), special.getQuantity(), special.getPrice(), special.getQuality1(), special.getQuality2(), special.getQuality3());
 
@@ -50,7 +51,7 @@ public class AdminItemController {
             return "failure";
     }
 
-    @PutMapping("/modify")
+    @PutMapping("/modifyitem")
     public String updateItem(@RequestBody Item special) {
         int ans = adminItemService.updateIntoItem(special);
         if(ans == 1)
@@ -59,7 +60,7 @@ public class AdminItemController {
             return "failure";
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/deleteitem")
     public String deleteItem(@RequestBody Item special){
         int ans = adminItemService.deleteIntoItem(special.getItemID());
         if(ans == 1)
@@ -68,10 +69,32 @@ public class AdminItemController {
             return "failure";
     }
 
-    @GetMapping("/display")
+    @GetMapping("/displayitem")
     public List<Item> displayItems(){
         List<Item> data = new ArrayList<Item>();
         data = adminItemService.findData();
+
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    @GetMapping("/displaycustomer")
+    public List<Credentials> displayCustomers(){
+        List<Credentials> data = new ArrayList<Credentials>();
+        data = adminItemService.findCustomers();
+
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    @GetMapping("/displaysupplier")
+    public List<Credentials> displaySuppliers(){
+        List<Credentials> data = new ArrayList<Credentials>();
+        data = adminItemService.findSuppliers();
 
         if(data != null)
             return data;

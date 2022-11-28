@@ -89,6 +89,27 @@ public class AdminItemService {
             return null;
     }
 
+    public List<Item> findCustomers() {
+        Query q5 = new Query();
+        q5.addCriteria(Criteria.where("itemID").is(num));
+        List<Item> data = mongoOperations.find(q4, Item.class);
+        System.out.println(data);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public List<Item> findData() {
+        Query q4 = new Query();
+        List<Item> data = mongoOperations.find(q4, Item.class);
+        System.out.println(data);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
     /*public double findPrice(int itemNo) {
         Query q1 = new Query();
         q1.addCriteria(Criteria.where("itemID").is(itemNo));

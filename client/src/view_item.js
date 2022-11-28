@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useState } from "react";
+import Axios from "axios";
 
 const items =[
     {
@@ -20,10 +21,22 @@ const items =[
 
 function ViewItems()
 {
+    const [itemDetails, setItemDetails] = useState([]);
+
+    Axios.get('http://localhost:9091/api/admin/displayitem', {
+    }).then((response) => {
+        setItemDetails(response.data);
+        console.log(response)
+        if (response.data != null) {
+            window.location.href = "http://localhost:3000/login";
+        }
+    });
+
+
     return (
         <>
     <div>
-        {items.map((item)=>(
+        {itemDetails.map((item)=>(
                 <div key={item.id}>
                     <h5> Name: {item.name} ID: {item.id}
                     </h5>

@@ -11,7 +11,7 @@ function App() {
     const [quality3, setquality3] = useState(0);
 
     const savedetail = () => {
-        Axios.post('http://localhost:9091/api/admin/add', {
+        Axios.post('http://localhost:9091/api/admin/additem', {
             itemName: name,
             quantity: qty,
             price: price,
@@ -63,7 +63,7 @@ return (
         </div>
     
     <div>
-
+        <label>Enter Quality1 required </label>
       <input type="number" placeholder='Quality 1'
        onChange={(event) => { setquality1(event.target.value); } } ></input>
 
@@ -71,22 +71,20 @@ return (
          <br></br>
     </div>
     <div>
-
+        <label>Enter Quality2 required </label>
       <input type="number" placeholder='Quality 2'
         onChange={(event) => { setquality2(event.target.value); } }></input>
          <br></br>
     </div>
     
     <div>
-
+        <label>Enter Quality3 required </label>
       <input type="number" placeholder='Quality 3'
         onChange={(event) => { setquality3(event.target.value); } }></input>
          <br></br>
     </div>
     
-     <button onClick={() => {
-         //addItem()
-           }}>Add Item</button>
+     <button onClick={savedetail}>Add Item</button>
     
 
   </div></>
