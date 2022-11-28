@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './itemlistnew';
+import App from './admin';
 import Login from './login'
 import Signup from './signup'
 import SpecialRequestForm from "./specialrequestform";
@@ -38,6 +38,10 @@ import Admin from './admin';
 import AddItem from './add_item';
 import DeleteItem from './delete_item';
 import EditItem from './edit_item';
+import ViewItem from './view_item';
+import Customer from './allcustomer';
+import Supplier from './allsupplier';
+import Ship from './shipping';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -79,6 +83,10 @@ root.render(
                       <Route path='/add_item' element={<AddItem />}></Route>
                       <Route path='/delete_item' element={<DeleteItem />}></Route>
                       <Route path='/edit_item' element={<EditItem />}></Route>
+                      <Route path='/view_item' element={<ViewItem />}></Route>
+                      <Route path='/shipping' element={<Ship />}></Route>
+                      <Route path='/allcustomer' element={<Customer />}></Route>
+                      <Route path='/allsupplier' element={<Supplier />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                   </Routes>
               </BrowserRouter>
