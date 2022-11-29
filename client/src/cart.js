@@ -247,6 +247,7 @@ function App() {
     //}
 
     /*function display() {
+
         /*return (
             <>
                 <div>
@@ -269,7 +270,29 @@ function deleteval(a,b,c,d )
   a=0;b=0;c=0;d=0;
 
 }
- return (
+ 
+
+
+
+        /*return (
+            <>
+                <div>
+                    {cart.map((item)=>(
+                            <div key={item.itemName}>
+                                <h5> Item Name: {item.itemName} </h5>
+                                <h5> Quantity: {item.quantity} </h5>
+                                <h5> Quality 1: {item.quality1} </h5>
+                                <h5> Quality 2: {item.quality2} </h5>
+                                <h5> Quality 3: {item.quality3} </h5>
+                                -------------------------------------
+                            </div>
+                        )
+                    )}
+                </div>
+            </>)*/
+
+return (
+
     <><div>
     <center>
       <h1 id="cart">
@@ -296,9 +319,11 @@ function deleteval(a,b,c,d )
                         <h5> Quality 1: {item.quality1} </h5>
                         <h5> Quality 2: {item.quality2} </h5>
                         <h5> Quality 3: {item.quality3} </h5>
+
                         <h5><button onClick={ ()=>{{deleteval(item.quantity,item.quality1,item.quality2,item.quality3)
                         }
                          }}>Delete</button></h5>
+
                         -------------------------------------
                     </div>
                 ) : ("") )
