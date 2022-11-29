@@ -3,6 +3,7 @@ import Axios from "axios";
 
 let cart=[];
 let send=[];
+let s = "";
 //import { useState } from "react";
 
 function App() {
@@ -146,7 +147,7 @@ function App() {
         });
     }
 
-    function multiple() {
+    //function multiple() {
         let i1 = 'a';
         let i2 = 'b';
         let i3 = 'c';
@@ -167,7 +168,7 @@ function App() {
         cart.push({itemName:i8, quantity:0, quality1:0, quality2:0, quality3:0});
         cart.push({itemName:i9, quantity:0, quality1:0, quality2:0, quality3:0});
         cart.push({itemName:i10, quantity:0, quality1:0, quality2:0, quality3:0});
-        console.log(cart);
+        //console.log(cart);
         cart[0].itemName='Cotton';
         cart[1].itemName='Jute';
         cart[2].itemName='Coffee';
@@ -224,19 +225,10 @@ function App() {
               console.log(cart[i].quantity+1);
                 console.log(cart[i].itemName);}
         }*/
-    }
+    //}
 
-    function display() {
-        for(let i=0 ; i<cart.length ; i++)
-        {
-            if(cart[i].quantity > 0){
-              cart[i].itemName
-                {cart[i].quantity}
-                {cart[i].quality1}
-                {cart[i].quality2}
-                {cart[i].quality3}
-            }
-        }
+    /*function display() {
+
 
         /*return (
             <>
@@ -254,7 +246,6 @@ function App() {
                     )}
                 </div>
             </>)*/
-    }
 
 return (
     <><div>
@@ -265,9 +256,31 @@ return (
     </center>
   </div>
 
-        <button onClick={multiple}>check</button>
-        <button onClick={savedetail}>Hello</button>
-        <button onClick={display}>Hi</button>
+        {/*for(i=0 ; i<cart.length ; i++)
+        {
+            if(cart[i].quantity > 0){
+            s = s + "Item Name: " + cart[i].itemName + ", Quantity: " + cart[i].quantity + ", Quality 1: " + cart[i].quality1 + ", Quality 2: " + cart[i].quality2 + "Quality 3: " + cart[i].quality3;
+            {s}
+            }
+            s = "";
+        }*/}
+
+        <div>
+            {cart.map((item)=>(
+                item.quantity>0 ? (
+                    <div key={item.itemName}>
+                        <h5> Item Name: {item.itemName} </h5>
+                        <h5> Quantity: {item.quantity} </h5>
+                        <h5> Quality 1: {item.quality1} </h5>
+                        <h5> Quality 2: {item.quality2} </h5>
+                        <h5> Quality 3: {item.quality3} </h5>
+                        -------------------------------------
+                    </div>
+                ) : ("") )
+            )}
+        </div>
+
+        <button onClick={savedetail}>Confirm Cart</button>
 
         {/*<button onClick={val}>Hello</button>
       {
