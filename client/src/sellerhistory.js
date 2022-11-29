@@ -1,16 +1,15 @@
-
 import {useEffect, useState} from "react";
 import Axios from "axios";
 
 function App() {
 
-    const [buydetails, setBuydetails] = useState([]);
+    const [selldetails, setSelldetails] = useState([]);
 
     useEffect(() => {
-    Axios.post('http://localhost:9091/api/buy/confirm', {
-        custEmail: "abcd@gmail.com"
+    Axios.post('http://localhost:9091/api/sell/confirm', {
+        sellerEmail: "abcd@gmail.com"
     }).then((response) => {
-        setBuydetails(response.data);
+        setSelldetails(response.data);
         console.log(response)
         if (response.data == 'success') {
             window.location.href = "http://localhost:3000/login";
@@ -22,17 +21,17 @@ function App() {
         <><div>
             <center>
                 <h1 id="buyconfirmation">
-                    Buyer History
+                    Seller History
                 </h1>
             </center>
         </div>
             <div id="details">
-                {buydetails.map((val, key)=>{
+                {selldetails.map((val1, key)=>{
                     return <>
                         <div>
-                            Bill Number : {val.billNo}
+                            Bill Number : {val1.billNo}
                             <br></br>
-                            Total Amount : {val.totalAmt}
+                            Total Amount : {val1.totalAmt}
                         </div>
                     </>
                 })}

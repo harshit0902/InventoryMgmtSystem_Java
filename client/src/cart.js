@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 
 let cart=[];
 let send=[];
+let s = "";
 //import { useState } from "react";
 
 function App() {
@@ -82,8 +83,6 @@ function App() {
      q_2 : parsedobj.quality_2 ,
               
           itemNAme : "Cotton"
-
-
     }*/ 
     // console.log(cart);
     // cart[0].itemName = 'Steel';
@@ -96,7 +95,6 @@ function App() {
     localStorage.setItem("cart1",jsonobj1);
     
     const ctr= localStorage.getItem("cart1");
-
     const parsedobj1 =JSON.parse(ctr);
     console.log(parsedobj1);
     console.log(parsedobj1.q_1,parsedobj1.q_2,parsedobj1.itemNAme[0],parsedobj1.itemNAme[1]);
@@ -123,7 +121,29 @@ function App() {
         cart[0].quality3 = parsedobj1.quality_3;
         console.log(cart);*/
     //}
+    // const deleteval = () {
+    //   return(
+    //     <div>
+    //     {cart.map((item)=>(
+    //         item.quantity>0 ? (
+    //             <div key={item.itemName}>
+    //                 <h5> Item Name: {item.itemName} </h5>
+    //                 <h5> Quantity: {item.quantity} </h5>
+    //                 <h5> Quality 1: {item.quality1} </h5>
+    //                 <h5> Quality 2: {item.quality2} </h5>
+    //                 <h5> Quality 3: {item.quality3} </h5>
+    //                 <h5><button onClick={ ()=> {item.quantity=0,item.quality1=0,item.quality2=0,item.quality3=0
+    //                ,deleteval }
+    //                }>Delete</button></h5>
+    //                 -------------------------------------
+    //             </div>
+    //         ) : ("") )
+    //     )}
+    // </div>
 
+    //   )
+
+    // }
     const savedetail = () => {
         for(let i=0 ; i<cart.length ; i++)
         {
@@ -146,7 +166,7 @@ function App() {
         });
     }
 
-    function multiple() {
+    //function multiple() {
         let i1 = 'a';
         let i2 = 'b';
         let i3 = 'c';
@@ -167,7 +187,7 @@ function App() {
         cart.push({itemName:i8, quantity:0, quality1:0, quality2:0, quality3:0});
         cart.push({itemName:i9, quantity:0, quality1:0, quality2:0, quality3:0});
         cart.push({itemName:i10, quantity:0, quality1:0, quality2:0, quality3:0});
-        console.log(cart);
+        //console.log(cart);
         cart[0].itemName='Cotton';
         cart[1].itemName='Jute';
         cart[2].itemName='Coffee';
@@ -224,32 +244,32 @@ function App() {
               console.log(cart[i].quantity+1);
                 console.log(cart[i].itemName);}
         }*/
-    }
+    //}
 
-    function display() {
-        for(let i=0 ; i<cart.length ; i++)
-        {
-            if(cart[i].quantity > 0){
-               console.log(cart[i].quantity+1);
-                 console.log(cart[i].itemName);
-              {cart[i].itemName}
-                
-                {cart[i].quantity}
-                
-                {cart[i].quality1}
-                
-                {cart[i].quality2}
-                
-                {cart[i].quality3}
-              
-                
+    /*function display() {
+        /*return (
+            <>
+                <div>
+                    {cart.map((item)=>(
+                            <div key={item.itemName}>
+                                <h5> Item Name: {item.itemName} </h5>
+                                <h5> Quantity: {item.quantity} </h5>
+                                <h5> Quality 1: {item.quality1} </h5>
+                                <h5> Quality 2: {item.quality2} </h5>
+                                <h5> Quality 3: {item.quality3} </h5>
+                                -------------------------------------
+                            </div>
+                        )
+                    )}
+                </div>
+            </>)*/
             
-            }
-        }
-    }
+function deleteval(a,b,c,d )
+{
+  a=0;b=0;c=0;d=0;
 
-
-return (
+}
+ return (
     <><div>
     <center>
       <h1 id="cart">
@@ -258,9 +278,34 @@ return (
     </center>
   </div>
 
-        <button onClick={multiple}>check</button>
-        <button onClick={savedetail}>Hello</button>
-        <button onClick={display}>Hi</button>
+        {/*for(i=0 ; i<cart.length ; i++)
+        {
+            if(cart[i].quantity > 0){
+            s = s + "Item Name: " + cart[i].itemName + ", Quantity: " + cart[i].quantity + ", Quality 1: " + cart[i].quality1 + ", Quality 2: " + cart[i].quality2 + "Quality 3: " + cart[i].quality3;
+            {s}
+            }
+            s = "";
+        }*/}
+
+        <div>
+            {cart.map((item)=>(
+                item.quantity>0 ? (
+                    <div key={item.itemName}>
+                        <h5> Item Name: {item.itemName} </h5>
+                        <h5> Quantity: {item.quantity} </h5>
+                        <h5> Quality 1: {item.quality1} </h5>
+                        <h5> Quality 2: {item.quality2} </h5>
+                        <h5> Quality 3: {item.quality3} </h5>
+                        <h5><button onClick={ ()=>{{deleteval(item.quantity,item.quality1,item.quality2,item.quality3)
+                        }
+                         }}>Delete</button></h5>
+                        -------------------------------------
+                    </div>
+                ) : ("") )
+            )}
+        </div>
+
+        <button onClick={savedetail}>Confirm Cart</button>
 
         {/*<button onClick={val}>Hello</button>
       {

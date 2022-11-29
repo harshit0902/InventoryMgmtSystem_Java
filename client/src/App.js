@@ -33,6 +33,8 @@ import ViewItem from './view_item';
 import Customer from '/allcustomer';
 import Supplier from './allsupplier';
 import Ship from './shipping';
+import Buyhistory from './buyerhistory';
+import Sellhistory from './sellerhistory';
 // import Header from "./navbar1";
 // import Footer from "./footer";
 
@@ -84,7 +86,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <Admin />
+            <Itemlistnew />
 
         </div>
         </div>

@@ -42,6 +42,8 @@ import ViewItem from './view_item';
 import Customer from './allcustomer';
 import Supplier from './allsupplier';
 import Ship from './shipping';
+import Buyhistory from './buyerhistory';
+import Sellhistory from './sellerhistory';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -87,6 +89,8 @@ root.render(
                       <Route path='/shipping' element={<Ship />}></Route>
                       <Route path='/allcustomer' element={<Customer />}></Route>
                       <Route path='/allsupplier' element={<Supplier />}></Route>
+                      <Route path='/buyerhistory' element={<Buyhistory />}></Route>
+                      <Route path='/sellerhistory' element={<Sellhistory />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                   </Routes>
               </BrowserRouter>

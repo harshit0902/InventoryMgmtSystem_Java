@@ -199,8 +199,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
         </h1>
       </center>
 
-            <button onClick={() => {
-        } }>Confirm</button>
+           
       </div></>
        
   

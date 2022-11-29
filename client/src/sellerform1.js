@@ -94,8 +94,7 @@ function SellerForm1()
         </h1>
       </center>
 
-        <button onClick={() => {
-    } }>Confirm</button>
+       
   </div></>
    
 
