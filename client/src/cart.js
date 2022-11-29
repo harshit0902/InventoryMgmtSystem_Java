@@ -4,6 +4,7 @@ import Axios from "axios";
 let cart=[];
 let send=[];
 let s = "";
+let val=0;
 //import { useState } from "react";
 
 function App() {
@@ -154,7 +155,7 @@ function App() {
 
         const pass = {"it":send}
         console.log(send);
-        console.log(pass);
+        //console.log(pass);
         Axios.post('http://localhost:9091/api/buy/normal', {
             it: send
         }).then((response) => {
@@ -265,14 +266,24 @@ function App() {
                 </div>
             </>)*/
             
-function deleteval(a,b,c,d )
+function display()
 {
-  a=0;b=0;c=0;d=0;
+    {cart.map((item)=>(
+        item.quantity>0 ? (
+            <div key={item.itemName}>
+                <h5> Item Name: {item.itemName} </h5>
+                <h5> Quantity: {item.quantity} </h5>
+                <h5> Quality 1: {item.quality1} </h5>
+                <h5> Quality 2: {item.quality2} </h5>
+                <h5> Quality 3: {item.quality3} </h5>
 
+                <h5><button onClick={ ()=>{console.log(item); item.quantity=0; item.quality1=0; item.quality2=0; item.quality3=0; display()}}>Delete</button></h5>
+
+                -------------------------------------
+            </div>
+        ) : ("") )
+    )}
 }
- 
-
-
 
         /*return (
             <>
@@ -320,9 +331,15 @@ return (
                         <h5> Quality 2: {item.quality2} </h5>
                         <h5> Quality 3: {item.quality3} </h5>
 
-                        <h5><button onClick={ ()=>{{deleteval(item.quantity,item.quality1,item.quality2,item.quality3)
-                        }
-                         }}>Delete</button></h5>
+                        {/*let obj = {
+                            names: item.itemName,
+                            quantity: item.quantity,
+                            quality1: item.quality1,
+                            quality2: item.quality2,
+                            quality3: item.quality3
+                        }*/}
+
+                        <h5><button onClick={ ()=>{console.log(item); item.quantity=0; item.quality1=0; item.quality2=0; item.quality3=0; display()}}>Delete</button></h5>
 
                         -------------------------------------
                     </div>

@@ -24,21 +24,21 @@ function App() {
             // setUserdetails(response.data);
             //console.log(response.data)
             if (response.data === "Success" && capcthaEntered === capctha) {
-                /*obj = Object.values(response.data);
+                /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
-                localStorage.setItem("name", obj[0].name);
+                /*localStorage.setItem("name", obj[0].name);
                 localStorage.setItem("uid", obj[0].uid);
 
                 if (obj[0].type === 'admin') {
                     window.location.href = "http://localhost:3000/admin_homepage"
                 } else {
                     window.location.href = "http://localhost:3000/homepage2"
-                }
+                }*/
 
             } else if (response.data === 'invalid') {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
-                localStorage.setItem("name", "");
+                /*localStorage.setItem("name", "");
             }*/
             console.log("Success");
             }
