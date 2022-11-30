@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Axios from "axios";
 
 let cart=[];
@@ -265,10 +265,28 @@ function App() {
                     )}
                 </div>
             </>)*/
+
+    useEffect(() => {
+        cart.map((item)=>(
+            item.quantity>0 ? (
+                <div key={item.itemName}>
+                    <h5> Item Name: {item.itemName} </h5>
+                    <h5> Quantity: {item.quantity} </h5>
+                    <h5> Quality 1: {item.quality1} </h5>
+                    <h5> Quality 2: {item.quality2} </h5>
+                    <h5> Quality 3: {item.quality3} </h5>
+
+                    <h5><button onClick={ ()=>{console.log(item); item.quantity=0; item.quality1=0; item.quality2=0; item.quality3=0; display()}}>Delete</button></h5>
+
+                    -------------------------------------
+                </div>
+            ) : ("") )
+        )
+    });
             
 function display()
 {
-    {cart.map((item)=>(
+    /*{cart.map((item)=>(
         item.quantity>0 ? (
             <div key={item.itemName}>
                 <h5> Item Name: {item.itemName} </h5>
@@ -282,7 +300,7 @@ function display()
                 -------------------------------------
             </div>
         ) : ("") )
-    )}
+    )}*/
 }
 
         /*return (
