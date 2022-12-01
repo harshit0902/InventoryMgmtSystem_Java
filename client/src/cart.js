@@ -284,89 +284,109 @@ function Cart() {
         )
     });*/
             
-const display = (it) =>
+function display(n)
 {
-    if(it.itemName.equals("Cotton"))
+    if(n === "Cotton")
     {
         cart[0].quantity = 0;
         cart[0].quality1 = 0;
         cart[0].quality2 = 0;
         cart[0].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    else if(it.itemName.equals("Jute"))
+    else if(n === "Jute")
     {
         cart[1].quantity = 0;
         cart[1].quality1 = 0;
         cart[1].quality2 = 0;
         cart[1].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    else if(it.itemName.equals("Coffee"))
+    else if(n === "Coffee")
     {
         cart[2].quantity = 0;
         cart[2].quality1 = 0;
         cart[2].quality2 = 0;
         cart[2].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    else if(it.itemName.equals("Steel"))
+    else if(n === "Steel")
     {
         cart[3].quantity = 0;
         cart[3].quality1 = 0;
         cart[3].quality2 = 0;
         cart[3].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Aluminium"))
+    if(n === "Aluminium")
     {
         cart[4].quantity = 0;
         cart[4].quality1 = 0;
         cart[4].quality2 = 0;
         cart[4].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Copper"))
+    if(n === "Copper")
     {
         cart[5].quantity = 0;
         cart[5].quality1 = 0;
         cart[5].quality2 = 0;
         cart[5].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Wood"))
+    if(n === "Wood")
     {
         cart[6].quantity = 0;
         cart[6].quality1 = 0;
         cart[6].quality2 = 0;
         cart[6].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Wheat"))
+    if(n === "Wheat")
     {
         cart[7].quantity = 0;
         cart[7].quality1 = 0;
         cart[7].quality2 = 0;
         cart[7].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Bajra"))
+    if(n === "Bajra")
     {
         cart[8].quantity = 0;
         cart[8].quality1 = 0;
         cart[8].quality2 = 0;
         cart[8].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    if(it.itemName.equals("Ragi"))
+    if(n === "Ragi")
     {
         cart[9].quantity = 0;
         cart[9].quality1 = 0;
         cart[9].quality2 = 0;
         cart[9].quality3 = 0;
+        console.log(n);
+        return true;
     }
 
-    cart.map((item)=>(
+    /*cart.map((item)=>(
         item.quantity>0 ? (
             <div key={item.itemName}>
                 <h5> Item Name: {item.itemName} </h5>
@@ -380,8 +400,15 @@ const display = (it) =>
                 -------------------------------------
             </div>
         ) : ("") )
-    )
+    )*/
+    return false;
 }
+
+    function update(it)
+    {
+        console.log(it);
+        cart = cart.filter(display);
+    }
 
 return (
 
@@ -420,7 +447,7 @@ return (
                             quality3: item.quality3
                         }*/}
 
-                        <h5><button onClick={ (item)=>{console.log(item); display(item)}}>Delete</button></h5>
+                        <h5><button onClick={update(item)}>Delete</button></h5>
 
                         -------------------------------------
                     </div>
