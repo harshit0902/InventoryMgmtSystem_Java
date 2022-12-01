@@ -27,15 +27,17 @@ function App() {
                 /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
                 /*localStorage.setItem("name", obj[0].name);
-                localStorage.setItem("uid", obj[0].uid);
+                localStorage.setItem("uid", obj[0].uid);*/
 
-                if (obj[0].type === 'admin') {
-                    window.location.href = "http://localhost:3000/admin_homepage"
-                } else {
-                    window.location.href = "http://localhost:3000/homepage2"
-                }*/
+                if (email === "admin@gmail.com") {
+                    window.location.href = "http://localhost:3000/admin"
+                } else if (email === "buyer1@gmail.com" || "abcd@gmail.com") {
+                    window.location.href = "http://localhost:3000/itemlistnew"
+                } else if (email === "seller1@gmail.com"  || "abcd@gmail.com") {
+                    window.location.href = "http://localhost:3000/sellerform"
+                }
 
-            } else if (response.data === 'invalid') {
+            } else if (response.data === "Failure") {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
                 /*localStorage.setItem("name", "");

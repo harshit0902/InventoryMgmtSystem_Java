@@ -1,13 +1,14 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Axios from "axios";
 
+let email = localStorage.getItem("email");
 function App() {
 
     const [selldetails, setSelldetails] = useState([]);
 
     useEffect(() => {
     Axios.post('http://localhost:9091/api/sell/confirm', {
-        sellerEmail: "abcd@gmail.com"
+        sellEmail: email
     }).then((response) => {
         setSelldetails(response.data);
         console.log(response)
@@ -26,15 +27,26 @@ function App() {
             </center>
         </div>
             <div id="details">
-                {selldetails.map((val1, key)=>{
-                    return <>
-                        <div>
-                            Bill Number : {val1.billNo}
-                            <br></br>
-                            Total Amount : {val1.totalAmt}
+                {selldetails.map((bill)=>(
+                        <div key={bill.billNo}>
+                            <h5> Bill No.: {bill.billNo} </h5>
+                            <h5> Issue Date: {bill.issueDate}</h5>
+                            <h5> Items:
+                                {bill.itemSold.map((item)=>(
+                                        <div key={item.billNo}>
+                                            <h5> Item Name: {item.itemName} </h5>
+                                            <h5> Quantity: {item.quantity}</h5>
+                                            ***********************************
+                                        </div>
+                                    )
+                                )}
+                            </h5>
+                            <h5> Total Quantity: {bill.totalQty}</h5>
+                            <h5> Total Amount: {bill.totalAmt}</h5>
+                            -------------------------------------
                         </div>
-                    </>
-                })}
+                    )
+                )}
             </div>
             {/*<div>
                 <button onClick={() => {

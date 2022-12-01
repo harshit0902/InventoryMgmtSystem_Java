@@ -92,7 +92,7 @@ public class AdminItemService {
 
     public List<Credentials> findCustomers() {
         Query q5 = new Query();
-        q5.addCriteria(Criteria.where("typeOfAcc").is("buyer"));
+        q5.addCriteria(Criteria.where("typeOfAcc").is("Buyer"));
         List<Credentials> data = mongoOperations.find(q5, Credentials.class);
         System.out.println(data);
         if(data != null)
@@ -103,7 +103,7 @@ public class AdminItemService {
 
     public List<Credentials> findSuppliers() {
         Query q6 = new Query();
-        q6.addCriteria(Criteria.where("typeOfAcc").is("seller"));
+        q6.addCriteria(Criteria.where("typeOfAcc").is("Seller"));
         List<Credentials> data = mongoOperations.find(q6, Credentials.class);
         if(data != null)
             return data;

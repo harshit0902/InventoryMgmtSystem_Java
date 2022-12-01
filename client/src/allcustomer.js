@@ -10,7 +10,7 @@ function Allcustomer()
     const [customerDetails, setcustomerDetails] = useState([]);
 
     useEffect(() => {
-         Axios.get('http://localhost:9091/api/admin/displayitem', {
+         Axios.get('http://localhost:9091/api/admin/displaycustomer', {
         }).then((response) => {
              setcustomerDetails(response.data);
             /*console.log(response)
@@ -24,9 +24,11 @@ function Allcustomer()
         <>
     <div>
         {customerDetails.map((c)=>(
-                <div key={c.id}>
-                    <h5> Customer Name: {c.Name} </h5>
-                    <h5>Customer Email: {c.email}</h5>
+                <div key={c.email}>
+                    <h5> Customer Name: {c.username} </h5>
+                    <h5> Customer Email: {c.email}</h5>
+                    <h5> Customer Mobile Number: {c.mobNo}</h5>
+                    <h5> Customer Address: {c.address}</h5>
                     -------------------------------------
                 </div>
             )

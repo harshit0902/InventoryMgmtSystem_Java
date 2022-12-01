@@ -10,7 +10,7 @@ function Allsupplier()
     const [supplierDetails, setsupplierDetails] = useState([]);
 
     useEffect(() => {
-         Axios.get('http://localhost:9091/api/admin/displayitem', {
+         Axios.get('http://localhost:9091/api/admin/displaysupplier', {
         }).then((response) => {
              setsupplierDetails(response.data);
             /*console.log(response)
@@ -24,9 +24,11 @@ function Allsupplier()
         <>
     <div>
         {supplierDetails.map((s)=>(
-                <div key={s.id}>
-                    <h5> Supplier Name: {s.Name} </h5>
-                    <h5>Supplier Email: {s.email}</h5>
+                <div key={s.email}>
+                    <h5> Supplier Name: {s.username} </h5>
+                    <h5> Supplier Email: {s.email}</h5>
+                    <h5> Supplier Mobile Number: {s.mobNo}</h5>
+                    <h5> Supplier Address: {s.address}</h5>
                     -------------------------------------
                 </div>
             )
