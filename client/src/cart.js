@@ -7,7 +7,7 @@ let s = "";
 let val=0;
 //import { useState } from "react";
 
-function App() {
+function Cart() {
 
     const cott= localStorage.getItem("cottData");
     const cottobj =JSON.parse(cott);
@@ -266,7 +266,7 @@ function App() {
                 </div>
             </>)*/
 
-    useEffect(() => {
+    /*useEffect(() => {
         cart.map((item)=>(
             item.quantity>0 ? (
                 <div key={item.itemName}>
@@ -282,11 +282,91 @@ function App() {
                 </div>
             ) : ("") )
         )
-    });
+    });*/
             
-function display()
+const display = (it) =>
 {
-    /*{cart.map((item)=>(
+    if(it.itemName.equals("Cotton"))
+    {
+        cart[0].quantity = 0;
+        cart[0].quality1 = 0;
+        cart[0].quality2 = 0;
+        cart[0].quality3 = 0;
+    }
+
+    else if(it.itemName.equals("Jute"))
+    {
+        cart[1].quantity = 0;
+        cart[1].quality1 = 0;
+        cart[1].quality2 = 0;
+        cart[1].quality3 = 0;
+    }
+
+    else if(it.itemName.equals("Coffee"))
+    {
+        cart[2].quantity = 0;
+        cart[2].quality1 = 0;
+        cart[2].quality2 = 0;
+        cart[2].quality3 = 0;
+    }
+
+    else if(it.itemName.equals("Steel"))
+    {
+        cart[3].quantity = 0;
+        cart[3].quality1 = 0;
+        cart[3].quality2 = 0;
+        cart[3].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Aluminium"))
+    {
+        cart[4].quantity = 0;
+        cart[4].quality1 = 0;
+        cart[4].quality2 = 0;
+        cart[4].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Copper"))
+    {
+        cart[5].quantity = 0;
+        cart[5].quality1 = 0;
+        cart[5].quality2 = 0;
+        cart[5].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Wood"))
+    {
+        cart[6].quantity = 0;
+        cart[6].quality1 = 0;
+        cart[6].quality2 = 0;
+        cart[6].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Wheat"))
+    {
+        cart[7].quantity = 0;
+        cart[7].quality1 = 0;
+        cart[7].quality2 = 0;
+        cart[7].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Bajra"))
+    {
+        cart[8].quantity = 0;
+        cart[8].quality1 = 0;
+        cart[8].quality2 = 0;
+        cart[8].quality3 = 0;
+    }
+
+    if(it.itemName.equals("Ragi"))
+    {
+        cart[9].quantity = 0;
+        cart[9].quality1 = 0;
+        cart[9].quality2 = 0;
+        cart[9].quality3 = 0;
+    }
+
+    cart.map((item)=>(
         item.quantity>0 ? (
             <div key={item.itemName}>
                 <h5> Item Name: {item.itemName} </h5>
@@ -295,30 +375,13 @@ function display()
                 <h5> Quality 2: {item.quality2} </h5>
                 <h5> Quality 3: {item.quality3} </h5>
 
-                <h5><button onClick={ ()=>{console.log(item); item.quantity=0; item.quality1=0; item.quality2=0; item.quality3=0; display()}}>Delete</button></h5>
+                <h5><button onClick={ ()=>{console.log(item); display(item)}}>Delete</button></h5>
 
                 -------------------------------------
             </div>
         ) : ("") )
-    )}*/
+    )
 }
-
-        /*return (
-            <>
-                <div>
-                    {cart.map((item)=>(
-                            <div key={item.itemName}>
-                                <h5> Item Name: {item.itemName} </h5>
-                                <h5> Quantity: {item.quantity} </h5>
-                                <h5> Quality 1: {item.quality1} </h5>
-                                <h5> Quality 2: {item.quality2} </h5>
-                                <h5> Quality 3: {item.quality3} </h5>
-                                -------------------------------------
-                            </div>
-                        )
-                    )}
-                </div>
-            </>)*/
 
 return (
 
@@ -357,7 +420,7 @@ return (
                             quality3: item.quality3
                         }*/}
 
-                        <h5><button onClick={ ()=>{console.log(item); item.quantity=0; item.quality1=0; item.quality2=0; item.quality3=0; display()}}>Delete</button></h5>
+                        <h5><button onClick={ (item)=>{console.log(item); display(item)}}>Delete</button></h5>
 
                         -------------------------------------
                     </div>
@@ -389,7 +452,7 @@ return (
 )
 }
 
-export default App;
+export default Cart;
 
 
 
