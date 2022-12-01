@@ -42,7 +42,8 @@ import ViewItem from './view_item';
 import Customer from './allcustomer';
 import Supplier from './allsupplier';
 import Ship from './shipping';
-
+import AdminNavbar from "./admin_navbar";
+import Navbar from "./navbar";
 import Buyhistory from './buyerhistory';
 import Sellhistory from './sellerhistory';
 
@@ -96,7 +97,8 @@ root.render(
                       <Route path='/buyerhistory' element={<Buyhistory />}></Route>
                       <Route path='/sellerhistory' element={<Sellhistory />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
-                      
+                      <Route path='/admin_navbar' element={<AdminNavbar />}></Route>
+                      <Route path='/navbar' element={<Navbar />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>
