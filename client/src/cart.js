@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
 
-let cart=[];
+//let cart=[];
 let send=[];
 let s = "";
 let val=0;
 //import { useState } from "react";
 
 function Cart() {
-
+    const [cart, setCart] = useState([]);
     const cott= localStorage.getItem("cottData");
     const cottobj =JSON.parse(cott);
     const jut= localStorage.getItem("jutData");
