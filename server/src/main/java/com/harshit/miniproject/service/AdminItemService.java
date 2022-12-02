@@ -111,6 +111,16 @@ public class AdminItemService {
             return null;
     }
 
+    public Item getEditData(Item name) {
+        Query q7 = new Query();
+        q7.addCriteria(Criteria.where("itemName").is(name.getItemName()));
+        Item data = mongoOperations.findOne(q7, Item.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
     /*public double findPrice(int itemNo) {
         Query q1 = new Query();
         q1.addCriteria(Criteria.where("itemID").is(itemNo));

@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 code {
@@ -51,6 +55,12 @@ code {
   margin-bottom: -100px;
 } */
 
+#footer-bottom {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .footer {
   /* position: fixed; */
   /* position: static; */
@@ -59,7 +69,7 @@ code {
   display: grid;
   grid-template-columns: auto auto auto;
   align-content: space-between;
-  height: 70px;
+  height: 20px;
   color: blue;
   /* padding-top: 25px; */
   /* padding-left: 275px; */
@@ -76,7 +86,7 @@ code {
   /* width: 100%; */
   /* position: flex; */
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 image {
@@ -88,8 +98,8 @@ image {
 }
 
 .footer-sm {
-  width: 75px;
-  height: 50px;
+  width: 50px;
+  height: 10px;
   display: inline;
   color: white
 }
@@ -297,7 +307,7 @@ select {
 
 #navbar2 {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   justify-content: space-between;
   /* height: 200px; */
 }
@@ -563,6 +573,7 @@ select {
 
 #pic {
   border: 4px #000f4d;
+  width: 30%;
 }
 
 #maintable {
@@ -626,4 +637,8 @@ select {
 
 #number {
   font-size: 20px;
+}
+
+#form {
+  flex: 1;
 }

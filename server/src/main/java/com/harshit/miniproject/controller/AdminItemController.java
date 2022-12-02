@@ -102,6 +102,15 @@ public class AdminItemController {
             return null;
     }
 
+    @PostMapping("/getdata")
+    public Item editData(@RequestBody Item name){
+        Item ans = adminItemService.getEditData(name);
+        if(ans != null)
+            return ans;
+        else
+            return null;
+    }
+
     /*@PostMapping("/normal")
     public String normalOrder(@RequestBody ItemList normal){
         //JSONObject obj = new JSONObject(normal);

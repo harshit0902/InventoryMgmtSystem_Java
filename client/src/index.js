@@ -46,8 +46,11 @@ import AdminNavbar from "./admin_navbar";
 import Navbar from "./navbar";
 import Buyhistory from './buyerhistory';
 import Sellhistory from './sellerhistory';
-
-
+import CustomerNavbar from './customer_navbar'
+import SupplierNavbar from "./supplier_navbar";
+import About from './about'
+import Footer from './footer';
+import Logout from './logout'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -99,6 +102,11 @@ root.render(
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
                       <Route path='/admin_navbar' element={<AdminNavbar />}></Route>
                       <Route path='/navbar' element={<Navbar />}></Route>
+                      <Route path='/customer_navbar' element={<CustomerNavbar />}></Route>
+                      <Route path='/supplier_navbar' element={<SupplierNavbar />}></Route>
+                      <Route path='/about' element={<About />}></Route>
+                      <Route path='/footer' element={<Footer />}></Route>
+                      <Route path='/logout' element={<Logout />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
+import Header from "./supplier_navbar";
+import Footer from "./footer"
 
 let email = localStorage.getItem("email");
 function App() {
@@ -20,6 +22,7 @@ function App() {
 
     return (
         <><div>
+            <Header />
             <center>
                 <h1 id="buyconfirmation">
                     Seller History
@@ -57,8 +60,9 @@ function App() {
                 }}>Add to cart</button>
                 <button>Special Request?</button>
 
-            </div>*/}</>
-
+            </div>*/}
+            <Footer />
+        </>
     )
 }
 export default App;

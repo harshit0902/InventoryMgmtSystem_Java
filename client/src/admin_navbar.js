@@ -9,7 +9,7 @@ function AdminNavbar() {
     return (
         <nav id="adminnav">
             <div class="navelement-img">
-                {/* <img src="logonew.jpg" ></img> */}
+                <img src="logonew.jpg" alt="Logo"></img>
             </div>
             <div class="navelement">
                 <NavLink to='/admin'><div class="navelement">HOME</div></NavLink>
@@ -43,7 +43,14 @@ function AdminNavbar() {
                 </button>
                 <div class="dropdown-content">
                     <Link to='/airline_routedetails'>View Suppliers</Link>
-                    {/* <Link to='/cargo_status'>View your Cargo Status</Link> */}
+                </div>
+            </div>
+            <div className="dropdown">
+                <button className="dropbtn">
+                    SHIPPING
+                </button>
+                <div className="dropdown-content">
+                    <Link to='/airline_routedetails'>Ship Orders</Link>
                 </div>
             </div>
             <div>

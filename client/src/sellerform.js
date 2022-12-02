@@ -2,9 +2,12 @@ import React from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 function SellerForm()
 {
+
   const navigate=useNavigate()
 
   const sellcottData={
@@ -114,7 +117,8 @@ localStorage.setItem("sellragData",jsonobjsellrag);
     return (
     
       
-        <><div>
+        <><div id="form">
+            <Header />
           <center>
         <h1 id="Items_new_sell">
            Cotton 
@@ -198,8 +202,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
            
         </h1>
       </center>
-
-           
+            <Footer />
       </div></>
        
   
