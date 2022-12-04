@@ -17,7 +17,7 @@ import Wood from './wood'
 import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
-import Cart from './cart'
+
 import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
@@ -72,7 +72,7 @@ root.render(
                       <Route path='/wheat' element={<Wheat />}></Route>
                       <Route path='/bajra' element={<Bajra />}></Route>
                       <Route path='/ragi' element={<Ragi />}></Route>
-                      <Route path='/cart' element={<Cart />}></Route>
+                      
                       <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
                       <Route path='/itemlistnew1' element={<Itemlistnew1 />}></Route>
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
