@@ -35,6 +35,10 @@ public class BuyerInvoice {
         this.special = special;
     }
 
+    public BuyerInvoice(String custEmail) {
+        this.custEmail = custEmail;
+    }
+
     public String getcustEmail() {
         return custEmail;
     }

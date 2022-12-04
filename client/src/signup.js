@@ -16,7 +16,7 @@ function App() {
     const [account, setAcc]= useState("");
     const savedetail = () => {
         if (emailregex.test(email) && mobno.length == 10 &&  password===confpassword) {
-            Axios.post('http://localhost:9090/api/credentials/signup', {
+            Axios.post('http://localhost:9091/api/credentials/signup', {
                 username: name,
                 email: email,
                 password: password,

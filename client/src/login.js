@@ -17,28 +17,30 @@ function App() {
         setCaptcha(Math.random().toString(36).substring(2, 8))
     }
     const savedetail = () => {
-        Axios.post('http://localhost:9090/api/credentials/login', {
+        Axios.post('http://localhost:9091/api/credentials/login', {
             email: email,
             password: password
         }).then((response) => {
             // setUserdetails(response.data);
             //console.log(response.data)
             if (response.data === "Success" && capcthaEntered === capctha) {
-                /*obj = Object.values(response.data);
+                /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
-                localStorage.setItem("name", obj[0].name);
-                localStorage.setItem("uid", obj[0].uid);
+                /*localStorage.setItem("name", obj[0].name);
+                localStorage.setItem("uid", obj[0].uid);*/
 
-                if (obj[0].type === 'admin') {
-                    window.location.href = "http://localhost:3000/admin_homepage"
-                } else {
-                    window.location.href = "http://localhost:3000/homepage2"
+                if (email === "admin@gmail.com") {
+                    window.location.href = "http://localhost:3000/admin"
+                } else if (email === "buyer1@gmail.com" || "abcd@gmail.com") {
+                    window.location.href = "http://localhost:3000/itemlistnew"
+                } else if (email === "seller1@gmail.com"  || "abcd@gmail.com") {
+                    window.location.href = "http://localhost:3000/sellerform"
                 }
 
-            } else if (response.data === 'invalid') {
+            } else if (response.data === "Failure") {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
-                localStorage.setItem("name", "");
+                /*localStorage.setItem("name", "");
             }*/
             console.log("Success");
             }

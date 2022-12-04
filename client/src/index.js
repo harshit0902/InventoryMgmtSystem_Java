@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './cart';
+import App from './itemlistnew';
 import Login from './login'
 import Signup from './signup'
 import SpecialRequestForm from "./specialrequestform";
@@ -19,6 +19,39 @@ import Bajra from './bajra'
 import Ragi from './ragi'
 import Cart from './cart'
 import Itemlistnew from './itemlistnew'
+import SellerForm from './sellerform'
+import SellCotton from './sell_cotton'
+import SellJute from './sell_jute'
+import SellCoffee from './sell_coffee'
+import SellSteel from './sell_steel'
+import SellAluminium from './sell_aluminium'
+import SellCopper from './sell_copper'
+import SellWood from './sell_wood'
+import SellWheat from './sell_wheat'
+import SellBajra from "./sell_bajra";
+import SellRagi from './sell_ragi'
+import BuyerConfirmation from "./buyerconfirmation";
+import Itemlistnew1 from './itemlistnew1'
+import SellerForm1 from './sellerform1';
+import SellerCart from './sellercart';
+import Admin from './admin';
+import AddItem from './add_item';
+import DeleteItem from './delete_item';
+import EditItem from './edit_item';
+import ViewItem from './view_item';
+import Customer from './allcustomer';
+import Supplier from './allsupplier';
+import Ship from './shipping';
+import AdminNavbar from "./admin_navbar";
+import Navbar from "./navbar";
+import Buyhistory from './buyerhistory';
+import Sellhistory from './sellerhistory';
+import CustomerNavbar from './customer_navbar'
+import SupplierNavbar from "./supplier_navbar";
+import About from './about'
+import Footer from './footer';
+import Logout from './logout'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -39,12 +72,41 @@ root.render(
                       <Route path='/wheat' element={<Wheat />}></Route>
                       <Route path='/bajra' element={<Bajra />}></Route>
                       <Route path='/ragi' element={<Ragi />}></Route>
-
                       <Route path='/cart' element={<Cart />}></Route>
                       <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
-
+                      <Route path='/itemlistnew1' element={<Itemlistnew1 />}></Route>
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
-
+                      <Route path='/sellerform' element={<SellerForm />}></Route>
+                      <Route path='/sellercart' element={<SellerCart />}></Route>
+                      <Route path='/sellerform1' element={<SellerForm1 />}></Route>
+                      <Route path='/sell_cotton' element={<SellCotton />}></Route>
+                      <Route path='/sell_jute' element={<SellJute />}></Route>
+                      <Route path='/sell_coffee' element={<SellCoffee />}></Route>
+                      <Route path='/sell_steel' element={<SellSteel />}></Route>
+                      <Route path='/sell_aluminium' element={<SellAluminium />}></Route>
+                      <Route path='/sell_copper' element={<SellCopper/>}></Route>
+                      <Route path='/sell_wood' element={<SellWood />}></Route>
+                      <Route path='/sell_wheat' element={<SellWheat />}></Route>
+                      <Route path='/sell_bajra' element={<SellBajra />}></Route>
+                      <Route path='/sell_ragi' element={<SellRagi />}></Route>
+                      <Route path='/admin' element={<Admin />}></Route>
+                      <Route path='/add_item' element={<AddItem />}></Route>
+                      <Route path='/delete_item' element={<DeleteItem />}></Route>
+                      <Route path='/edit_item' element={<EditItem />}></Route>
+                      <Route path='/view_item' element={<ViewItem />}></Route>
+                      <Route path='/shipping' element={<Ship />}></Route>
+                      <Route path='/allcustomer' element={<Customer />}></Route>
+                      <Route path='/allsupplier' element={<Supplier />}></Route>
+                      <Route path='/buyerhistory' element={<Buyhistory />}></Route>
+                      <Route path='/sellerhistory' element={<Sellhistory />}></Route>
+                      <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
+                      <Route path='/admin_navbar' element={<AdminNavbar />}></Route>
+                      <Route path='/navbar' element={<Navbar />}></Route>
+                      <Route path='/customer_navbar' element={<CustomerNavbar />}></Route>
+                      <Route path='/supplier_navbar' element={<SupplierNavbar />}></Route>
+                      <Route path='/about' element={<About />}></Route>
+                      <Route path='/footer' element={<Footer />}></Route>
+                      <Route path='/logout' element={<Logout />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

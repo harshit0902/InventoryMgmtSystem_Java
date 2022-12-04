@@ -1,18 +1,21 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+@Document(collection = "SellerInvoice")
 public class SellerInvoice {
-    private int suppID;
-    private int billNo;
-    ArrayList<Item> itemSold = new ArrayList<Item>();
-    private Date issueDate;
+    private String sellEmail;
+    private int billNo = (int)(Math.random()*(1000-1+1)+1);
+    private ArrayList<Item> itemSold;
+    private String issueDate;
     private int totalQty;
     private double totalAmt;
 
     public SellerInvoice() {
-        suppID = 0;
+        sellEmail = null;
         billNo = 0;
         itemSold = null;
         issueDate = null;
@@ -20,8 +23,12 @@ public class SellerInvoice {
         totalAmt = 0.0;
     }
 
-    public SellerInvoice(int suppID, int billNo, ArrayList<Item> itemSold, Date issueDate, int totalQty, double totalAmt) {
-        this.suppID = suppID;
+    public SellerInvoice(String sellEmail) {
+        this.sellEmail = sellEmail;
+    }
+
+    public SellerInvoice(String sellEmail, int billNo, ArrayList<Item> itemSold, String issueDate, int totalQty, double totalAmt) {
+        this.sellEmail = sellEmail;
         this.billNo = billNo;
         this.itemSold = itemSold;
         this.issueDate = issueDate;
@@ -29,12 +36,20 @@ public class SellerInvoice {
         this.totalAmt = totalAmt;
     }
 
-    public int getSuppID() {
-        return suppID;
+    public SellerInvoice(String sellEmail, ArrayList<Item> itemSold, String issueDate, int totalQty, double totalAmt) {
+        this.sellEmail = sellEmail;
+        this.itemSold = itemSold;
+        this.issueDate = issueDate;
+        this.totalQty = totalQty;
+        this.totalAmt = totalAmt;
     }
 
-    public void setSuppID(int suppID) {
-        this.suppID = suppID;
+    public String getSellEmail() {
+        return sellEmail;
+    }
+
+    public void setSuppID(String sellEmail) {
+        this.sellEmail = sellEmail;
     }
 
     public int getBillNo() {
@@ -53,11 +68,11 @@ public class SellerInvoice {
         this.itemSold = itemSold;
     }
 
-    public Date getIssueDate() {
+    public String getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 
