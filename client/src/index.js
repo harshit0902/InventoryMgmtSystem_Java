@@ -41,7 +41,7 @@ import EditItem from './edit_item';
 import ViewItem from './view_item';
 import Customer from './allcustomer';
 import Supplier from './allsupplier';
-import Ship from './shipping';
+
 import AdminNavbar from "./admin_navbar";
 import Navbar from "./navbar";
 import Buyhistory from './buyerhistory';
@@ -94,7 +94,7 @@ root.render(
                       <Route path='/delete_item' element={<DeleteItem />}></Route>
                       <Route path='/edit_item' element={<EditItem />}></Route>
                       <Route path='/view_item' element={<ViewItem />}></Route>
-                      <Route path='/shipping' element={<Ship />}></Route>
+                      
                       <Route path='/allcustomer' element={<Customer />}></Route>
                       <Route path='/allsupplier' element={<Supplier />}></Route>
                       <Route path='/buyerhistory' element={<Buyhistory />}></Route>

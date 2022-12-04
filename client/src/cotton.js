@@ -2,6 +2,7 @@
 import { useState } from "react";
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import './index.css';
 let error = [];
 
 function App() {
@@ -103,7 +104,7 @@ function App() {
    
 return (
     
-      
+      <body>
       <><div>
     <center>
       <h1 id="cot">
@@ -147,8 +148,9 @@ return (
              }}>Add to cart</button>
       <button>Special Request?</button>
 
-    </div></>
-
+    </div>
+    </>
+    </body>
 )
 }
 export default App;

@@ -1,3 +1,4 @@
+import React from "react";
 import './index.css';
 import {BsTwitter} from 'react-icons/bs'
 import {BsFacebook} from 'react-icons/bs'
