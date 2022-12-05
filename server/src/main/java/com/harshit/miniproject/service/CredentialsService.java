@@ -44,7 +44,7 @@ public class CredentialsService {
             return 1;
     }
 
-    public int getUserLogin(String email, String password) {
+    public Credentials getUserLogin(String email, String password) {
         Query q1 = new Query();
         q1.addCriteria(Criteria.where("email").is(email));
         //System.out.println(q1);
@@ -53,13 +53,13 @@ public class CredentialsService {
         //System.out.println(password);
 
         if(em == null)
-            return 0;
+            return null;
 
         else {
             if(em.getPassword().equals(password))
-                return 1;
+                return em;
             else
-                return 0;
+                return null;
         }
 
         /*Criteria c2 = new Criteria();

@@ -24,21 +24,21 @@ function App() {
         }).then((response) => {
             // setUserdetails(response.data);
             //console.log(response.data)
-            if (response.data === "Success" && capcthaEntered === capctha) {
+            if (response.data !== null && capcthaEntered === capctha) {
                 /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
                 /*localStorage.setItem("name", obj[0].name);
                 localStorage.setItem("uid", obj[0].uid);*/
 
-                if (email === "admin@gmail.com") {
+                if (response.data === "Admin") {
                     window.location.href = "http://localhost:3000/admin"
-                } else if (email === "buyer1@gmail.com" || "abcd@gmail.com") {
+                } else if (response.data === "Buyer") {
                     window.location.href = "http://localhost:3000/itemlistnew"
-                } else if (email === "seller1@gmail.com"  || "abcd@gmail.com") {
+                } else if (response.data === "Seller") {
                     window.location.href = "http://localhost:3000/sellerform"
                 }
 
-            } else if (response.data === "Failure") {
+            } else if (response.data === null) {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
                 /*localStorage.setItem("name", "");
