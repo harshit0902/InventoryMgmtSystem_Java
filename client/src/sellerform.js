@@ -1,14 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
 import Header from './supplier_navbar'
 import Footer from './footer'
+import Axios from "axios";
 
 function SellerForm()
 {
 
   const navigate=useNavigate()
+
+    const [itemDetails, setItemDetails] = useState([]);
+
+    useEffect(() => {
+        Axios.get('http://localhost:9091/api/admin/displayitem', {
+        }).then((response) => {
+            setItemDetails(response.data);
+        });
+    }, []);
 
   const sellcottData={
       quantity : 0,
@@ -122,7 +132,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
           <center>
         <h1 id="Items_new_sell">
            Cotton 
-           <h6>Quantity needed  ="variable from backend" 
+           <h6>Quantity needed = <div>
+               {itemDetails.map((item)=>(
+                   item.itemName === "Cotton" ? (
+                       <div key={item.id}>
+                           {100-item.quantity}
+                       </div>
+                   ) : ("") )
+               )}
+           </div>
                 Minimum quality required =" variable from backend" 
                 Minimum quality required =" variable from backend"
                 Minimum quality required =" variable from backend"
@@ -132,7 +150,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Jute <h6>Quantity needed  ="variable from backend" 
+           Jute <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Jute" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_jute'>Supply now</Link></button></h6>
            
@@ -140,7 +166,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Coffee<h6>Quantity needed  ="variable from backend" 
+           Coffee<h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Coffee" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_coffee'>Supply now</Link></button></h6>
            
@@ -148,7 +182,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Steel <h6>Quantity needed  ="variable from backend" 
+           Steel <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Steel" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_steel'>Supply now</Link></button></h6>
            
@@ -156,15 +198,31 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Aluminium <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Aluminium <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Aluminium" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
+                Minimum quality required = " variable from backend"
                 <button id="button-result"><Link id="sign" to='/sell_aluminium'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Copper <h6>Quantity needed  ="variable from backend" 
+           Copper <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Copper" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_copper'>Supply now</Link></button></h6>
            
@@ -172,7 +230,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Wood <h6>Quantity needed  ="variable from backend" 
+           Wood <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Wood" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_wood'>Supply now</Link></button></h6>
            
@@ -180,7 +246,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Wheat <h6>Quantity needed  ="variable from backend" 
+           Wheat <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Wheat" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_wheat'>Supply now</Link></button></h6>
            
@@ -188,7 +262,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Bajra <h6>Quantity needed  ="variable from backend" 
+           Bajra <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Bajra" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_bajra'>Supply now</Link></button></h6>
            
@@ -196,7 +278,15 @@ localStorage.setItem("sellragData",jsonobjsellrag);
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Ragi <h6>Quantity needed  ="variable from backend" 
+           Ragi <h6>Quantity needed = <div>
+            {itemDetails.map((item)=>(
+                item.itemName === "Ragi" ? (
+                    <div key={item.id}>
+                        {100-item.quantity}
+                    </div>
+                ) : ("") )
+            )}
+        </div>
                 Minimum quality required =" variable from backend" 
                 <button id="button-result"><Link id="sign" to='/sell_ragi'>Supply now</Link></button></h6>
            
