@@ -5,9 +5,8 @@ import { NavLink, Link } from 'react-router-dom'
 import Header from './supplier_navbar'
 import Footer from './footer'
 import Axios from "axios";
-import Header from './supplier_navbar'
-import Footer from './footer'
 
+import './index.css';
 function SellerForm()
 {
 
@@ -130,7 +129,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
     
       
         <><Header /><div id="form">
-            <Header />
+            
           <center>
         <h1 id="Items_new_sell">
            Cotton 
@@ -295,7 +294,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
         </h1>
       </center>
             <Footer />
-      </div><Footer /></>
+      </div></>
        
   
   )

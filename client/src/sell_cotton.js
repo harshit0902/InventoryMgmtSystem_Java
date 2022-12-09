@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Header from './supplier_navbar'
 import Footer from './footer'
+import { textAlign } from "@mui/system";
 
 function App() {
     
@@ -76,13 +77,14 @@ function App() {
 return (
     
       
-      <><Header /><div>
+      <><Header /><div style={{backgroundColor:'black',textAlign:'center'}}>
     <center>
+      
       <h1 id="cot">
         Supply Cotton
       </h1>
     </center>
-  </div><div id="details">
+  <div id="details">
       <div>
         <label>Enter Quantity to be suppplied </label>
         <input type="number" placeholder='Enter in kg'
@@ -111,18 +113,20 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
-      <button onClick={() => {
+      <button className="button-methish" onClick={() => {
         Check1()
         Check2()
         Check3() 
         Checkqty()
        } }>Check</button>
-       <button onClick={() => {
+       <button className="button-methish"
+       onClick={() => {
         slocalstorage1()
              }}>Add to supply cart</button>
       
-
-    </div><Footer /></>
+      </div>
+      </div>
+   <Footer /></>
 
 )
 }
