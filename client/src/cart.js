@@ -3,7 +3,6 @@ import Axios from "axios";
 import Header from './customer_navbar'
 import Footer from './footer'
 
-let cart=[];
 //let cart=[];
 let send=[];
 let s = "";
@@ -12,7 +11,7 @@ let val=0;
 
 function Cart() {
 
-    const [cart, setCart] = useState([]);
+    //let [cart, setCart] = useState([]);
     const cott= localStorage.getItem("cottData");
     const cottobj =JSON.parse(cott);
     const jut= localStorage.getItem("jutData");
