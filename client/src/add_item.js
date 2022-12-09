@@ -1,6 +1,8 @@
 import { useState } from "react";
 import React from "react";
 import Axios from "axios";
+import Header from './admin_navbar'
+import Footer from './footer'
 
 function App() {
     //const [id, setid] = useState(0);
@@ -30,7 +32,7 @@ function App() {
 
 return (
 
-    <><div>
+    <><Header /><div>
   <center>
     <h1 id="cot">
       Add an Item
@@ -88,7 +90,7 @@ return (
      <button onClick={savedetail}>Add Item</button>
     
 
-  </div></>
+  </div><Footer /></>
 
 )
 }

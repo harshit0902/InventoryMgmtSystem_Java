@@ -1,8 +1,10 @@
-
 import { useState } from "react";
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import './index.css';
+import Header from './customer_navbar'
+import Footer from './footer'
+
 let error = [];
 
 function App() {
@@ -105,7 +107,7 @@ function App() {
 return (
     
       <body>
-      <><div>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Order Cotton
@@ -149,7 +151,7 @@ return (
       <button>Special Request?</button>
 
     </div>
-    </>
+    <Footer /></>
     </body>
 )
 }

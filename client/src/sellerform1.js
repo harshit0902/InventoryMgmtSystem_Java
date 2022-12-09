@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 function SellerForm1()
 {
@@ -9,7 +11,7 @@ function SellerForm1()
   return (
     
       
-    <><div>
+    <><Header /><div>
           <center>
         <h1 id="Items_new_sell">
            Cotton 
@@ -95,7 +97,7 @@ function SellerForm1()
       </center>
 
        
-  </div></>
+  </div><Footer /></>
    
 
 )

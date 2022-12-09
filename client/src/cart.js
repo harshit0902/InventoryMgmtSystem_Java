@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
+import Header from './customer_navbar'
+import Footer from './footer'
 
 let cart=[];
 //let cart=[];
@@ -386,7 +388,7 @@ function Cart() {
         cart = cart.filter(display);
     }
     return (
-        <><div>
+        <><Header /><div>
             <center>
                 <h1 id="cart">
                     Cart
@@ -439,7 +441,7 @@ function Cart() {
             {/* cart[0].itemName = "Steel"; */}
             {/* <button>Special Request?</button> */}
 
-        </>
+        <Footer /></>
     )
 }
 export default Cart;

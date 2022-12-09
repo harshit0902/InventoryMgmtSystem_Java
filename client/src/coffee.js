@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Header from './customer_navbar'
+import Footer from './footer'
 
 let error = [];
 
@@ -101,7 +103,7 @@ function App() {
 return (
     
       
-      <><div>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Order Coffee
@@ -144,7 +146,7 @@ return (
              }}>Add to cart</button>
       <button>Special Request?</button>
 
-    </div></>
+    </div><Footer /></>
 
 )
 }

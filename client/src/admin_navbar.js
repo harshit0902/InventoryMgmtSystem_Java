@@ -4,6 +4,7 @@ import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
 import './index.css'
 
+
 function AdminNavbar() {
 
     return (
@@ -42,7 +43,7 @@ function AdminNavbar() {
                     SUPPLIERS
                 </button>
                 <div class="dropdown-content">
-                    <Link to='/airline_routedetails'>View Suppliers</Link>
+                    <Link to='/allsupplier'>View Suppliers</Link>
                 </div>
             </div>
             <div className="dropdown">
@@ -50,7 +51,7 @@ function AdminNavbar() {
                     SHIPPING
                 </button>
                 <div className="dropdown-content">
-                    <Link to='/airline_routedetails'>Ship Orders</Link>
+                    <Link to='/shipping'>Ship Orders</Link>
                 </div>
             </div>
             <div>

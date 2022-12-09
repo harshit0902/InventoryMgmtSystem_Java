@@ -2,7 +2,8 @@ import React, {useEffect} from 'react'
 
 import { useState } from "react";
 import Axios from "axios";
-
+import Header from './admin_navbar'
+import Footer from './footer'
 
 
 function Allsupplier()
@@ -21,7 +22,13 @@ function Allsupplier()
     }, []);
 
     return (
-        <>
+        <><Header /><div>
+            <center>
+                <h1 id="cot">
+                    All Suppliers
+                </h1>
+            </center>
+        </div>
     <div>
         {supplierDetails.map((s)=>(
                 <div key={s.email}>
@@ -34,7 +41,7 @@ function Allsupplier()
             )
         )}
     </div>
-        </>
+        <Footer /></>
     );
 }
 export default Allsupplier;

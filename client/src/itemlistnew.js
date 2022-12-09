@@ -1,9 +1,10 @@
-
 import {useEffect, useState} from "react";
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
+import Header from './customer_navbar'
+import Footer from './footer'
 
 let cotton=0, jute=0, coffee=0, steel, aluminium=0, copper=0, wood=0, wheat=0, bajra=0, ragi=0;
 
@@ -124,7 +125,7 @@ localStorage.setItem("ragData",jsonobjrag);
 return (
 
 
-      <>
+      <><Header />
           <div>
         <center>
       <h1 id="Items_new">
@@ -266,7 +267,7 @@ return (
          
       </h1>
     </center>
-    </div></>
+    </div><Footer /></>
 
 
 )

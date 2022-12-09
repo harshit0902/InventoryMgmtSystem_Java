@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import {useParams} from "react-router-dom";
+import Header from './admin_navbar'
+import Footer from './footer'
 
 function App() {
     const [id, setid] = useState(0);
@@ -19,7 +21,7 @@ function App() {
     }
 
     return (
-        <><div>
+        <><Header /><div>
       <center>
         <h1 id="cot">
           Delete an Item
@@ -35,7 +37,7 @@ function App() {
         <button onClick={()=>savedetail(id)}>Delete Item</button>
 
 
-</div></>
+</div><Footer /></>
 
 )
 }

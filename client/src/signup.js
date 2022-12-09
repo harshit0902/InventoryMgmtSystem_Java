@@ -2,6 +2,8 @@ import { useState } from "react";
 import React from "react";
 import Axios from "axios";
 import Display from "./display";
+import Header from './navbar'
+import Footer from './footer'
 
 function App() {
     const emailregex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
@@ -39,7 +41,7 @@ function App() {
 
     return (
         <div id="Users">
-            
+            <Header />
             <div>
                 <center>
                     <h1 id="title">
@@ -111,7 +113,7 @@ function App() {
                         Account={value.Account}/>
                 </div>
             })*/}
-            
+            <Footer />
         </div>
     );
 }

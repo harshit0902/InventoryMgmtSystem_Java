@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 function App() {
     
@@ -74,7 +76,7 @@ function App() {
 return (
     
       
-      <><div>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Supply Steel
@@ -120,7 +122,7 @@ return (
              }}>Add to supply cart</button>
       
 
-    </div></>
+    </div><Footer /></>
 
 )
 }

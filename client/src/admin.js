@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
+import Footer from './footer'
 
 function Admin()
 { const navigate=useNavigate()
@@ -31,7 +32,7 @@ function Admin()
  <button onClick={()=> navigate('./allcustomer')}>View list of all customers</button>
  <button onClick={()=> navigate('./allsupplier')}>View list of all suppliers</button> */}
       
-  </div></>
+  </div><Footer /></>
    
 
 )

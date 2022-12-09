@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import Axios from "axios"
+import Header from './customer_navbar'
+import Footer from './footer'
 
 function App() {
     const [buydetails, setBuydetails] = useState([]);
 
       return (
-        <><div>
+        <><Header /><div>
             <center>
                 <h1 id="buyconfirmation">
                     Confirmation Page
@@ -31,7 +33,7 @@ function App() {
             }}>Add to cart</button>
             <button>Special Request?</button>
 
-        </div></>
+        </div><Footer /></>
 
       )
 }

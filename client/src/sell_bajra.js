@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 function App() {
     

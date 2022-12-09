@@ -1,7 +1,8 @@
 import { useState } from "react";
-
 import React from "react";
 import Axios from "axios";
+import Header from './customer_navbar'
+import Footer from './footer'
 // import Axios from "axios";
 // import Display from "./display";
 
@@ -256,7 +257,7 @@ function App1() {
 
     return (
         <div id="Users">
-
+            <Header />
             <div>
                 <center>
                     <h1 id="title">
@@ -314,7 +315,7 @@ function App1() {
                         Account={value.Account}/>
                 </div>
             })*/}
-
+        <Footer />
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import Axios from "axios";
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 let cart=[];
 let send=[];
@@ -139,7 +141,7 @@ function App() {
 
 
 return (
-    <><div>
+    <><Header /><div>
     <center>
       <h1 id="cart">
         Cart
@@ -167,7 +169,7 @@ return (
 
         {/* <button>Special Request?</button> */}
 
-    </>
+    <Footer /></>
 
 
         )

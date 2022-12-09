@@ -1,6 +1,8 @@
 import React from "react";
 import {useEffect, useState} from "react";
 import Axios from "axios";
+import Header from './admin_navbar'
+import Footer from './footer'
 
 let count = 0;
 function App() {
@@ -57,7 +59,7 @@ useEffect(() => {
 return (
     
       
-    <><div>
+    <><Header /><div>
   <center>
     <h1 id="cot">
       Edit an Item
@@ -115,7 +117,7 @@ return (
      <button onClick={savedetail}>Edit Item</button>
     
 
-  </div></>
+  </div><Footer /></>
 
 )
 }

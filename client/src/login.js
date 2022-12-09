@@ -2,6 +2,8 @@ import { useState } from "react";
 import React from "react";
 import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
+import Header from './navbar'
+import Footer from './footer'
 
 // import Display from "./display";
 
@@ -55,7 +57,7 @@ function App() {
     }
 
     return (
-        <>
+        <><Header />
             <div id="Users">
                 <div>
                     <center>
@@ -126,7 +128,7 @@ function App() {
                     })}
                     </table> */}
             </div>
-        </>
+        <Footer /></>
 
     );
 }

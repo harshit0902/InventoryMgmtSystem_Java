@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
-import Header from "./supplier_navbar";
-import Footer from "./footer"
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 let email = localStorage.getItem("email");
 function App() {
@@ -21,7 +21,7 @@ function App() {
     }, []);
 
     return (
-        <><div>
+        <><Header /><div>
             <Header />
             <center>
                 <h1 id="buyconfirmation">

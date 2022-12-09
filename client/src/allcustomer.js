@@ -2,6 +2,8 @@ import React, {useEffect} from 'react'
 
 import { useState } from "react";
 import Axios from "axios";
+import Header from './admin_navbar'
+import Footer from './footer'
 
 
 
@@ -21,7 +23,13 @@ function Allcustomer()
     }, []);
 
     return (
-        <>
+        <><Header /><div>
+            <center>
+                <h1 id="cot">
+                    All Customers
+                </h1>
+            </center>
+        </div>
     <div>
         {customerDetails.map((c)=>(
                 <div key={c.email}>
@@ -34,7 +42,7 @@ function Allcustomer()
             )
         )}
     </div>
-        </>
+        <Footer /></>
     );
 }
 export default Allcustomer;

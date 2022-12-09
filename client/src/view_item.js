@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
-
 import { useState } from "react";
 import Axios from "axios";
+import Header from './supplier_navbar'
+import Footer from './footer'
 
 const items =[
     {
@@ -35,7 +36,7 @@ function ViewItems()
     }, []);
 
     return (
-        <>
+        <><Header />
     <div>
         {itemDetails.map((item)=>(
                 <div key={item.id}>
@@ -51,7 +52,7 @@ function ViewItems()
             )
         )}
     </div>
-        </>
+        <Footer /></>
     );
 }
 export default ViewItems;

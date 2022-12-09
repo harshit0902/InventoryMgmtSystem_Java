@@ -3,13 +3,15 @@ import React, {useEffect, useState} from "react";
 import { NavLink, Link } from 'react-router-dom'
 import {BsFillPersonFill} from 'react-icons/bs'
 import Axios from "axios";
+import Header from './navbar'
+import Footer from './footer'
 import './index.css'
 
 function Navbar() {
 
     return (
         <div id="AboutUs">
-            {/*<Header />*/}
+            <Header />
             <div>
                 <center>
                     <h2 id="titlehead2">
@@ -48,7 +50,7 @@ function Navbar() {
                 </div>
             </div>
             <br></br>
-            {/*<Footer />*/}
+            <Footer />
         </div>
     );
 }

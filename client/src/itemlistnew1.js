@@ -2,13 +2,15 @@ import { useState } from "react";
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
+import Header from './customer_navbar'
+import Footer from './footer'
 
 function App() {
     const navigate=useNavigate()
     return (
     
       
-      <><div>
+      <><Header /><div>
          <center>
       <h1 id="Items_new">
           <h3> <button id="button-result"><Link id="sign" to='/cart'>Cart</Link></button></h3>
@@ -75,7 +77,7 @@ function App() {
          
       </h1>
     </center>
-    </div></>
+    </div><Footer /></>
      
 
 )
