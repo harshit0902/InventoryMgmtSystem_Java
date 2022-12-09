@@ -17,7 +17,6 @@ import Wood from './wood'
 import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
-
 import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
@@ -34,14 +33,14 @@ import BuyerConfirmation from "./buyerconfirmation";
 import Itemlistnew1 from './itemlistnew1'
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
-import Admin from './admin';
+import Admin_homepage from './admin_homepage';
 import AddItem from './add_item';
 import DeleteItem from './delete_item';
 import EditItem from './edit_item';
 import ViewItem from './view_item';
 import Customer from './allcustomer';
 import Supplier from './allsupplier';
-
+import Cart from './cart'
 import AdminNavbar from "./admin_navbar";
 import Navbar from "./navbar";
 import Buyhistory from './buyerhistory';
@@ -51,6 +50,9 @@ import SupplierNavbar from "./supplier_navbar";
 import About from './about'
 import Footer from './footer';
 import Logout from './logout'
+import Homepage1 from './homepage1'
+import Homepage2 from './homepage2'
+import Homepage3 from './homepage3'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -72,7 +74,7 @@ root.render(
                       <Route path='/wheat' element={<Wheat />}></Route>
                       <Route path='/bajra' element={<Bajra />}></Route>
                       <Route path='/ragi' element={<Ragi />}></Route>
-                      
+                      <Route path='/cart' element={<Cart />}></Route>
                       <Route path='/itemlistnew' element={<Itemlistnew />}></Route>
                       <Route path='/itemlistnew1' element={<Itemlistnew1 />}></Route>
                       <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
@@ -89,12 +91,11 @@ root.render(
                       <Route path='/sell_wheat' element={<SellWheat />}></Route>
                       <Route path='/sell_bajra' element={<SellBajra />}></Route>
                       <Route path='/sell_ragi' element={<SellRagi />}></Route>
-                      <Route path='/admin' element={<Admin />}></Route>
+                      <Route path='/admin_homepage' element={<Admin_homepage />}></Route>
                       <Route path='/add_item' element={<AddItem />}></Route>
                       <Route path='/delete_item' element={<DeleteItem />}></Route>
                       <Route path='/edit_item' element={<EditItem />}></Route>
                       <Route path='/view_item' element={<ViewItem />}></Route>
-                      
                       <Route path='/allcustomer' element={<Customer />}></Route>
                       <Route path='/allsupplier' element={<Supplier />}></Route>
                       <Route path='/buyerhistory' element={<Buyhistory />}></Route>
@@ -107,6 +108,9 @@ root.render(
                       <Route path='/about' element={<About />}></Route>
                       <Route path='/footer' element={<Footer />}></Route>
                       <Route path='/logout' element={<Logout />}></Route>
+                      <Route path='/homepage1' element={<Homepage1 />}></Route>
+                      <Route path='/homepage2' element={<Homepage2 />}></Route>
+                      <Route path='/homepage3' element={<Homepage3 />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

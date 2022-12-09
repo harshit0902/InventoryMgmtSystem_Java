@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import Header from './customer_navbar'
 import Footer from './footer'
+import {Link} from "react-router-dom";
 
-//let cart=[];
+let cart=[];
 let send=[];
 let s = "";
 let val=0;
@@ -418,13 +419,13 @@ function Cart() {
                             quality2: item.quality2,
                             quality3: item.quality3
                         }*/}
-                            <h5><button onClick={update(item)}>Delete</button></h5>
+                            {/*<h5><button onClick={update(item)}>Delete</button></h5>*/}
                             -------------------------------------
                         </div>
                     ) : ("") )
                 )}
             </div>
-            <button onClick={savedetail}>Confirm Cart</button>
+            <button onClick={savedetail}><Link id="sign" to='/homepage2'>Confirm Cart</Link></button>
             {/*<button onClick={val}>Hello</button>
       {
         cart.map((val)=>{

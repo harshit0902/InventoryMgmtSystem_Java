@@ -144,8 +144,9 @@ return (
        } }>check</button>
        <button onClick={() => {
         localstorage10()
-             }}>Add to cart</button>
-      <button>Special Request?</button>
+             }}><Link id="sign" to='/itemlistnew1'>Add to Cart</Link></button>
+          <br />
+          <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
       
     </div><Footer /></>
 

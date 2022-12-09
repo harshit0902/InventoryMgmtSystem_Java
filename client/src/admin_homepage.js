@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
 import Footer from './footer'
 
-function Admin()
+function Admin_homepage()
 { const navigate=useNavigate()
     return (
     
@@ -12,11 +12,7 @@ function Admin()
     <><div>
      <center>
     <h1 id="Items_new_sell">
-       ADMINISTRATOR HOMEPAGE 
-           
-       
-   
-       
+       ADMINISTRATOR HOMEPAGE
     </h1>
   </center>
   <button ><Link id="sign" to='/add_item'>Add Item</Link></button>
@@ -38,4 +34,4 @@ function Admin()
 )
 
 }
-export default Admin;
+export default Admin_homepage;

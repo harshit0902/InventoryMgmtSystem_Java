@@ -3,6 +3,7 @@ import { useState } from "react";
 import Axios from "axios";
 import Header from './supplier_navbar'
 import Footer from './footer'
+import {Link} from "react-router-dom";
 
 let cart=[];
 let send=[];
@@ -150,7 +151,7 @@ return (
   </div>
 
         <button onClick={multiple}>check</button>
-        <button onClick={savedetail}>Hello</button>
+        <button onClick={savedetail}><Link id="sign" to='/itemlistnew1'>Add to Supply Cart</Link></button>
 
         {/*<button onClick={val}>Hello</button>
       {

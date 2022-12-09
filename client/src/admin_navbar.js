@@ -13,7 +13,7 @@ function AdminNavbar() {
                 <img src="logonew.jpg" alt="Logo"></img>
             </div>
             <div class="navelement">
-                <NavLink to='/admin'><div class="navelement">HOME</div></NavLink>
+                <NavLink to='/admin_homepage'><div class="navelement">HOME</div></NavLink>
             </div>
             {/* <div class="navelement">
                 <NavLink to='/about2'>About</NavLink>
