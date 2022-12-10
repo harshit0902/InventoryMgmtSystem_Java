@@ -111,13 +111,14 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
-      <button onClick={() => {
+      <button className="button-methish" onClick={() => {
         Check1()
         Check2()
         Check3() 
         Checkqty()
        } }>Check</button>
-       <button onClick={() => {
+       <button className="button-methish"
+       onClick={() => {
         slocalstorage10()
              }}>Add to supply cart</button>
       

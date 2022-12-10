@@ -13,6 +13,12 @@ function SellerForm1()
       
     <><Header /><div>
           <center>
+      <h1 id="Items_new">
+          <h3> <button id="button-result"><Link id="sign" to='/cart'>Cart</Link></button></h3>
+         
+      </h1>
+      </center>
+          <center>
         <h1 id="Items_new_sell">
            Cotton 
            <h6>Quantity needed  ="variable from backend" 

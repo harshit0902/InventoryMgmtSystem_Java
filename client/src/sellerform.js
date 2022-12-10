@@ -142,9 +142,9 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                    ) : ("") )
                )}
            </div>
-                Minimum quality required =" variable from backend" 
-                Minimum quality required =" variable from backend"
-                Minimum quality required =" variable from backend"
+               <h4>Minimum quality required =" variable from backend"</h4> 
+               <h4>Minimum quality required =" variable from backend"</h4> 
+               <h4>Minimum quality required =" variable from backend"</h4> 
                 <button id="button-result"><Link id="sign" to='/sell_cotton'>Supply now</Link></button></h6>
 
         </h1>
@@ -160,7 +160,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               <h4> Minimum quality required =" variable from backend" </h4>
                 <button id="button-result"><Link id="sign" to='/sell_jute'>Supply now</Link></button></h6>
            
         </h1>
