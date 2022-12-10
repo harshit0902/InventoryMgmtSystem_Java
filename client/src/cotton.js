@@ -107,13 +107,13 @@ function App() {
 return (
     
       <body>
-      <><Header /><div>
+      <><Header /><div style={{backgroundColor:'black',textAlign:'center'}}>
     <center>
       <h1 id="cot">
         Order Cotton
       </h1>
     </center>
-  </div><div id="details">
+  <div id="details">
       <div>
         <label>Enter Quantity required </label>
         <input type="number" placeholder='Enter in kg'
@@ -149,7 +149,7 @@ return (
         localstorage1()
              }}>Add to cart</button>
       <button>Special Request?</button>
-
+</div>
     </div>
     <Footer /></>
     </body>

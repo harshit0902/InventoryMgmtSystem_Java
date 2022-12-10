@@ -128,7 +128,7 @@ return (
       <><Header />
           <div>
         <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Cotton <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Cotton" ? (
@@ -142,7 +142,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Jute <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Jute" ? (
@@ -156,7 +156,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Coffee <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Coffee" ? (
@@ -170,7 +170,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Steel <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Steel" ? (
@@ -184,7 +184,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Aluminium <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Aluminium" ? (
@@ -198,7 +198,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Copper <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Copper" ? (
@@ -212,7 +212,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Wood <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Wood" ? (
@@ -226,7 +226,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Wheat <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Wheat" ? (
@@ -240,7 +240,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Bajra <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Bajra" ? (
@@ -254,7 +254,7 @@ return (
       </h1>
     </center>
     <center>
-      <h1 id="Items_new">
+      <h1 id="Items_new_sell">
          Ragi <h3>Quantity available <div>
           {itemDetails.map((item)=>(
               item.itemName === "Ragi" ? (
