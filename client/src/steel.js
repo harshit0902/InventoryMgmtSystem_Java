@@ -139,16 +139,15 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
-      <button onClick={() => {
-        Check()
-
-       } 
-       }>check</button>
-       <button onClick={() => {
+      <center>
+      <button className="button-methish" onClick={() => {
+            Check()
+       } }>Check</button>
+       <button className="button-methish" onClick={() => {
         localstorage4()
              }}>Add to cart</button>
-
-      <button>Special Request?</button>
+      <button className="button-methish">Special Request?</button>
+      </center>
 
     </div><Footer /></>
 
