@@ -119,6 +119,7 @@ function Cart() {
     cart[9].quality3=ragobj.quality_3;
     useEffect(() => {
         setCart(cart);
+        localStorage.setItem("cart", cart);
       }, []);
     function Del(val){
         let temp=car.filter((i)=> i.id!=val);
