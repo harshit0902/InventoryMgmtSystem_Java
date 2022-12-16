@@ -3,7 +3,7 @@ import { useState } from "react";
 import Axios from "axios";
 import Header from './supplier_navbar'
 import Footer from './footer'
-
+import { NavLink, Link } from 'react-router-dom'
 let cart=[];
 let send=[];
 //import { useState } from "react";

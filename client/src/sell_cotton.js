@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from './supplier_navbar'
 import Footer from './footer'
 import { textAlign } from "@mui/system";
-
+import { NavLink, Link } from 'react-router-dom'
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -32,7 +32,7 @@ function App() {
    function Check1() {
     if((q1>9000 && q1<15000)){    /* variables needed from backend*/
       console.log("success");
-      
+      Check2()
       
     }  else{
       console.log("failure");
@@ -42,7 +42,7 @@ function App() {
    function Check2(){
     if((q2>9000 && q2<15000)){
       console.log("success");
-      
+      Check3() 
       
     }  else{
       console.log("failure");
@@ -53,7 +53,7 @@ function App() {
     function Check3(){
       if((q3>9000 && q3<15000)){
         console.log("success");
-        
+        Checkqty()
         
       }  else{
         console.log("failure");
@@ -64,7 +64,7 @@ function App() {
       function Checkqty(){
         if((qty1>0 && qty1 <=25)){           /*variables from backend*/
           console.log("success");
-          
+          slocalstorage1()
           
         }  else{
           console.log("failure");
@@ -116,14 +116,9 @@ return (
       <center>
       <button className="button-methish" onClick={() => {
         Check1()
-        Check2()
-        Check3() 
-        Checkqty()
-       } }>Check</button>
-       <button className="button-methish"
-       onClick={() => {
-        slocalstorage1()
-             }}>Add to supply cart</button>
+        
+       } }><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
+       
       </center>
       </div>
       </div>

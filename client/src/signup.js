@@ -97,7 +97,7 @@ function App() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                <button onClick={savedetail}>signup</button>
+                <button className="button-methish" onClick={savedetail}>signup</button>
                 </center>
                 {message}
             </div>

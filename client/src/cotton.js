@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import './index.css';
 import Header from './customer_navbar'
 import Footer from './footer'
-
+import { NavLink, Link } from 'react-router-dom'
 let error = [];
 
 function App() {
@@ -36,8 +36,9 @@ function App() {
 
    function Check1() {
     if((q1>9000 && q1<15000)){
-      return true;
       
+      Check2()
+      return true;
       
     }  else{
       console.log("failure");
@@ -46,8 +47,9 @@ function App() {
     }}
    function Check2(){
     if((q2>9000 && q2<15000)){
+        
+        Check3()
         return true;
-      
       
     }  else{
       console.log("failure");
@@ -57,8 +59,9 @@ function App() {
   }
     function Check3(){
       if((q3>9000 && q3<15000)){
+          
+          Checkqty()
           return true;
-        
         
       }  else{
         console.log("failure");
@@ -68,8 +71,9 @@ function App() {
     }
       function Checkqty(){
         if((qty1>0 && qty1 <=25)){
+            
+            localstorage1()
             return true;
-          
           
         }  else{
           console.log("failure");
@@ -79,30 +83,30 @@ function App() {
       
       }
 
-      function Check() {
-          if(Check1() && Check2() && Check3() && Checkqty()) {
-              window.location.href = '/itemlistnew1'
-          }
+      // function Check() {
+      //     if(Check1() && Check2() && Check3() && Checkqty()) {
+      //         window.location.href = '/itemlistnew1'
+      //     }
 
-          if(!Check1()) {
-              error.push("Error in Quality 1\n");
-          }
+      //     if(!Check1()) {
+      //         error.push("Error in Quality 1\n");
+      //     }
 
-          if(!Check2()) {
-              error.push("Error in Quality 2\n");
-          }
+      //     if(!Check2()) {
+      //         error.push("Error in Quality 2\n");
+      //     }
 
-          if(!Check3()) {
-              error.push("Error in Quality 3\n");
-          }
+      //     if(!Check3()) {
+      //         error.push("Error in Quality 3\n");
+      //     }
 
-          if(!Checkqty()) {
-              error.push("Error in Quantity\n");
-          }
+      //     if(!Checkqty()) {
+      //         error.push("Error in Quantity\n");
+      //     }
 
-          if(error.length != 0)
-              alert(error);
-      }
+      //     if(error.length != 0)
+      //         alert(error);
+      // }
    
 return (
     
@@ -143,13 +147,11 @@ return (
            <br></br>
       </div>
       <center>
-      <button className="button-methish" onClick={() => {
-            Check()
-       } }>Check</button>
+      
        <button className="button-methish" onClick={() => {
-        localstorage1()
-             }}>Add to cart</button>
-      <button className="button-methish">Special Request?</button>
+        Check1()
+         }}><Link id="sign" to='/itemlistnew1'>Add to cart</Link></button> 
+      <button className="button-methish"><Link id="sign" to='/specialrequestform'>Special Request?</Link></button>
       </center>
 </div>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Header from './supplier_navbar'
 import Footer from './footer'
-
+import { NavLink, Link } from 'react-router-dom'
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -29,7 +29,7 @@ function App() {
     }
 
    function Check1() {
-    if((q1>9000 && q1<15000)){    /* variables needed from backend*/
+    if((q1>9000 && q1<15000)){ Check2()   /* variables needed from backend*/
       console.log("success");
       
       
@@ -39,7 +39,7 @@ function App() {
 
     }}
    function Check2(){
-    if((q2>9000 && q2<15000)){
+    if((q2>9000 && q2<15000)){Check3()
       console.log("success");
       
       
@@ -50,7 +50,7 @@ function App() {
     }
   }
     function Check3(){
-      if((q3>9000 && q3<15000)){
+      if((q3>9000 && q3<15000)){Checkqty()
         console.log("success");
         
         
@@ -61,7 +61,7 @@ function App() {
       }
     }
       function Checkqty(){
-        if((qty1>0 && qty1 <=25)){           /*variables from backend*/
+        if((qty1>0 && qty1 <=25)){  slocalstorage7()         /*variables from backend*/
           console.log("success");
           
           
@@ -111,17 +111,13 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
+      <center>
       <button className="button-methish" onClick={() => {
         Check1()
-        Check2()
-        Check3() 
-        Checkqty()
-       } }>Check</button>
-       <button className="button-methish"
-       onClick={() => {
-        slocalstorage7()
-             }}>Add to supply cart</button>
-      
+        
+       } }><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
+       
+      </center>
 
     </div><Footer /></>
 
