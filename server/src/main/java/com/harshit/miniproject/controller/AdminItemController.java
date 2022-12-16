@@ -1,9 +1,6 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.BuyerInvoice;
-import com.harshit.miniproject.model.Credentials;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
 import com.harshit.miniproject.service.AdminItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
@@ -109,6 +107,36 @@ public class AdminItemController {
             return ans;
         else
             return null;
+    }
+
+    @GetMapping("/getshipping")
+    public List<BuyerInvoice> shippingDetails(){
+        List<BuyerInvoice> data = new ArrayList<BuyerInvoice>();
+        data = adminItemService.getShipping();
+
+        if(data != null) {
+            System.out.println(data);
+            return data;
+        }
+
+        else
+            return null;
+    }
+
+    @PutMapping("/updatestatus")
+    public void updateStatus(@RequestBody Shipping val){
+        int ans = adminItemService.updateShipping(val);
+
+        if(ans == 1) {
+            try {
+                TimeUnit.SECONDS.sleep(20);
+                System.out.println("\nHi");
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+
+            adminItemService.updateDelivery(val);
+        }
     }
 
     /*@PostMapping("/normal")

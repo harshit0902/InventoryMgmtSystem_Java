@@ -53,6 +53,7 @@ import Logout from './logout'
 import Homepage1 from './homepage1'
 import Homepage2 from './homepage2'
 import Homepage3 from './homepage3'
+import Shipping from './shipping'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -111,6 +112,7 @@ root.render(
                       <Route path='/homepage1' element={<Homepage1 />}></Route>
                       <Route path='/homepage2' element={<Homepage2 />}></Route>
                       <Route path='/homepage3' element={<Homepage3 />}></Route>
+                      <Route path='/shipping' element={<Shipping />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

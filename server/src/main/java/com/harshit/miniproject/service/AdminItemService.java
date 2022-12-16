@@ -1,9 +1,6 @@
 package com.harshit.miniproject.service;
 
-import com.harshit.miniproject.model.BuyerInvoice;
-import com.harshit.miniproject.model.Credentials;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -119,6 +116,46 @@ public class AdminItemService {
             return data;
         else
             return null;
+    }
+
+    public List<BuyerInvoice> getShipping() {
+        Query q8 = new Query();
+        q8.addCriteria(Criteria.where("status").is("Order Processing"));
+        List<BuyerInvoice> data = mongoOperations.find(q8, BuyerInvoice.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public int updateShipping(Shipping name) {
+        Query q9 = new Query();
+        q9.addCriteria(Criteria.where("billID").is(name.getBillID()));
+        Shipping item = mongoOperations.findOne(q9, Shipping.class);
+
+        if(item != null)
+        {
+            Update update2 = new Update();
+            update2.set("status", "In Shipping");
+            mongoOperations.updateFirst(q9, update2, BuyerInvoice.class);
+            return 1;
+        }
+
+        else
+            return 0;
+    }
+
+    public void updateDelivery(Shipping name) {
+        Query q10 = new Query();
+        q10.addCriteria(Criteria.where("billID").is(name.getBillID()));
+        Shipping item = mongoOperations.findOne(q10, Shipping.class);
+
+        if(item != null)
+        {
+            Update update3 = new Update();
+            update3.set("status", "Delivered");
+            mongoOperations.updateFirst(q10, update3, BuyerInvoice.class);
+        }
     }
 
     /*public double findPrice(int itemNo) {
