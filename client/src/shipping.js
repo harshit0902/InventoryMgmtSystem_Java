@@ -8,7 +8,6 @@ let email = localStorage.getItem('email');
 
 function Cart() {
     const [shippingDetails, setShippingDetails] = useState([]);
-    //const [shipDetails, setShipDetails] = useState([]);
 
     useEffect(() => {
         Axios.get('http://localhost:9091/api/admin/getshipping', {
@@ -18,6 +17,7 @@ function Cart() {
     }, []);
 
     function Del(val) {
+        console.log(val);
         let temp1 = shippingDetails.map(obje => {
             if (obje.billNo !== val) {
                 return obje;
