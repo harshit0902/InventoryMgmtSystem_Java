@@ -71,7 +71,7 @@ public class BuyerInvoiceController {
 
         double price = buyerInvoiceService.findPrice(itemNo);
         System.out.println(price);
-        BuyerInvoice splorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), price*it.getQuantity(), "Order Processing", true);
+        BuyerInvoice splorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), price*it.getQuantity(), "Special Request Made", true);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(splorder);
         if(ans == 1)
             return "success";
@@ -123,7 +123,7 @@ public class BuyerInvoiceController {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
 
-        BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), tot, "Order Processing", false);
+        BuyerInvoice normalorder = new BuyerInvoice(normal.getEmail(), item, dtf.format(now), tot, "Order Processing", false);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(normalorder);
         if(ans == 1) {
             for(Item i : item) {

@@ -1,5 +1,8 @@
-
+import React from "react";
 import { useState } from "react";
+import Header from './supplier_navbar'
+import Footer from './footer'
+import {Link} from "react-router-dom";
 
 function App() {
     
@@ -74,7 +77,7 @@ function App() {
 return (
     
       
-      <><div>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Supply Wood
@@ -117,10 +120,10 @@ return (
        } }>Check</button>
        <button onClick={() => {
         slocalstorage7()
-             }}>Add to supply cart</button>
+             }}><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
       
 
-    </div></>
+    </div><Footer /></>
 
 )
 }

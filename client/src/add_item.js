@@ -1,5 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import Axios from "axios";
+import Header from './admin_navbar'
+import Footer from './footer'
+import {Link} from "react-router-dom";
 
 function App() {
     //const [id, setid] = useState(0);
@@ -10,8 +14,8 @@ function App() {
     const [quality2, setquality2] = useState(0);
     const [quality3, setquality3] = useState(0);
 
-    const addIten = () => {
-        Axios.post('http://localhost:9091/api/admin/add', {
+    const savedetail = () => {
+        Axios.post('http://localhost:9091/api/admin/additem', {
             itemName: name,
             quantity: qty,
             price: price,
@@ -29,7 +33,7 @@ function App() {
 
 return (
 
-    <><div>
+    <><Header /><div>
   <center>
     <h1 id="cot">
       Add an Item
@@ -51,45 +55,43 @@ return (
     <div>
       <label>Enter Quantity </label>
       <input type="number" placeholder='Enter in kg'
-        onChange={(event) => { setqty(event.target.value); } }></input>
+        onChange={(event) => { setqty(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
 
         <div>
             <label>Enter Price </label>
             <input type="number" placeholder='Enter in Rs.'
-                   onChange={(event) => { setprice(event.target.value); } }></input>
+                   onChange={(event) => { setprice(parseInt(event.target.value)); } }></input>
             <br></br>
         </div>
     
     <div>
-
+        <label>Enter Quality1 required </label>
       <input type="number" placeholder='Quality 1'
-       onChange={(event) => { setquality1(event.target.value); } } ></input>
+       onChange={(event) => { setquality1(parseInt(event.target.value)); } } ></input>
 
 
          <br></br>
     </div>
     <div>
-
+        <label>Enter Quality2 required </label>
       <input type="number" placeholder='Quality 2'
-        onChange={(event) => { setquality2(event.target.value); } }></input>
+        onChange={(event) => { setquality2(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
     
     <div>
-
+        <label>Enter Quality3 required </label>
       <input type="number" placeholder='Quality 3'
-        onChange={(event) => { setquality3(event.target.value); } }></input>
+        onChange={(event) => { setquality3(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
     
-     <button onClick={() => {
-         addItem()
-           }}>Add Item</button>
+     <button onClick={savedetail}><Link id="sign" to='/admin_homepage'>Add Item</Link></button>
     
 
-  </div></>
+  </div><Footer /></>
 
 )
 }

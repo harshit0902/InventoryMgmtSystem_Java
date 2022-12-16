@@ -55,10 +55,11 @@ public class CredentialsController {
         System.out.println(user.getPassword());
         //System.out.println(getType(email));
         //System.out.println(getType(password));
-        if(credentialsService.getUserLogin(user.getEmail(), user.getPassword()) == 1)
-            return "Success";
+        Credentials account = credentialsService.getUserLogin(user.getEmail(), user.getPassword());
+        if(account != null)
+            return account.getTypeOfAcc();
         else
-            return "Failure";
+            return null;
     }
 
     /*@GetMapping("/signup")

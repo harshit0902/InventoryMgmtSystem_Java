@@ -1,6 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
+import Header from './navbar'
+import Footer from './footer'
 
 // import Display from "./display";
 
@@ -23,22 +26,24 @@ function App() {
         }).then((response) => {
             // setUserdetails(response.data);
             //console.log(response.data)
-            if (response.data === "Success" && capcthaEntered === capctha) {
-                /*obj = Object.values(response.data);
+            if (response.data !== null && capcthaEntered === capctha) {
+                /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
-                localStorage.setItem("name", obj[0].name);
-                localStorage.setItem("uid", obj[0].uid);
+                /*localStorage.setItem("name", obj[0].name);
+                localStorage.setItem("uid", obj[0].uid);*/
 
-                if (obj[0].type === 'admin') {
+                if (response.data === "Admin") {
                     window.location.href = "http://localhost:3000/admin_homepage"
-                } else {
-                    window.location.href = "http://localhost:3000/homepage2"
+                } else if (response.data === "Buyer") {
+                    window.location.href = "http://localhost:3000/itemlistnew"
+                } else if (response.data === "Seller") {
+                    window.location.href = "http://localhost:3000/sellerform"
                 }
 
-            } else if (response.data === 'invalid') {
+            } else if (response.data === null) {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
-                localStorage.setItem("name", "");
+                /*localStorage.setItem("name", "");
             }*/
             console.log("Success");
             }
@@ -52,7 +57,7 @@ function App() {
     }
 
     return (
-        <>
+        <><Header />
             <div id="Users">
                 <div>
                     <center>
@@ -123,7 +128,7 @@ function App() {
                     })}
                     </table> */}
             </div>
-        </>
+        <Footer /></>
 
     );
 }

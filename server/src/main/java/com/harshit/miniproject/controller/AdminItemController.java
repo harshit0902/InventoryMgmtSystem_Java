@@ -1,8 +1,6 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.BuyerInvoice;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
 import com.harshit.miniproject.service.AdminItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
@@ -39,7 +38,7 @@ public class AdminItemController {
         this.adminItemJpaRepository = adminItemJpaRepository;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/additem")
     public String addItem(@RequestBody Item special){
         Item it = new Item(val++, special.getItemName(), special.getQuantity(), special.getPrice(), special.getQuality1(), special.getQuality2(), special.getQuality3());
 
@@ -50,7 +49,7 @@ public class AdminItemController {
             return "failure";
     }
 
-    @PutMapping("/modify")
+    @PutMapping("/modifyitem")
     public String updateItem(@RequestBody Item special) {
         int ans = adminItemService.updateIntoItem(special);
         if(ans == 1)
@@ -59,16 +58,16 @@ public class AdminItemController {
             return "failure";
     }
 
-    @PostMapping("/delete")
-    public String deleteItem(@RequestBody Item special){
-        int ans = adminItemService.deleteIntoItem(special.getItemID());
+    @PostMapping("/deleteitem")
+    public String deleteItem(@PathVariable int id){
+        int ans = adminItemService.deleteIntoItem(id);
         if(ans == 1)
             return "success";
         else
             return "failure";
     }
 
-    @GetMapping("/display")
+    @GetMapping("/displayitem")
     public List<Item> displayItems(){
         List<Item> data = new ArrayList<Item>();
         data = adminItemService.findData();
@@ -77,6 +76,68 @@ public class AdminItemController {
             return data;
         else
             return null;
+    }
+
+    @GetMapping("/displaycustomer")
+    public List<Credentials> displayCustomers(){
+        List<Credentials> data = new ArrayList<Credentials>();
+        data = adminItemService.findCustomers();
+
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    @GetMapping("/displaysupplier")
+    public List<Credentials> displaySuppliers(){
+        List<Credentials> data = new ArrayList<Credentials>();
+        data = adminItemService.findSuppliers();
+
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    @PostMapping("/getdata")
+    public Item editData(@RequestBody Item name){
+        Item ans = adminItemService.getEditData(name);
+        if(ans != null)
+            return ans;
+        else
+            return null;
+    }
+
+    @GetMapping("/getshipping")
+    public List<BuyerInvoice> shippingDetails(){
+        List<BuyerInvoice> data = new ArrayList<BuyerInvoice>();
+        data = adminItemService.getShipping();
+
+        if(data != null) {
+            System.out.println(data);
+            return data;
+        }
+
+        else
+            return null;
+    }
+
+    @PutMapping("/updatestatus")
+    public void updateStatus(@RequestBody Shipping val){
+        int ans = adminItemService.updateShipping(val);
+        System.out.println(ans);
+
+        if(ans == 1) {
+            try {
+                TimeUnit.SECONDS.sleep(20);
+                System.out.println("\nHi");
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+
+            adminItemService.updateDelivery(val);
+        }
     }
 
     /*@PostMapping("/normal")

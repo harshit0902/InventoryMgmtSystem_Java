@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './admin';
+import App from './itemlistnew';
 import Login from './login'
 import Signup from './signup'
 import SpecialRequestForm from "./specialrequestform";
@@ -17,7 +17,6 @@ import Wood from './wood'
 import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
-import Cart from './cart'
 import Itemlistnew from './itemlistnew'
 import SellerForm from './sellerform'
 import SellCotton from './sell_cotton'
@@ -34,8 +33,29 @@ import BuyerConfirmation from "./buyerconfirmation";
 import Itemlistnew1 from './itemlistnew1'
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
-import Admin from './admin';
+import Admin_homepage from './admin_homepage';
 import AddItem from './add_item';
+import DeleteItem from './delete_item';
+import EditItem from './edit_item';
+import ViewItem from './view_item';
+import Customer from './allcustomer';
+import Supplier from './allsupplier';
+import Cart from './cart'
+import AdminNavbar from "./admin_navbar";
+import Navbar from "./navbar";
+import Buyhistory from './buyerhistory';
+import Sellhistory from './sellerhistory';
+import CustomerNavbar from './customer_navbar'
+import SupplierNavbar from "./supplier_navbar";
+import About from './about'
+import Footer from './footer';
+import Logout from './logout'
+import Homepage1 from './homepage1'
+import Homepage2 from './homepage2'
+import Homepage3 from './homepage3'
+import Shipping from './shipping'
+import SellerSpecialRequest from './seller_specialrequest'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -73,9 +93,28 @@ root.render(
                       <Route path='/sell_wheat' element={<SellWheat />}></Route>
                       <Route path='/sell_bajra' element={<SellBajra />}></Route>
                       <Route path='/sell_ragi' element={<SellRagi />}></Route>
-                      <Route path='/admin' element={<Admin />}></Route>
+                      <Route path='/admin_homepage' element={<Admin_homepage />}></Route>
                       <Route path='/add_item' element={<AddItem />}></Route>
+                      <Route path='/delete_item' element={<DeleteItem />}></Route>
+                      <Route path='/edit_item' element={<EditItem />}></Route>
+                      <Route path='/view_item' element={<ViewItem />}></Route>
+                      <Route path='/allcustomer' element={<Customer />}></Route>
+                      <Route path='/allsupplier' element={<Supplier />}></Route>
+                      <Route path='/buyerhistory' element={<Buyhistory />}></Route>
+                      <Route path='/sellerhistory' element={<Sellhistory />}></Route>
                       <Route path='/buyerconfirmation' element={<BuyerConfirmation />}></Route>
+                      <Route path='/admin_navbar' element={<AdminNavbar />}></Route>
+                      <Route path='/navbar' element={<Navbar />}></Route>
+                      <Route path='/customer_navbar' element={<CustomerNavbar />}></Route>
+                      <Route path='/supplier_navbar' element={<SupplierNavbar />}></Route>
+                      <Route path='/about' element={<About />}></Route>
+                      <Route path='/footer' element={<Footer />}></Route>
+                      <Route path='/logout' element={<Logout />}></Route>
+                      <Route path='/homepage1' element={<Homepage1 />}></Route>
+                      <Route path='/homepage2' element={<Homepage2 />}></Route>
+                      <Route path='/homepage3' element={<Homepage3 />}></Route>
+                      <Route path='/shipping' element={<Shipping />}></Route>
+                      <Route path='/seller_specialrequest' element={<SellerSpecialRequest />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

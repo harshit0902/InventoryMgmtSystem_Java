@@ -1,7 +1,15 @@
-
 import { useState } from "react";
+import React from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import './index.css';
+import Header from './customer_navbar'
+import Footer from './footer'
+
 let error = [];
+
 function App() {
+ 
+  const navigate=useNavigate()
     
     const [qty, setqty] = useState(0);
     const [quality1, setquality1] = useState(0);
@@ -98,8 +106,8 @@ function App() {
    
 return (
     
-      
-      <><div>
+      <body>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Order Cotton
@@ -139,11 +147,13 @@ return (
        } }>Check</button>
        <button onClick={() => {
         localstorage1()
-             }}>Add to cart</button>
-      <button>Special Request?</button>
+             }}><Link id="sign" to='/itemlistnew1'>Add to Cart</Link></button>
+          <br />
+          <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
 
-    </div></>
-
+    </div>
+    <Footer /></>
+    </body>
 )
 }
 export default App;

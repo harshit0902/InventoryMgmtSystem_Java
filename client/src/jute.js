@@ -1,5 +1,8 @@
 import { useState } from "react";
-
+import React from "react";
+import Header from './customer_navbar'
+import Footer from './footer'
+import {Link} from "react-router-dom";
 
 let error = [];
 
@@ -100,7 +103,7 @@ function App() {
 return (
     
       
-      <><div>
+      <><Header /><div>
     <center>
       <h1 id="cot">
         Order Jute
@@ -140,10 +143,11 @@ return (
        } }>check</button>
        <button onClick={() => {
         localstorage2()
-             }}>Add to cart</button>
-      <button>Special Request?</button>
+             }}><Link id="sign" to='/itemlistnew1'>Add to Cart</Link></button>
+          <br />
+          <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
 
-    </div></>
+    </div><Footer /></>
 
 )
 }

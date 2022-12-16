@@ -1,11 +1,23 @@
-
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import Axios from "axios";
+import Header from './customer_navbar'
+import Footer from './footer'
 
+let cotton=0, jute=0, coffee=0, steel, aluminium=0, copper=0, wood=0, wheat=0, bajra=0, ragi=0;
 
 function App() {
     const navigate=useNavigate()
+    const [itemDetails, setItemDetails] = useState([]);
+
+    useEffect(() => {
+        Axios.get('http://localhost:9091/api/admin/displayitem', {
+        }).then((response) => {
+            setItemDetails(response.data);
+        });
+    }, []);
 
     const cottData={
         quantity : 0,
@@ -111,71 +123,152 @@ localStorage.setItem("ragData",jsonobjrag);
 
    
 return (
-    
-      
-      <><div>
+
+
+      <><Header />
+          <div>
         <center>
       <h1 id="Items_new">
-         Cotton <h3>Quantity available <button onClick={()=> navigate('./cotton')}>Order now</button></h3>
+         Cotton <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Cotton" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/cotton'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Jute <h3>Quantity available <button onClick={()=> navigate('./jute')}>Order now</button></h3>
+         Jute <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Jute" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/jute'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Coffee <h3>Quantity available <button onClick={()=> navigate('./coffee')}>Order now</button></h3>
+         Coffee <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Coffee" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/coffee'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Steel <h3>Quantity available <button onClick={()=> navigate('./steel')}>Order now</button></h3>
+         Steel <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Steel" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/steel'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Aluminium <h3>Quantity available <button onClick={()=> navigate('./aluminium')}>Order now</button></h3>
+         Aluminium <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Aluminium" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/aluminium'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Copper <h3>Quantity available <button onClick={()=> navigate('./copper')}>Order now</button></h3>
+         Copper <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Copper" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/copper'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Wood <h3>Quantity available <button onClick={()=> navigate('./wood')}>Order now</button></h3>
+         Wood <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Wood" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/wood'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Wheat <h3>Quantity available <button onClick={()=> navigate('./wheat')}>Order now</button></h3>
+         Wheat <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Wheat" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/wheat'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Bajra <h3>Quantity available <button onClick={()=> navigate('./bajra')}>Order now</button></h3>
+         Bajra <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Bajra" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/bajra'>Order now</Link></button></h3>
          
       </h1>
     </center>
     <center>
       <h1 id="Items_new">
-         Ragi <h3>Quantity available <button onClick={()=> navigate('./ragi')}>Order now</button></h3>
+         Ragi <h3>Quantity available <div>
+          {itemDetails.map((item)=>(
+              item.itemName === "Ragi" ? (
+                  <div key={item.id}>
+                      {item.quantity}
+                  </div>
+              ) : ("") )
+          )}
+      </div> <button id="button-result"><Link id="sign" to='/ragi'>Order now</Link></button></h3>
          
       </h1>
     </center>
-    </div></>
-     
+    </div><Footer /></>
+
 
 )
 }

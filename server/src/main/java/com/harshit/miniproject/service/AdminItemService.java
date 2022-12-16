@@ -1,8 +1,6 @@
 package com.harshit.miniproject.service;
 
-import com.harshit.miniproject.model.BuyerInvoice;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.AdminItemJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -87,6 +85,77 @@ public class AdminItemService {
             return data;
         else
             return null;
+    }
+
+    public List<Credentials> findCustomers() {
+        Query q5 = new Query();
+        q5.addCriteria(Criteria.where("typeOfAcc").is("Buyer"));
+        List<Credentials> data = mongoOperations.find(q5, Credentials.class);
+        System.out.println(data);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public List<Credentials> findSuppliers() {
+        Query q6 = new Query();
+        q6.addCriteria(Criteria.where("typeOfAcc").is("Seller"));
+        List<Credentials> data = mongoOperations.find(q6, Credentials.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public Item getEditData(Item name) {
+        Query q7 = new Query();
+        q7.addCriteria(Criteria.where("itemName").is(name.getItemName()));
+        Item data = mongoOperations.findOne(q7, Item.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public List<BuyerInvoice> getShipping() {
+        Query q8 = new Query();
+        q8.addCriteria(Criteria.where("status").is("Order Processing"));
+        List<BuyerInvoice> data = mongoOperations.find(q8, BuyerInvoice.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public int updateShipping(Shipping name) {
+        Query q9 = new Query();
+        q9.addCriteria(Criteria.where("billNo").is(name.getBillID()));
+        BuyerInvoice item = mongoOperations.findOne(q9, BuyerInvoice.class);
+
+        if(item != null)
+        {
+            Update update2 = new Update();
+            update2.set("status", "In Shipping");
+            mongoOperations.updateFirst(q9, update2, BuyerInvoice.class);
+            return 1;
+        }
+
+        else
+            return 0;
+    }
+
+    public void updateDelivery(Shipping name) {
+        Query q10 = new Query();
+        q10.addCriteria(Criteria.where("billNo").is(name.getBillID()));
+        BuyerInvoice item = mongoOperations.findOne(q10, BuyerInvoice.class);
+
+        if(item != null)
+        {
+            Update update3 = new Update();
+            update3.set("status", "Delivered");
+            mongoOperations.updateFirst(q10, update3, BuyerInvoice.class);
+        }
     }
 
     /*public double findPrice(int itemNo) {

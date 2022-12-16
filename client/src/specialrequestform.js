@@ -1,5 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import Axios from "axios";
+import Header from './customer_navbar'
+import Footer from './footer'
+import {Link} from "react-router-dom";
 // import Axios from "axios";
 // import Display from "./display";
 
@@ -254,7 +258,7 @@ function App1() {
 
     return (
         <div id="Users">
-
+            <Header />
             <div>
                 <center>
                     <h1 id="title">
@@ -296,7 +300,7 @@ function App1() {
             <div>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={savedetail}>Place Order</button>
+                    <button onClick={savedetail}><Link id="sign" to='/homepage2'>Place Order</Link></button>
                 </center>
                 {/*{message}*/}
             </div>
@@ -312,7 +316,7 @@ function App1() {
                         Account={value.Account}/>
                 </div>
             })*/}
-
+        <Footer />
         </div>
     );
 }

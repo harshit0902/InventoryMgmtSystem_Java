@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles';
-
+import React from "react";
 import Login from './login'
 
 import Cart from './cart'
@@ -25,9 +25,16 @@ import Cart from './cart';
 import SellerForm from './sellerform';
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
-import Admin from './admin';
+import Admin_homepage from './admin_homepage';
 import AddItem from './add_item';
-
+import DeleteItem from './delete_item';
+import EditItem from './edit_item';
+import ViewItem from './view_item';
+import Customer from '/allcustomer';
+import Supplier from './allsupplier';
+import Ship from './shipping';
+import Buyhistory from './buyerhistory';
+import Sellhistory from './sellerhistory';
 // import Header from "./navbar1";
 // import Footer from "./footer";
 
@@ -79,7 +86,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <Admin />
+            <Itemlistnew />
 
         </div>
         </div>

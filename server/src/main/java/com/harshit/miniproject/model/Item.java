@@ -23,8 +23,8 @@ public class Item {
         quality3 = 0;
     }
 
-    public Item(int itemID) {
-        this.itemID = itemID;
+    public Item(String itemName) {
+        this.itemName = itemName;
     }
 
     public Item(String itemName, int quantity) {
@@ -63,6 +63,10 @@ public class Item {
         this.quality1 = quality1;
         this.quality2 = quality2;
         this.quality3 = quality3;
+    }
+
+    public Item(int itemID) {
+        this.itemID = itemID;
     }
 
     public int getItemID() {
