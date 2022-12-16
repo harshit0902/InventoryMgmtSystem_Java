@@ -38,6 +38,7 @@ function Cart() {
             }
         }
         console.log(send);
+        localStorage.setItem("cart", send);
         Axios.post('http://localhost:9091/api/buy/normal', {
             it: send
         }).then((response) => {
@@ -117,22 +118,61 @@ function Cart() {
     cart[7].quality3=wheobj.quality_3;
     cart[8].quality3=bajobj.quality_3;
     cart[9].quality3=ragobj.quality_3;
+
     useEffect(() => {
         setCart(cart);
-        localStorage.setItem("cart", cart);
       }, []);
+
+    const Data={
+        quantity : 0,
+        quality_1 : 0,
+        quality_2 : 0,
+        quality_3 : 0
+    };
+    const obj = JSON.stringify(Data);
+
     function Del(val){
-    let temp1 = car.map(obj => {
-        if (obj.id === val) {
-          return {...obj, quantity: 0,quality1:0,quality2:0,quality3:0};
+    let temp1 = car.map(obje => {
+        if (obje.id === val) {
+          return {...obje, quantity: 0,quality1:0,quality2:0,quality3:0};
         }
-        return obj;
+        return obje;
       });
-    //   setData(newState);
         setCart(temp1);
         console.log(temp1);
         console.log(val);
+
+        if(val == 0)
+            localStorage.setItem("cottData",obj);
+
+        if(val == 1)
+            localStorage.setItem("jutData",obj);
+
+        if(val == 2)
+            localStorage.setItem("coffData",obj);
+
+        if(val == 3)
+            localStorage.setItem("steelData",obj);
+
+        if(val == 4)
+            localStorage.setItem("alumData",obj);
+
+        if(val == 5)
+            localStorage.setItem("coppData",obj);
+
+        if(val == 6)
+            localStorage.setItem("wooData",obj);
+
+        if(val == 7)
+            localStorage.setItem("wheData",obj);
+
+        if(val == 8)
+            localStorage.setItem("bajData",obj);
+
+        if(val == 9)
+            localStorage.setItem("ragData",obj);
     }
+
     return (
         <><Header /><div>
             <center>
