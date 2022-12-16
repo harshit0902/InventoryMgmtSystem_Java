@@ -122,9 +122,15 @@ function Cart() {
         localStorage.setItem("cart", cart);
       }, []);
     function Del(val){
-        let temp=car.filter((i)=> i.id!=val);
-        setCart(temp);
-        console.log(temp);
+    let temp1 = car.map(obj => {
+        if (obj.id === val) {
+          return {...obj, quantity: 0,quality1:0,quality2:0,quality3:0};
+        }
+        return obj;
+      });
+    //   setData(newState);
+        setCart(temp1);
+        console.log(temp1);
         console.log(val);
     }
     return (
