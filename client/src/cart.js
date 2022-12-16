@@ -8,6 +8,7 @@ let cart=[];
 let send=[];
 
 function Cart() {
+    let [car,setCart]=useState([]);
     let cott= localStorage.getItem("cottData");
     let cottobj =JSON.parse(cott);
     let jut= localStorage.getItem("jutData");
@@ -56,16 +57,16 @@ function Cart() {
     let i8 = 'h';
     let i9 = 'i';
     let i10 = 'j';
-    cart.push({itemName:i1, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i2, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i3, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i4, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i5, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i6, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i7, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i8, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i9, quantity:0, quality1:0, quality2:0, quality3:0});
-    cart.push({itemName:i10, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:0,itemName:i1, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:1,itemName:i2, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:2,itemName:i3, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:3,itemName:i4, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:4,itemName:i5, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:5,itemName:i6, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:6,itemName:i7, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:7,itemName:i8, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:8,itemName:i9, quantity:0, quality1:0, quality2:0, quality3:0});
+    cart.push({id:9,itemName:i10, quantity:0, quality1:0, quality2:0, quality3:0});
     cart[0].itemName='Cotton';
     cart[1].itemName='Jute';
     cart[2].itemName='Coffee';
@@ -116,107 +117,14 @@ function Cart() {
     cart[7].quality3=wheobj.quality_3;
     cart[8].quality3=bajobj.quality_3;
     cart[9].quality3=ragobj.quality_3;
-    function display(n)
-    {
-        if(n === "Cotton")
-        {
-            cart[0].quantity = 0;
-            cart[0].quality1 = 0;
-            cart[0].quality2 = 0;
-            cart[0].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        else if(n === "Jute")
-        {
-            cart[1].quantity = 0;
-            cart[1].quality1 = 0;
-            cart[1].quality2 = 0;
-            cart[1].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        else if(n === "Coffee")
-        {
-            cart[2].quantity = 0;
-            cart[2].quality1 = 0;
-            cart[2].quality2 = 0;
-            cart[2].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        else if(n === "Steel")
-        {
-            cart[3].quantity = 0;
-            cart[3].quality1 = 0;
-            cart[3].quality2 = 0;
-            cart[3].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Aluminium")
-        {
-            cart[4].quantity = 0;
-            cart[4].quality1 = 0;
-            cart[4].quality2 = 0;
-            cart[4].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Copper")
-        {
-            cart[5].quantity = 0;
-            cart[5].quality1 = 0;
-            cart[5].quality2 = 0;
-            cart[5].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Wood")
-        {
-            cart[6].quantity = 0;
-            cart[6].quality1 = 0;
-            cart[6].quality2 = 0;
-            cart[6].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Wheat")
-        {
-            cart[7].quantity = 0;
-            cart[7].quality1 = 0;
-            cart[7].quality2 = 0;
-            cart[7].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Bajra")
-        {
-            cart[8].quantity = 0;
-            cart[8].quality1 = 0;
-            cart[8].quality2 = 0;
-            cart[8].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        if(n === "Ragi")
-        {
-            cart[9].quantity = 0;
-            cart[9].quality1 = 0;
-            cart[9].quality2 = 0;
-            cart[9].quality3 = 0;
-            console.log(n);
-            return true;
-        }
-        return false;
-    }
-    function update(it)
-    {
-        console.log(it);
-        cart[it].quantity=0;
-        cart[it].quality1=0;
-        cart[it].quality2=0;
-        cart[it].quality3=0;
+    useEffect(() => {
+        setCart(cart);
+      }, []);
+    function Del(val){
+        let temp=car.filter((i)=> i.id!=val);
+        setCart(temp);
+        console.log(temp);
+        console.log(val);
     }
     return (
         <><Header /><div>
@@ -225,9 +133,10 @@ function Cart() {
                     Cart
                 </h1>
             </center>
+            {/* <h5><button onClick={()=>{setCart(cart)}}>Display</button></h5> */}
         </div>
             <div>
-                {cart.map((item,val)=>(
+                {car.map((item,val)=>(
                     val+1,
                     item.quantity>0 ? (
                         <div key={item.itemName}>
@@ -236,7 +145,7 @@ function Cart() {
                             <h5> Quality 1: {item.quality1} </h5>
                             <h5> Quality 2: {item.quality2} </h5>
                             <h5> Quality 3: {item.quality3} </h5>
-                            <h5><button onClick={()=>{}}>Delete</button></h5>
+                            <h5><button onClick={()=>{Del(val)}}>Delete</button></h5>
                             -------------------------------------
                         </div>
                     ) : ("") )
