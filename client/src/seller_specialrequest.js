@@ -7,22 +7,22 @@ import {Link} from "react-router-dom";
 let email = localStorage.getItem('email');
 
 function Cart() {
-    const [shippingDetails, setShippingDetails] = useState([]);
+    const [specialDetails, setSpecialDetails] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:9091/api/admin/getshipping', {
+        Axios.get('http://localhost:9091/api/sell/getspecialdetails', {
         }).then((response) => {
-            setShippingDetails(response.data);
+            setSpecialDetails(response.data);
         });
     }, []);
 
     function Del(val) {
         console.log(val);
-        let temp1 = shippingDetails.map(obje => {
+        let temp1 = specialDetails.map(obje => {
             if (obje.billNo !== val) {
                 return obje;
             } else {
-                Axios.put('http://localhost:9091/api/admin/updatestatus', {
+                Axios.put('http://localhost:9091/api/sell/acceptrequest', {
                     custEmail : email,
                     billID : val
                 }).then((response) => {
@@ -30,7 +30,7 @@ function Cart() {
                 return {}
             }
         });
-        setShippingDetails(temp1);
+        setSpecialDetails(temp1);
         console.log(temp1);
         console.log(val);
     }
@@ -46,8 +46,8 @@ function Cart() {
                 {/* <h5><button onClick={()=>{setCart(cart)}}>Display</button></h5> */}
             </div>
             <div>
-                {shippingDetails.map((bill) => (
-                    bill.status == "Order Processing" ? (
+                {specialDetails.map((bill) => (
+                    bill.special == true && bill.status == "Special Request Made" ? (
                         <div key={bill.billNo}>
                             <h5> Bill Number : {bill.billNo} </h5>
                             <h5> Customer Email: {bill.custEmail} </h5>
@@ -63,7 +63,7 @@ function Cart() {
                                 )}
                             </h5>
                             <h5> Total Amount: {bill.totalAmt} </h5>
-                            <h5> Status {bill.status} </h5>
+                            <h5> Status: {bill.status} </h5>
                             <h5>
                                 <button onClick={() => {
                                     Del(bill.billNo)

@@ -126,6 +126,7 @@ public class AdminItemController {
     @PutMapping("/updatestatus")
     public void updateStatus(@RequestBody Shipping val){
         int ans = adminItemService.updateShipping(val);
+        System.out.println(ans);
 
         if(ans == 1) {
             try {

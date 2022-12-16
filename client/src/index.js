@@ -54,6 +54,7 @@ import Homepage1 from './homepage1'
 import Homepage2 from './homepage2'
 import Homepage3 from './homepage3'
 import Shipping from './shipping'
+import SellerSpecialRequest from './seller_specialrequest'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -113,6 +114,7 @@ root.render(
                       <Route path='/homepage2' element={<Homepage2 />}></Route>
                       <Route path='/homepage3' element={<Homepage3 />}></Route>
                       <Route path='/shipping' element={<Shipping />}></Route>
+                      <Route path='/seller_specialrequest' element={<SellerSpecialRequest />}></Route>
                   </Routes>
               </BrowserRouter>
           </div>

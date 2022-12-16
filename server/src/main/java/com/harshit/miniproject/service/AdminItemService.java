@@ -130,7 +130,7 @@ public class AdminItemService {
 
     public int updateShipping(Shipping name) {
         Query q9 = new Query();
-        q9.addCriteria(Criteria.where("billID").is(name.getBillID()));
+        q9.addCriteria(Criteria.where("billNo").is(name.getBillID()));
         BuyerInvoice item = mongoOperations.findOne(q9, BuyerInvoice.class);
 
         if(item != null)
@@ -147,7 +147,7 @@ public class AdminItemService {
 
     public void updateDelivery(Shipping name) {
         Query q10 = new Query();
-        q10.addCriteria(Criteria.where("billID").is(name.getBillID()));
+        q10.addCriteria(Criteria.where("billNo").is(name.getBillID()));
         BuyerInvoice item = mongoOperations.findOne(q10, BuyerInvoice.class);
 
         if(item != null)

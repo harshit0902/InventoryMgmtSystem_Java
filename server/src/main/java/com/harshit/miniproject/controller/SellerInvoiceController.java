@@ -1,8 +1,6 @@
 package com.harshit.miniproject.controller;
 
-import com.harshit.miniproject.model.SellerInvoice;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.SellerInvoiceJpaRepository;
 import com.harshit.miniproject.service.SellerInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
@@ -83,7 +82,7 @@ public class SellerInvoiceController {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
 
-        SellerInvoice normalorder = new SellerInvoice("abcd@gmail.com", item, dtf.format(now), totqty, totamt);
+        SellerInvoice normalorder = new SellerInvoice(normal.getEmail(), item, dtf.format(now), totqty, totamt);
         int ans = sellerInvoiceService.insertIntoSellerInvoice(normalorder);
         if(ans == 1) {
             for(Item i : item) {
@@ -126,6 +125,30 @@ public class SellerInvoiceController {
             return dataSell;
         else
             return null;
+    }
+
+    @GetMapping("/getspecialdetails")
+    public List<BuyerInvoice> buyerDetails(){
+        List<BuyerInvoice> data = new ArrayList<BuyerInvoice>();
+        data = sellerInvoiceService.getBuyerDetails();
+
+        if(data != null) {
+            System.out.println(data);
+            return data;
+        }
+
+        else
+            return null;
+    }
+
+    @PutMapping("/acceptrequest")
+    public void acceptRequest(@RequestBody Shipping val){
+        int ans = sellerInvoiceService.updateOrder(val);
+        System.out.println(ans);
+
+        if(ans == 1) {
+            System.out.println("Success");
+        }
     }
 
     /*@PostMapping("/special")

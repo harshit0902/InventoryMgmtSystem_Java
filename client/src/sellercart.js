@@ -41,6 +41,7 @@ function Cart() {
         console.log(send);
         localStorage.setItem("cart", send);
         Axios.post('http://localhost:9091/api/sell/normal', {
+            email: email,
             it: send
         }).then((response) => {
             console.log(response)
