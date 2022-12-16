@@ -62,7 +62,6 @@ function Cart() {
                             </h5>
                             <h5> Total Amount: {bill.totalAmt} </h5>
                             <h5> Status {bill.status} </h5>
-                            <h5> Special Order: {bill.special}</h5>
                             <h5>
                                 <button onClick={() => {
                                     Del(bill.billno)
