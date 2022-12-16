@@ -32,7 +32,7 @@ function App() {
     
   }
     function Check1() {
-        if((q1>9000 && q1<15000)){Check2()
+        if((q1>1 && q1<100)){Check2()
             return true;
 
 
@@ -42,7 +42,7 @@ function App() {
 
         }}
     function Check2(){
-        if((q2>9000 && q2<15000)){Check3()
+        if((q2>1 && q2<100)){Check3()
             return true;
 
 
@@ -53,7 +53,7 @@ function App() {
         }
     }
     function Check3(){
-        if((q3>9000 && q3<15000)){Checkqty()
+        if((q3>1 && q3<100)){Checkqty()
             return true;
 
 
@@ -117,10 +117,10 @@ return (
           onChange={(event) => { setqty(event.target.value); } }></input>
            <br></br>
       </div>
-      <label>Enter a value between the range.</label>
+      <label>Enter a value between the range 1-100.</label>
       <div>
 
-        <input type="number" placeholder='Quality 1'
+        <input type="number" placeholder=' Fatty Acid Content'
          onChange={(event) => { setquality1(event.target.value); } } ></input>
            
 
@@ -128,14 +128,14 @@ return (
       </div>
       <div>
 
-        <input type="number" placeholder='Quality 2'
+        <input type="number" placeholder='Crude Fibre Content'
           onChange={(event) => { setquality2(event.target.value); } }></input>
            <br></br>
       </div>
       
       <div>
 
-        <input type="number" placeholder='Quality 3'
+        <input type="number" placeholder='Crude Protein Content'
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>

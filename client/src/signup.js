@@ -57,9 +57,9 @@ function App() {
                 </div>
                 <div>
                     <label>Enter Account type: </label>
-                    <label for="buy">Buyer </label>
+                    <label for="buy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buyer </label>
                     <input type="radio" id="buy" name="account" value="Buyer" onChange={(event) => { setAcc(event.target.value) }}></input>
-                    <label for="sell">Seller</label>
+                    <label for="sell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seller</label>
                     <input type="radio" id="sell" name="account" value="Seller" onChange={(event) => { setAcc(event.target.value) }}></input>
                 </div>
                 <div>
@@ -93,26 +93,15 @@ function App() {
                     <br></br>
                 </div>
             </div>
-            <br></br>
-            <div>
+            
+            <div id='detailsnew'>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
                 <button className="button-methish" onClick={savedetail}>signup</button>
                 </center>
-                {message}
+                
             </div>
-            {/*userdetails.map((value, key) => {
-                return <div>
-                    <Display
-                        Name={value.Name}
-                        Email={value.Email}
-                        Password={value.Password}
-                        Conf_Password={value.Conf_Password}
-                        Mob_No={value.Mobile_Number}
-                        Address={value.Address} 
-                        Account={value.Account}/>
-                </div>
-            })*/}
+           
             <Footer />
         </div>
     );

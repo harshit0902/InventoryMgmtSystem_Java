@@ -681,3 +681,21 @@ select {
   
   font-weight:lighter;
 }
+#detailsnew{
+  margin-bottom: 10px;
+  /* border: black 10px; */
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 1200px;
+  /* height: 120px; */
+  /* border: 10px solid #ff3c00; */
+  background: black;
+  margin: 90px;
+  height: 20px;
+   text-align: centre;
+  
+  font-size: 20px;
+}
+
