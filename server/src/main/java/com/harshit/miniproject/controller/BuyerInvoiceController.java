@@ -123,7 +123,7 @@ public class BuyerInvoiceController {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
 
-        BuyerInvoice normalorder = new BuyerInvoice("abcd@gmail.com", item, dtf.format(now), tot, "Order Processing", false);
+        BuyerInvoice normalorder = new BuyerInvoice("abcd", item, dtf.format(now), tot, "Order Processing", false);
         int ans = buyerInvoiceService.insertIntoBuyerInvoice(normalorder);
         if(ans == 1) {
             for(Item i : item) {

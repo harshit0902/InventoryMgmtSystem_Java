@@ -3,6 +3,7 @@ import Axios from "axios";
 import Header from './customer_navbar'
 import Footer from './footer'
 import {Link} from "react-router-dom";
+let email = localStorage.getItem("email");
 
 let cart=[];
 let send=[];
@@ -40,6 +41,7 @@ function Cart() {
         console.log(send);
         localStorage.setItem("cart", send);
         Axios.post('http://localhost:9091/api/buy/normal', {
+            email: email,
             it: send
         }).then((response) => {
             console.log(response)
