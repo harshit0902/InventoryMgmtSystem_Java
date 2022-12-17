@@ -2,13 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Header from './supplier_navbar'
 import Footer from './footer'
-<<<<<<< HEAD
 import { textAlign } from "@mui/system";
 import { NavLink, Link } from 'react-router-dom'
-=======
-import {Link} from "react-router-dom";
 
->>>>>>> main
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -121,7 +117,6 @@ return (
       <center>
       <button className="button-methish" onClick={() => {
         Check1()
-<<<<<<< HEAD
         
        } }><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
        
@@ -129,18 +124,7 @@ return (
       </div>
       </div>
    <Footer /></>
-=======
-        Check2()
-        Check3() 
-        Checkqty()
-       } }>Check</button>
-       <button onClick={() => {
-        slocalstorage1()
-             }}><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
-      
 
-    </div><Footer /></>
->>>>>>> main
 
 )
 }

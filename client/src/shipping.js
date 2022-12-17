@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import Header from './admin_navbar'
-import Footer from './footer'
-import { NavLink, Link } from 'react-router-dom'
-=======
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import Header from './customer_navbar'
@@ -87,4 +81,3 @@ function Cart() {
 }
 
 export default Cart;
->>>>>>> main
