@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import './index.css';
 import Header from './customer_navbar'
 import Footer from './footer'
@@ -146,6 +146,7 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
+<<<<<<< HEAD
       <center>
       
        <button className="button-methish" onClick={() => {
@@ -154,6 +155,17 @@ return (
       <button className="button-methish"><Link id="sign" to='/specialrequestform'>Special Request?</Link></button>
       </center>
 </div>
+=======
+      <button onClick={() => {
+            Check()
+       } }>Check</button>
+       <button onClick={() => {
+        localstorage1()
+             }}><Link id="sign" to='/itemlistnew1'>Add to Cart</Link></button>
+          <br />
+          <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
+
+>>>>>>> main
     </div>
     <Footer /></>
     </body>

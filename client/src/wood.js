@@ -2,7 +2,12 @@ import React from "react";
 import { useState } from "react";
 import Header from './customer_navbar'
 import Footer from './footer'
+<<<<<<< HEAD
 import { NavLink, Link } from 'react-router-dom'
+=======
+import {Link} from "react-router-dom";
+
+>>>>>>> main
 let error = [];
 
 
@@ -138,12 +143,23 @@ return (
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
+<<<<<<< HEAD
       <center>
       <button className="button-methish" onClick={() => {
         Check1()
          }}><Link id="sign" to='/itemlistnew1'>Add to cart</Link></button> 
       <button className="button-methish"><Link id="sign" to='/specialrequestform'>Special Request?</Link></button>
       </center>
+=======
+      <button onClick={() => {
+        Check()
+       } }>Check</button>
+       <button onClick={() => {
+        localstorage7()
+             }}><Link id="sign" to='/itemlistnew1'>Add to Cart</Link></button>
+          <br />
+          <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
+>>>>>>> main
 
     </div><Footer /></>
 

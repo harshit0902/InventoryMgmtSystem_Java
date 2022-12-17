@@ -1,8 +1,6 @@
 package com.harshit.miniproject.service;
 
-import com.harshit.miniproject.model.SellerInvoice;
-import com.harshit.miniproject.model.Item;
-import com.harshit.miniproject.model.ItemList;
+import com.harshit.miniproject.model.*;
 import com.harshit.miniproject.repository.SellerInvoiceJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -85,6 +83,34 @@ public class SellerInvoiceService {
         }
         else
             System.out.println("null");
+    }
+
+    public List<BuyerInvoice> getBuyerDetails() {
+        Query q4 = new Query();
+        q4.addCriteria(Criteria.where("special").is(true));
+        q4.addCriteria(Criteria.where("status").is("Special Request Made"));
+        List<BuyerInvoice> data = mongoOperations.find(q4, BuyerInvoice.class);
+        if(data != null)
+            return data;
+        else
+            return null;
+    }
+
+    public int updateOrder(Shipping name) {
+        Query q5 = new Query();
+        q5.addCriteria(Criteria.where("billNo").is(name.getBillID()));
+        BuyerInvoice item = mongoOperations.findOne(q5, BuyerInvoice.class);
+
+        if(item != null)
+        {
+            Update update1 = new Update();
+            update1.set("status", "Order Processing");
+            mongoOperations.updateFirst(q5, update1, BuyerInvoice.class);
+            return 1;
+        }
+
+        else
+            return 0;
     }
 
     /*public int checkIfEmailExists(Credentials user) {

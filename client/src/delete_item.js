@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Axios from "axios";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import Header from './admin_navbar'
 import Footer from './footer'
 
@@ -34,7 +34,7 @@ function App() {
             onChange={(event) => { setid(parseInt(event.target.value)); } }></input>
              <br></br>
         </div>
-        <button onClick={()=>savedetail(id)}>Delete Item</button>
+        <button onClick={()=>savedetail(id)}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
 
 
 </div><Footer /></>

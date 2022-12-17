@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Axios from "axios";
 import Header from './admin_navbar'
 import Footer from './footer'
+import {Link} from "react-router-dom";
 
 let count = 0;
 function App() {
@@ -114,7 +115,7 @@ return (
          <br></br>
     </div>
     
-     <button onClick={savedetail}>Edit Item</button>
+     <button onClick={savedetail}><Link id="sign" to='/admin_homepage'>Edit Item</Link></button>
     
 
   </div><Footer /></>

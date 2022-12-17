@@ -3,6 +3,7 @@ import React from "react";
 import Axios from "axios";
 import Header from './admin_navbar'
 import Footer from './footer'
+import {Link} from "react-router-dom";
 
 function App() {
     //const [id, setid] = useState(0);
@@ -87,7 +88,7 @@ return (
          <br></br>
     </div>
     
-     <button onClick={savedetail}>Add Item</button>
+     <button onClick={savedetail}><Link id="sign" to='/admin_homepage'>Add Item</Link></button>
     
 
   </div><Footer /></>

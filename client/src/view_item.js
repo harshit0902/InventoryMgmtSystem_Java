@@ -3,6 +3,7 @@ import { useState } from "react";
 import Axios from "axios";
 import Header from './supplier_navbar'
 import Footer from './footer'
+import {Link} from "react-router-dom";
 
 const items =[
     {
@@ -51,6 +52,7 @@ function ViewItems()
                 </div>
             )
         )}
+        <button><Link id="sign" to='/admin_homepage'>Back to homepage</Link></button>
     </div>
         <Footer /></>
     );

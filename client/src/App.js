@@ -25,7 +25,7 @@ import Cart from './cart';
 import SellerForm from './sellerform';
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
-import Admin from './admin';
+import Admin_homepage from './admin_homepage';
 import AddItem from './add_item';
 import DeleteItem from './delete_item';
 import EditItem from './edit_item';

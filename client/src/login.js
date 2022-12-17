@@ -33,7 +33,7 @@ function App() {
                 localStorage.setItem("uid", obj[0].uid);*/
 
                 if (response.data === "Admin") {
-                    window.location.href = "http://localhost:3000/admin"
+                    window.location.href = "http://localhost:3000/admin_homepage"
                 } else if (response.data === "Buyer") {
                     window.location.href = "http://localhost:3000/itemlistnew"
                 } else if (response.data === "Seller") {
