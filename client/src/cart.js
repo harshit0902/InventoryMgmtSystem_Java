@@ -46,8 +46,9 @@ function Cart() {
         }).then((response) => {
             console.log(response)
             if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
+                window.location.href = "http://localhost:3000/homepage2";
             }
+            alert("Payment Successful !!");
         });
     }
     let i1 = 'a';
@@ -200,7 +201,7 @@ function Cart() {
                     ) : ("") )
                 )}
             </div>
-            <button onClick={savedetail}><Link id="sign" to='/homepage2'>Confirm Cart</Link></button>
+            <button onClick={savedetail}><Link id="sign" to='/homepage2'>Confirm Cart & Make Payment</Link></button>
 
         <Footer /></>
     )

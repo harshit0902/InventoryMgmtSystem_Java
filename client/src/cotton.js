@@ -1,10 +1,9 @@
 import { useState } from "react";
 import React from 'react'
-import {Link, useNavigate} from 'react-router-dom'
 import './index.css';
 import Header from './customer_navbar'
 import Footer from './footer'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
 let error = [];
 
 function App() {
