@@ -46,9 +46,9 @@ function Cart() {
             it: send
         }).then((response) => {
             console.log(response)
-            if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
-            }
+            //if (response.data == 'success') {
+            //    window.location.href = "http://localhost:3000/login";
+            //}
         });
     }
     let i1 = 'a';

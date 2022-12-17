@@ -19,7 +19,7 @@ function CustomerNavbar() {
                 <NavLink to='/homepage2'><div class="navelement">HOME</div></NavLink>
             </div>
             <div class="navelement">
-                <NavLink to='/about'><div class="navelement">ABOUT US</div></NavLink>
+                <NavLink to='/about1'><div class="navelement">ABOUT US</div></NavLink>
             </div>
             <div className="dropdown">
                 <button className="dropbtn">BUY ITEMS</button>

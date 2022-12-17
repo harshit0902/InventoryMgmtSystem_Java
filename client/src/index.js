@@ -48,6 +48,8 @@ import Sellhistory from './sellerhistory';
 import CustomerNavbar from './customer_navbar'
 import SupplierNavbar from "./supplier_navbar";
 import About from './about'
+import About1 from './about1'
+import About2 from './about2'
 import Footer from './footer';
 import Logout from './logout'
 import Homepage1 from './homepage1'
@@ -108,6 +110,8 @@ root.render(
                       <Route path='/customer_navbar' element={<CustomerNavbar />}></Route>
                       <Route path='/supplier_navbar' element={<SupplierNavbar />}></Route>
                       <Route path='/about' element={<About />}></Route>
+                      <Route path='/about1' element={<About1 />}></Route>
+                      <Route path='/about2' element={<About2 />}></Route>
                       <Route path='/footer' element={<Footer />}></Route>
                       <Route path='/logout' element={<Logout />}></Route>
                       <Route path='/homepage1' element={<Homepage1 />}></Route>

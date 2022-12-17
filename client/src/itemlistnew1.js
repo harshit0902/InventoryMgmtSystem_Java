@@ -19,10 +19,18 @@ function App() {
     }, []);
 
     return (
+
+
         <><Header />
             <div>
                 <center>
                     <h1 id="Items_new">
+                        <h3> <button id="button-result"><Link id="sign" to='/cart'>Cart</Link></button></h3>
+
+                    </h1>
+                </center>
+                <center>
+                    <h1 id="Items_new_sell">
                         Cotton <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Cotton" ? (
@@ -36,7 +44,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Jute <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Jute" ? (
@@ -50,7 +58,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Coffee <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Coffee" ? (
@@ -64,7 +72,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Steel <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Steel" ? (
@@ -78,7 +86,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Aluminium <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Aluminium" ? (
@@ -92,7 +100,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Copper <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Copper" ? (
@@ -106,7 +114,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Wood <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Wood" ? (
@@ -120,7 +128,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Wheat <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Wheat" ? (
@@ -134,7 +142,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Bajra <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Bajra" ? (
@@ -148,7 +156,7 @@ function App() {
                     </h1>
                 </center>
                 <center>
-                    <h1 id="Items_new">
+                    <h1 id="Items_new_sell">
                         Ragi <h3>Quantity available <div>
                         {itemDetails.map((item)=>(
                             item.itemName === "Ragi" ? (

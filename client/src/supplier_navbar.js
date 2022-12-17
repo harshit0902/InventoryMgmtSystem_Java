@@ -16,10 +16,10 @@ function SupplierNavbar() {
                 <NavLink to='/profile'><div class="navelement">PROFILE</div></NavLink>
             </div>*/}
             <div class="navelement">
-                <NavLink to='/homepage2'><div class="navelement">HOME</div></NavLink>
+                <NavLink to='/homepage3'><div class="navelement">HOME</div></NavLink>
             </div>
             <div class="navelement">
-                <NavLink to='/about'><div class="navelement">ABOUT US</div></NavLink>
+                <NavLink to='/about2'><div class="navelement">ABOUT US</div></NavLink>
             </div>
             <div className="navelement">
                 <NavLink to='/sellerform'><div className="navelement">SELL ITEMS</div></NavLink>

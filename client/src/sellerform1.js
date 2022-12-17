@@ -14,7 +14,7 @@ function SellerForm1()
     <><Header /><div>
           <center>
       <h1 id="Items_new">
-          <h3> <button id="button-result"><Link id="sign" to='/cart'>Cart</Link></button></h3>
+          <h3> <button id="button-result"><Link id="sign" to='/sellercart'>Cart</Link></button></h3>
          
       </h1>
       </center>
