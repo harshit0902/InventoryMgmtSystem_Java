@@ -87,17 +87,14 @@ function App() {
                         <input type="text"
                             onChange={(event) => { setcapcthaEntered(event.target.value) }}></input>
                     </div>
-                    <br></br>
-                    <div>
                     </div>
-
-                </div>
-                <br></br>
-                <div>
+                    
+                   <div id='detailsnew'>
                     <center>
                         <button className="button-methish" onClick={savedetail}>Login</button>
                     </center>
                 </div>
+                
                 <div>
                   {/*  <center>
                         <h3>Don't have an account</h3>

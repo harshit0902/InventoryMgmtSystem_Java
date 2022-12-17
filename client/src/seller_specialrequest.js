@@ -49,23 +49,23 @@ function Cart() {
                 {specialDetails.map((bill) => (
                     bill.special == true && bill.status == "Special Request Made" ? (
                         <div key={bill.billNo}>
-                            <h5> Bill Number : {bill.billNo} </h5>
-                            <h5> Customer Email: {bill.custEmail} </h5>
-                            <h5> Issue Date: {bill.issueDate}</h5>
-                            <h5> Items:
+                            <h5  id="Items_new_sell"> Bill Number : {bill.billNo} </h5>
+                            <h5  id="Items_new_sell"> Customer Email: {bill.custEmail} </h5>
+                            <h5  id="Items_new_sell"> Issue Date: {bill.issueDate}</h5>
+                            <h5  id="Items_new_sell"> Items:
                                 {bill.it.map((item) => (
                                         <div key={item.billNo}>
-                                            <h5> Item Name: {item.itemName} </h5>
-                                            <h5> Quantity: {item.quantity}</h5>
+                                            <h5  id="Items_new_sell"> Item Name: {item.itemName} </h5>
+                                            <h5  id="Items_new_sell"> Quantity: {item.quantity}</h5>
                                             ***********************************
                                         </div>
                                     )
                                 )}
                             </h5>
-                            <h5> Total Amount: {bill.totalAmt} </h5>
-                            <h5> Status: {bill.status} </h5>
-                            <h5>
-                                <button onClick={() => {
+                            <h5  id="Items_new_sell"> Total Amount: {bill.totalAmt} </h5>
+                            <h5  id="Items_new_sell"> Status: {bill.status} </h5>
+                            <h5  id="Items_new_sell">
+                                <button  id='button-result' onClick={() => {
                                     Del(bill.billNo)
                                 }}>Delete
                                 </button>

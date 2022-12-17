@@ -114,8 +114,11 @@ return (
         onChange={(event) => { setquality3(event.target.value); } }></input>
          <br></br>
     </div>
-    
-     <button onClick={savedetail}><Link id="sign" to='/admin_homepage'>Edit Item</Link></button>
+    <div id='detailsnew'>
+      <center>
+     <button className="button-methish" onClick={savedetail}><Link id="sign" to='/admin_homepage'>Edit Item</Link></button>
+     </center>
+     </div>
     
 
   </div><Footer /></>

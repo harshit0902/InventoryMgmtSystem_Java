@@ -269,7 +269,7 @@ function App1() {
             <div id="details">
                 <div>
                     <label>Select Item Name: </label>
-                    <select id="itemName" className="form-select" aria-label="Default select example"
+                    <select id="itemName"  aria-label="Default select example"
                             onClick={(event) => {
                                 fun1(event.target.value)
                             }}>
@@ -297,10 +297,10 @@ function App1() {
             </div>
             {item}
             <br></br>
-            <div>
+            <div id='detailsnew'>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                    <button onClick={savedetail}><Link id="sign" to='/homepage2'>Place Order</Link></button>
+                    <button id='button-result' onClick={savedetail}><Link id="sign" to='/homepage2'>Place Order</Link></button>
                 </center>
                 {/*{message}*/}
             </div>

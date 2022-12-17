@@ -31,7 +31,7 @@ function App() {
                 </h1>
             </center>
         </div>
-            <div id="details">
+            <div id="detailsnew">
                 {buydetails.map((bill)=>(
                         <div key={bill.billNo}>
                             <h5 id="Items_new_sell"> Bill No.: {bill.billNo} </h5>

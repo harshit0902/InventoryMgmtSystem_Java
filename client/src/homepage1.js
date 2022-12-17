@@ -20,12 +20,12 @@ function Homepage1()
                     High Turnover and High <br></br> Profitability of your Stocks
                 </h2>
             </div>
-            <div id="buttongroups">
+            <div id="detailsnew">
+            
+                    <button className='button-methish'  onClick><Link id="sign" to='/signup'>Sign Up</Link></button>
+                
                 <div id="buttons">
-                    <button id="button-title" variant="contained" onClick><Link id="sign" to='/signup'>Sign Up</Link></button>
-                </div>
-                <div id="buttons">
-                    <button id="button-title" variant="contained" onClick><Link id="sign" to='/login'>Login</Link></button>
+                    <button className='button-methish'  onClick><Link id="sign" to='/login'>Login</Link></button>
                 </div>
             </div>
 

@@ -33,10 +33,10 @@ function Allcustomer()
     <div>
         {customerDetails.map((c)=>(
                 <div key={c.email}>
-                    <h5> Customer Name: {c.username} </h5>
-                    <h5> Customer Email: {c.email}</h5>
-                    <h5> Customer Mobile Number: {c.mobNo}</h5>
-                    <h5> Customer Address: {c.address}</h5>
+                    <h5 id="Items_new_sell"> Customer Name: {c.username} </h5>
+                    <h5 id="Items_new_sell"> Customer Email: {c.email}</h5>
+                    <h5 id="Items_new_sell"> Customer Mobile Number: {c.mobNo}</h5>
+                    <h5 id="Items_new_sell"> Customer Address: {c.address}</h5>
                     -------------------------------------
                 </div>
             )

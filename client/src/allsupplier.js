@@ -32,10 +32,10 @@ function Allsupplier()
     <div>
         {supplierDetails.map((s)=>(
                 <div key={s.email}>
-                    <h5> Supplier Name: {s.username} </h5>
-                    <h5> Supplier Email: {s.email}</h5>
-                    <h5> Supplier Mobile Number: {s.mobNo}</h5>
-                    <h5> Supplier Address: {s.address}</h5>
+                    <h5 id="Items_new_sell"> Supplier Name: {s.username} </h5>
+                    <h5 id="Items_new_sell"> Supplier Email: {s.email}</h5>
+                    <h5 id="Items_new_sell"> Supplier Mobile Number: {s.mobNo}</h5>
+                    <h5 id="Items_new_sell"> Supplier Address: {s.address}</h5>
                     -------------------------------------
                 </div>
             )

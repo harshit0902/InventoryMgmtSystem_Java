@@ -38,22 +38,25 @@ function ViewItems()
 
     return (
         <><Header />
-    <div>
+    <div id="details">
         {itemDetails.map((item)=>(
                 <div key={item.id}>
-                    <h5> ID: {item.itemID} </h5>
-                    <h5> Item Name: {item.itemName} </h5>
-                    <h5> Quantity: {item.quantity} </h5>
-                    <h5> Price: {item.price} </h5>
-                    <h5> Quality 1: {item.quality1} </h5>
-                    <h5> Quality 2: {item.quality2} </h5>
-                    <h5> Quality 3: {item.quality3} </h5>
+                    <h5 id="Items_new_sell"> ID: {item.itemID} </h5>
+                    <h5 id="Items_new_sell"> Item Name: {item.itemName} </h5>
+                    <h5 id="Items_new_sell"> Quantity: {item.quantity} </h5>
+                    <h5 id="Items_new_sell"> Price: {item.price} </h5>
+                    <h5 id="Items_new_sell"> Quality 1: {item.quality1} </h5>
+                    <h5 id="Items_new_sell"> Quality 2: {item.quality2} </h5>
+                    <h5 id="Items_new_sell"> Quality 3: {item.quality3} </h5>
                     -------------------------------------
                 </div>
             )
-        )}
-        <button><Link id="sign" to='/admin_homepage'>Back to homepage</Link></button>
-    </div>
+        )}</div><div id='detailsnew'>
+        <center>
+       <button className="button-methish"><Link id="sign" to='/admin_homepage'>Back to Homepage</Link></button>
+       </center>
+       </div>
+    
         <Footer /></>
     );
 }

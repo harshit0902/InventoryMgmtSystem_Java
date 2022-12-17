@@ -189,7 +189,7 @@ function Cart() {
                 {car.map((item,val)=>(
                     val+1,
                     item.quantity>0 ? (
-                        <div key={item.itemName}>
+                        <div id='detailscart' key={item.itemName}>
                             <h5> Item Name: {item.itemName} </h5>
                             <h5> Quantity: {item.quantity} </h5>
                             <h5> Quality 1: {item.quality1} </h5>
@@ -201,7 +201,7 @@ function Cart() {
                     ) : ("") )
                 )}
             </div>
-            <button onClick={savedetail}><Link id="sign" to='/homepage2'>Confirm Cart & Make Payment</Link></button>
+            <button id='button-result' onClick={savedetail}><Link id="sign" to='/homepage2'>Confirm Cart & Make Payment</Link></button>
 
         <Footer /></>
     )

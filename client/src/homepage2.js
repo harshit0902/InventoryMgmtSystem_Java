@@ -19,6 +19,9 @@ function Homepage2()
                 <h2 id="titlehead2">
                     Make your Stocks <br></br> And Management with Us
                 </h2>
+                <div id="detailsnew">
+            
+            </div>
             </div>
             <Footer /></>
 

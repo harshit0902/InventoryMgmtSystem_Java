@@ -20,6 +20,9 @@ function Homepage2()
                     Make your Stocks <br></br> And Management with Us
                 </h2>
             </div>
+            <div id="detailsnew">
+            
+            </div>
             <Footer /></>
 
 

@@ -33,8 +33,11 @@ function App() {
           <input type="number" placeholder='Item Id'
             onChange={(event) => { setid(parseInt(event.target.value)); } }></input>
              <br></br>
-        </div>
-        <button onClick={()=>savedetail(id)}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
+        </div><div id='detailsnew'>
+      <center>
+     <button className="button-methish" onClick={savedetail}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
+     </center>
+     </div>
 
 
 </div><Footer /></>

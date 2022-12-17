@@ -17,9 +17,13 @@ import Wheat from './wheat'
 import Bajra from './bajra'
 import Ragi from './ragi'
 import About from './about'
+import About1 from './about1'
+import About2 from './about2'
 import Itemlistnew1 from './itemlistnew1'
 import Itemlistnew from './itemlistnew'
-
+import Homepage1 from './homepage1'
+import Homepage2 from './homepage2'
+import Homepage3 from './homepage3'
 import SpecialRequestForm from './specialrequestform'
 import Cart from './cart';
 import SellerForm from './sellerform';
@@ -86,7 +90,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <Signup />
+            <Homepage2 />
 
         </div>
         </div>

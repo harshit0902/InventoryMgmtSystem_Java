@@ -87,9 +87,11 @@ return (
         onChange={(event) => { setquality3(parseInt(event.target.value)); } }></input>
          <br></br>
     </div>
-    
-     <button onClick={savedetail}><Link id="sign" to='/admin_homepage'>Add Item</Link></button>
-    
+    <div id='detailsnew'>
+      <center>
+     <button className="button-methish" onClick={savedetail}><Link id="sign" to='/admin_homepage'>Add Item</Link></button>
+     </center>
+     </div>
 
   </div><Footer /></>
 

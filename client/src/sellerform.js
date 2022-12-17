@@ -142,9 +142,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                    ) : ("") )
                )}
            </div>
-               <h4>Minimum quality required =" variable from backend"</h4> 
-               <h4>Minimum quality required =" variable from backend"</h4> 
-               <h4>Minimum quality required =" variable from backend"</h4> 
+              
                 <button id="button-result"><Link id="sign" to='/sell_cotton'>Supply now</Link></button></h6>
 
         </h1>
@@ -160,7 +158,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-               <h4> Minimum quality required =" variable from backend" </h4>
+              
                 <button id="button-result"><Link id="sign" to='/sell_jute'>Supply now</Link></button></h6>
            
         </h1>
@@ -176,7 +174,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               
                 <button id="button-result"><Link id="sign" to='/sell_coffee'>Supply now</Link></button></h6>
            
         </h1>
@@ -192,7 +190,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+                
                 <button id="button-result"><Link id="sign" to='/sell_steel'>Supply now</Link></button></h6>
            
         </h1>
@@ -208,7 +206,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required = " variable from backend"
+               
                 <button id="button-result"><Link id="sign" to='/sell_aluminium'>Supply now</Link></button></h6>
            
         </h1>
@@ -224,7 +222,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+                
                 <button id="button-result"><Link id="sign" to='/sell_copper'>Supply now</Link></button></h6>
            
         </h1>
@@ -240,7 +238,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               
                 <button id="button-result"><Link id="sign" to='/sell_wood'>Supply now</Link></button></h6>
            
         </h1>
@@ -256,7 +254,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               
                 <button id="button-result"><Link id="sign" to='/sell_wheat'>Supply now</Link></button></h6>
            
         </h1>
@@ -272,7 +270,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               
                 <button id="button-result"><Link id="sign" to='/sell_bajra'>Supply now</Link></button></h6>
            
         </h1>
@@ -288,7 +286,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+              
                 <button id="button-result"><Link id="sign" to='/sell_ragi'>Supply now</Link></button></h6>
            
         </h1>

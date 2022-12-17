@@ -21,82 +21,70 @@ function SellerForm1()
           <center>
         <h1 id="Items_new_sell">
            Cotton 
-           <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
-                Minimum quality required =" variable from backend"
-                Minimum quality required =" variable from backend"
+           <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_cotton'>Supply now</Link></button></h6>
 
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Jute <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Jute <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_jute'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Coffee<h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Coffee<h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_coffee'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Steel <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Steel <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_steel'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Aluminium <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Aluminium <h6> Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_aluminium'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Copper <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Copper <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_copper'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Wood <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Wood <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_wood'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Wheat <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Wheat <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_wheat'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Bajra <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Bajra <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_bajra'>Supply now</Link></button></h6>
            
         </h1>
       </center>
       <center>
         <h1 id="Items_new_sell">
-           Ragi <h6>Quantity needed  ="variable from backend" 
-                Minimum quality required =" variable from backend" 
+           Ragi <h6>Quantity needed  = 
                 <button id="button-result"><Link id="sign" to='/sell_ragi'>Supply now</Link></button></h6>
            
         </h1>

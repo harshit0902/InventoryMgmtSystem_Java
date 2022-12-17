@@ -231,6 +231,23 @@ nav a.active {
   
   font-size: 20px;
 }
+#detailscart {
+  margin-bottom: 10px;
+  /* border: black 10px; */
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 700px;
+  /* height: 120px; */
+  /* border: 10px solid #ff3c00; */
+  background: black;
+  margin: 90px;
+   text-align: left;
+  color :#ff3c00;
+  font-size: 20px;
+}
+
 
 #text {
   margin-bottom: 25px;
@@ -323,7 +340,7 @@ select {
 
 .dropdown {
   overflow: hidden;
-  background-color: black;
+  background-color: #ff3c00;
   width: 100px;
   margin-right: 0px;
   margin-top: 5px;
@@ -345,42 +362,43 @@ select {
   padding: 14px 12px;
   background-color: inherit;
   font-family: inherit;
-  color: white;
+  
 }
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: indigo;
+  background-color: black;
   width: 100px;
-  color: black
+  color: #ff3c00
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
-  padding: 12px 16px;
+  color: #ff3c00;
+  padding: 12px 5px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
 
 .dropdown-content a:hover {
-  background-color: #ff3c00;
+  background-color: black;
   color: white;
   text-decoration: bold;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  background-color: black;
 }
 
 .navelement {
@@ -567,6 +585,7 @@ select {
 #buttons {
   float: left;
   padding-left: 70px;
+  width: 500px
 }
 
 /* #About {
@@ -663,7 +682,9 @@ select {
   margin: 10px;
   font-size: 20px;
 }
-
+#itemName{
+  background-color: #ff3c00;
+}
 #number {
   font-size: 20px;
 }
