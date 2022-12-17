@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import './index.css';
 import Header from './customer_navbar'
 import Footer from './footer'
-
+import { NavLink, Link } from 'react-router-dom'
 let error = [];
 
 function App() {
@@ -35,9 +35,10 @@ function App() {
     }
 
    function Check1() {
-    if((q1>9000 && q1<15000)){
-      return true;
+    if((q1>1 && q1<100)){
       
+      Check2()
+      return true;
       
     }  else{
       console.log("failure");
@@ -45,9 +46,10 @@ function App() {
 
     }}
    function Check2(){
-    if((q2>9000 && q2<15000)){
+    if((q2>1 && q2<100)){
+        
+        Check3()
         return true;
-      
       
     }  else{
       console.log("failure");
@@ -56,9 +58,10 @@ function App() {
     }
   }
     function Check3(){
-      if((q3>9000 && q3<15000)){
+      if((q3>1 && q3<100)){
+          
+          Checkqty()
           return true;
-        
         
       }  else{
         console.log("failure");
@@ -68,8 +71,9 @@ function App() {
     }
       function Checkqty(){
         if((qty1>0 && qty1 <=25)){
+            
+            localstorage1()
             return true;
-          
           
         }  else{
           console.log("failure");
@@ -79,51 +83,51 @@ function App() {
       
       }
 
-      function Check() {
-          if(Check1() && Check2() && Check3() && Checkqty()) {
-              window.location.href = '/itemlistnew1'
-          }
+      // function Check() {
+      //     if(Check1() && Check2() && Check3() && Checkqty()) {
+      //         window.location.href = '/itemlistnew1'
+      //     }
 
-          if(!Check1()) {
-              error.push("Error in Quality 1\n");
-          }
+      //     if(!Check1()) {
+      //         error.push("Error in Quality 1\n");
+      //     }
 
-          if(!Check2()) {
-              error.push("Error in Quality 2\n");
-          }
+      //     if(!Check2()) {
+      //         error.push("Error in Quality 2\n");
+      //     }
 
-          if(!Check3()) {
-              error.push("Error in Quality 3\n");
-          }
+      //     if(!Check3()) {
+      //         error.push("Error in Quality 3\n");
+      //     }
 
-          if(!Checkqty()) {
-              error.push("Error in Quantity\n");
-          }
+      //     if(!Checkqty()) {
+      //         error.push("Error in Quantity\n");
+      //     }
 
-          if(error.length != 0)
-              alert(error);
-      }
+      //     if(error.length != 0)
+      //         alert(error);
+      // }
    
 return (
     
       <body>
-      <><Header /><div>
+      <><Header /><div style={{backgroundColor:'black',textAlign:'center'}}>
     <center>
       <h1 id="cot">
         Order Cotton
       </h1>
     </center>
-  </div><div id="details">
+  <div id="details">
       <div>
         <label>Enter Quantity required </label>
         <input type="number" placeholder='Enter in kg'
           onChange={(event) => { setqty(event.target.value); } }></input>
            <br></br>
       </div>
-      <label>Enter a value between the range.</label>
+      <label>Enter a value between the range 1-100.</label>
       <div>
 
-        <input type="number" placeholder='Quality 1'
+        <input type="number" placeholder='Uniformity Index'
          onChange={(event) => { setquality1(event.target.value); } } ></input>
            
 
@@ -131,17 +135,27 @@ return (
       </div>
       <div>
 
-        <input type="number" placeholder='Quality 2'
+        <input type="number" placeholder='Strength'
           onChange={(event) => { setquality2(event.target.value); } }></input>
            <br></br>
       </div>
       
       <div>
 
-        <input type="number" placeholder='Quality 3'
+        <input type="number" placeholder='Elongation'
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
+<<<<<<< HEAD
+      <center>
+      
+       <button className="button-methish" onClick={() => {
+        Check1()
+         }}><Link id="sign" to='/itemlistnew1'>Add to cart</Link></button> 
+      <button className="button-methish"><Link id="sign" to='/specialrequestform'>Special Request?</Link></button>
+      </center>
+</div>
+=======
       <button onClick={() => {
             Check()
        } }>Check</button>
@@ -151,6 +165,7 @@ return (
           <br />
           <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
 
+>>>>>>> main
     </div>
     <Footer /></>
     </body>

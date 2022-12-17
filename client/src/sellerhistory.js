@@ -22,9 +22,9 @@ function App() {
 
     return (
         <><Header /><div>
-            <Header />
+            
             <center>
-                <h1 id="buyconfirmation">
+                <h1 id="Items_new_sell">
                     Seller History
                 </h1>
             </center>
@@ -32,20 +32,20 @@ function App() {
             <div id="details">
                 {selldetails.map((bill)=>(
                         <div key={bill.billNo}>
-                            <h5> Bill No.: {bill.billNo} </h5>
-                            <h5> Issue Date: {bill.issueDate}</h5>
-                            <h5> Items:
+                            <h5 id="Items_new_sell"> Bill No.: {bill.billNo} </h5>
+                            <h5 id="Items_new_sell"> Issue Date: {bill.issueDate}</h5>
+                            <h5 id="Items_new_sell"> Items:
                                 {bill.itemSold.map((item)=>(
                                         <div key={item.billNo}>
-                                            <h5> Item Name: {item.itemName} </h5>
-                                            <h5> Quantity: {item.quantity}</h5>
+                                            <h5 id="Items_new_sell"> Item Name: {item.itemName} </h5>
+                                            <h5 id="Items_new_sell"> Quantity: {item.quantity}</h5>
                                             ***********************************
                                         </div>
                                     )
                                 )}
                             </h5>
-                            <h5> Total Quantity: {bill.totalQty}</h5>
-                            <h5> Total Amount: {bill.totalAmt}</h5>
+                            <h5 id="Items_new_sell"> Total Quantity: {bill.totalQty}</h5>
+                            <h5 id="Items_new_sell"> Total Amount: {bill.totalAmt}</h5>
                             -------------------------------------
                         </div>
                     )

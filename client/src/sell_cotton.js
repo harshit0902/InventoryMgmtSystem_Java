@@ -2,8 +2,13 @@ import React from "react";
 import { useState } from "react";
 import Header from './supplier_navbar'
 import Footer from './footer'
+<<<<<<< HEAD
+import { textAlign } from "@mui/system";
+import { NavLink, Link } from 'react-router-dom'
+=======
 import {Link} from "react-router-dom";
 
+>>>>>>> main
 function App() {
     
     const [qty, setqty] = useState(0);
@@ -30,9 +35,9 @@ function App() {
     }
 
    function Check1() {
-    if((q1>9000 && q1<15000)){    /* variables needed from backend*/
+    if((q1>1 && q1<100)){    /* variables needed from backend*/
       console.log("success");
-      
+      Check2()
       
     }  else{
       console.log("failure");
@@ -40,9 +45,9 @@ function App() {
 
     }}
    function Check2(){
-    if((q2>9000 && q2<15000)){
+    if((q2>1 && q2<100)){
       console.log("success");
-      
+      Check3() 
       
     }  else{
       console.log("failure");
@@ -51,9 +56,9 @@ function App() {
     }
   }
     function Check3(){
-      if((q3>9000 && q3<15000)){
+      if((q3>1 && q3<100)){
         console.log("success");
-        
+        Checkqty()
         
       }  else{
         console.log("failure");
@@ -64,7 +69,7 @@ function App() {
       function Checkqty(){
         if((qty1>0 && qty1 <=25)){           /*variables from backend*/
           console.log("success");
-          
+          slocalstorage1()
           
         }  else{
           console.log("failure");
@@ -77,23 +82,24 @@ function App() {
 return (
     
       
-      <><Header /><div>
+      <><Header /><div style={{backgroundColor:'black',textAlign:'center'}}>
     <center>
+      
       <h1 id="cot">
         Supply Cotton
       </h1>
     </center>
-  </div><div id="details">
+  <div id="details">
       <div>
         <label>Enter Quantity to be suppplied </label>
         <input type="number" placeholder='Enter in kg'
           onChange={(event) => { setqty(event.target.value); } }></input>
            <br></br>
       </div>
-      <label>Enter a value between the range.</label>
+      <label>Enter a value between the range 1-100.</label>
       <div>
 
-        <input type="number" placeholder='Quality 1'
+        <input type="number" placeholder='Uniformity Index'
          onChange={(event) => { setquality1(event.target.value); } } ></input>
            
 
@@ -101,19 +107,29 @@ return (
       </div>
       <div>
 
-        <input type="number" placeholder='Quality 2'
+        <input type="number" placeholder=' Strength'
           onChange={(event) => { setquality2(event.target.value); } }></input>
            <br></br>
       </div>
       
       <div>
 
-        <input type="number" placeholder='Quality 3'
+        <input type="number" placeholder='Elongation'
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
-      <button onClick={() => {
+      <center>
+      <button className="button-methish" onClick={() => {
         Check1()
+<<<<<<< HEAD
+        
+       } }><Link id="sign" to='/sellerform1'>Add to Supply Cart</Link></button>
+       
+      </center>
+      </div>
+      </div>
+   <Footer /></>
+=======
         Check2()
         Check3() 
         Checkqty()
@@ -124,6 +140,7 @@ return (
       
 
     </div><Footer /></>
+>>>>>>> main
 
 )
 }

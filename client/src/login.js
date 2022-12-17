@@ -80,7 +80,7 @@ function App() {
                     </div>
                     <center><div id="captcha-string">{capctha}</div>
                         <br></br>
-                        <button onClick={changecaptcha}>Change Captcha</button></center>
+                        <button className="button-methish" onClick={changecaptcha}>Change Captcha</button></center>
                     <br></br>
                     <div>
                         <label>Enter Captcha : </label>
@@ -95,7 +95,7 @@ function App() {
                 <br></br>
                 <div>
                     <center>
-                        <button onClick={savedetail}>Login</button>
+                        <button className="button-methish" onClick={savedetail}>Login</button>
                     </center>
                 </div>
                 <div>

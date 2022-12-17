@@ -2,8 +2,12 @@ import React from "react";
 import { useState } from "react";
 import Header from './customer_navbar'
 import Footer from './footer'
+<<<<<<< HEAD
+import { NavLink, Link } from 'react-router-dom'
+=======
 import {Link} from "react-router-dom";
 
+>>>>>>> main
 let error = [];
 function App() {
   
@@ -34,7 +38,7 @@ function App() {
     
   }
     function Check1() {
-        if((q1>9000 && q1<15000)){
+        if((q1>1 && q1<100)){Check2()
             return true;
 
 
@@ -44,7 +48,7 @@ function App() {
 
         }}
     function Check2(){
-        if((q2>9000 && q2<15000)){
+        if((q2>1 && q2<100)){Check3()
             return true;
 
 
@@ -55,7 +59,7 @@ function App() {
         }
     }
     function Check3(){
-        if((q3>9000 && q3<15000)){
+        if((q3>1 && q3<100)){Checkqty()
             return true;
 
 
@@ -66,7 +70,7 @@ function App() {
         }
     }
     function Checkqty(){
-        if((qty1>0 && qty1 <=25)){
+        if((qty1>0 && qty1 <=25)){localstorage4()
             return true;
 
 
@@ -118,10 +122,10 @@ return (
           onChange={(event) => { setqty(event.target.value); } }></input>
            <br></br>
       </div>
-      <label>Enter a value between the range.</label>
+      <label>Enter a value between the range 1-100.</label>
       <div>
 
-        <input type="number" placeholder='Quality 1'
+        <input type="number" placeholder='Hardenability'
          onChange={(event) => { setquality1(event.target.value); } } ></input>
            
 
@@ -129,17 +133,25 @@ return (
       </div>
       <div>
 
-        <input type="number" placeholder='Quality 2'
+        <input type="number" placeholder='Ductility'
           onChange={(event) => { setquality2(event.target.value); } }></input>
            <br></br>
       </div>
       
       <div>
 
-        <input type="number" placeholder='Quality 3'
+        <input type="number" placeholder='Compression'
           onChange={(event) => { setquality3(event.target.value); } }></input>
            <br></br>
       </div>
+<<<<<<< HEAD
+      <center>
+      <button className="button-methish" onClick={() => {
+        Check1()
+         }}><Link id="sign" to='/itemlistnew1'>Add to cart</Link></button> 
+      <button className="button-methish"><Link id="sign" to='/specialrequestform'>Special Request?</Link></button>
+      </center>
+=======
       <button onClick={() => {
         Check()
 
@@ -151,6 +163,7 @@ return (
 
           <br />
           <Link id="sign" to='/specialrequestform'>Having more items than the quantity, want to place a special order ?</Link>
+>>>>>>> main
 
     </div><Footer /></>
 

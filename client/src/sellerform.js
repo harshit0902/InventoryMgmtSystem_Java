@@ -6,6 +6,7 @@ import Header from './supplier_navbar'
 import Footer from './footer'
 import Axios from "axios";
 
+import './index.css';
 function SellerForm()
 {
 
@@ -128,7 +129,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
     
       
         <><Header /><div id="form">
-            <Header />
+            
           <center>
         <h1 id="Items_new_sell">
            Cotton 
@@ -141,9 +142,9 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                    ) : ("") )
                )}
            </div>
-                Minimum quality required =" variable from backend" 
-                Minimum quality required =" variable from backend"
-                Minimum quality required =" variable from backend"
+               <h4>Minimum quality required =" variable from backend"</h4> 
+               <h4>Minimum quality required =" variable from backend"</h4> 
+               <h4>Minimum quality required =" variable from backend"</h4> 
                 <button id="button-result"><Link id="sign" to='/sell_cotton'>Supply now</Link></button></h6>
 
         </h1>
@@ -159,7 +160,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
                 ) : ("") )
             )}
         </div>
-                Minimum quality required =" variable from backend" 
+               <h4> Minimum quality required =" variable from backend" </h4>
                 <button id="button-result"><Link id="sign" to='/sell_jute'>Supply now</Link></button></h6>
            
         </h1>
@@ -293,7 +294,7 @@ localStorage.setItem("sellragData",jsonobjsellrag);
         </h1>
       </center>
             <Footer />
-      </div><Footer /></>
+      </div></>
        
   
   )

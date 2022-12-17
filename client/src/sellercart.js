@@ -2,9 +2,13 @@ import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import Header from './customer_navbar'
 import Footer from './footer'
+<<<<<<< HEAD
+import { NavLink, Link } from 'react-router-dom'
+=======
 import {Link} from "react-router-dom";
 
 let email = localStorage.getItem("email");
+>>>>>>> main
 let cart=[];
 let send=[];
 
