@@ -35,9 +35,9 @@ function App() {
                 if (response.data === "Admin") {
                     window.location.href = "http://localhost:3000/admin_homepage"
                 } else if (response.data === "Buyer") {
-                    window.location.href = "http://localhost:3000/itemlistnew"
+                    window.location.href = "http://localhost:3000/homepage2"
                 } else if (response.data === "Seller") {
-                    window.location.href = "http://localhost:3000/sellerform"
+                    window.location.href = "http://localhost:3000/homepage3"
                 }
 
             } else if (response.data === null) {
