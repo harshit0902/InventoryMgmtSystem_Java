@@ -9,8 +9,8 @@ import Footer from './footer'
 function Navbar() {
     return (
         <><Header />
-        <div id="Users">
-            <div>
+        <div >
+            <div >
                 <center>
                     <h1 id="title">
                         !! Thank you for visiting us !!

@@ -719,6 +719,14 @@ select {
   
   font-size: 20px;
 }
+#apple{
+  width: 3em;
+  height: 3em;
+}
+.apple :a {
+  width: 3em;
+  height: 3em;
+}
 
 .flex-container {
   display: flex;
