@@ -723,11 +723,13 @@ select {
   width: 3em;
   height: 3em;
   background-color: #c95b0c;
+  border-radius: 5px;
 }
 .apple :a {
   width: 3em;
   height: 3em;
   background-color: #c95b0c;
+  border-radius: 5px;
 }
 
 .flex-container {
