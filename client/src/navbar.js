@@ -19,7 +19,7 @@ function Navbar() {
                 <NavLink to='/about'><div class="navelement">ABOUT US</div></NavLink>
             </div>
             <div id='apple'>
-                <Link to='/login'><BsFillPersonFill  size= "40px" color="white"/></Link>
+                <Link to='/login'><BsFillPersonFill size= "50px" color="black"/></Link>
             </div>
         </nav>
     )

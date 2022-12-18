@@ -722,10 +722,12 @@ select {
 #apple{
   width: 3em;
   height: 3em;
+  background-color: #c95b0c;
 }
 .apple :a {
   width: 3em;
   height: 3em;
+  background-color: #c95b0c;
 }
 
 .flex-container {
