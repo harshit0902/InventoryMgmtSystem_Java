@@ -34,8 +34,8 @@ function CustomerNavbar() {
             {/*<div class="navelement">
                 <NavLink to='/reportform'><div class="navelement">REPORT</div></NavLink>
             </div>*/}
-            <div>
-                <Link to='/logout'><BsFillPersonFill size="2em" color="white"/></Link>
+            <div id='apple'>
+                <Link to='/logout'><BsFillPersonFill size="2em" color="black"/></Link>
             </div>
         </nav>
     )

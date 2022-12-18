@@ -383,7 +383,7 @@ select {
 
 .dropdown-content a {
   float: none;
-  color: #c95b0c;
+  color: black;
   padding: 12px 5px;
   text-decoration: none;
   display: block;
@@ -391,14 +391,15 @@ select {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
+  background-color: #c95b0c;
   color: white;
   text-decoration: bold;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-  background-color: black;
+  background-color: #c95b0c;
+  text-decoration: bold;
 }
 
 .navelement {

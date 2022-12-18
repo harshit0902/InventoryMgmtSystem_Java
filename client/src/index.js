@@ -65,7 +65,7 @@ root.render(
             <div id="add-background-img">
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<App />}></Route>
+                        <Route path='/' element={<Homepage1 />}></Route>
                         <Route path='/login' element={<Login />}></Route>
                         <Route path='/signup' element={<Signup />}></Route>
                         <Route path='/cotton' element={<Cotton />}></Route>
