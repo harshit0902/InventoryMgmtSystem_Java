@@ -25,7 +25,6 @@ import Homepage1 from './homepage1'
 import Homepage2 from './homepage2'
 import Homepage3 from './homepage3'
 import SpecialRequestForm from './specialrequestform'
-import Cart from './cart';
 import SellerForm from './sellerform';
 import SellerForm1 from './sellerform1';
 import SellerCart from './sellercart';
@@ -90,7 +89,7 @@ function App2() {
 
                 <Route path='/specialrequestform' element={<SpecialRequestForm />}></Route>
             </Routes> */}
-            <Homepage2 />
+            <Homepage1 />
 
         </div>
         </div>
