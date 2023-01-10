@@ -21,8 +21,12 @@ function SupplierNavbar() {
             <div class="navelement">
                 <NavLink to='/about2'><div class="navelement">ABOUT US</div></NavLink>
             </div>
-            <div className="navelement">
-                <NavLink to='/sellerform'><div className="navelement">SELL ITEMS</div></NavLink>
+            <div className="dropdown">
+                <button className="dropbtn">SELL ITEMS</button>
+                <div className="dropdown-content">
+                    <Link to='/sellerform'>Sell Products</Link>
+                    <Link to='/seller_specialrequest'>Accept Special Requests</Link>
+                </div>
             </div>
             <div className="navelement">
                 <NavLink to='/sellerhistory'><div className="navelement">HISTORY</div></NavLink>

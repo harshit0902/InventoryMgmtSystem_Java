@@ -30,50 +30,54 @@ function App() {
       localStorage.setItem("jutData",jsonobjjut);
     
   }
-    function Check1() {
-        if((q1>1 && q1<100)){Check2()
-            return true;
+  function Check1() {
+    if((q1>=1 && q1<=100)){
+        Check2()
+        return true;
 
 
-        }  else{
-            console.log("failure");
-            return false;
+    }  else{
+        console.log("failure");
+        return false;
 
-        }}
-    function Check2(){
-        if((q2>1 && q2<100)){Check3()
-            return true;
-
-
-        }  else{
-            console.log("failure");
-            return false;
-
-        }
-    }
-    function Check3(){
-        if((q3>1 && q3<100)){Checkqty()
-            return true;
+    }}
+function Check2(){
+    if((q2>=1 && q2<=100)){
+        Check3()
+        return true;
 
 
-        }  else{
-            console.log("failure");
-            return false;
-
-        }
-    }
-    function Checkqty(){
-        if((qty1>0 && qty1 <=25)){localstorage2()
-            return true;
-
-
-        }  else{
-            console.log("failure");
-            return false;
-
-        }
+    }  else{
+        console.log("failure");
+        return false;
 
     }
+}
+function Check3(){
+    if((q3>=1 && q3<=100)){
+        Checkqty()
+        return true;
+
+
+    }  else{
+        console.log("failure");
+        return false;
+
+    }
+}
+function Checkqty(){
+    if((qty1>0 && qty1 <=25)){
+        localstorage3()
+        return true;
+
+
+    }  else{
+        console.log("failure");
+        return false;
+
+    }
+
+}
 
     function Check() {
         if(Check1() && Check2() && Check3() && Checkqty()) {

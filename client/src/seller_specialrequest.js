@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
-import Header from './customer_navbar'
+import Header from './supplier_navbar'
 import Footer from './footer'
 import {Link} from "react-router-dom";
 

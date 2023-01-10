@@ -29,7 +29,7 @@ function Allsupplier()
                 </h1>
             </center>
         </div>
-    <div>
+    <div id="itemlistnew">
         {supplierDetails.map((s)=>(
                 <div key={s.email}>
                     <h5 id="Items_new_sell"> Supplier Name: {s.username} </h5>

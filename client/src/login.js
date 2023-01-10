@@ -45,7 +45,7 @@ function App() {
                 localStorage.setItem("email", "");
                 /*localStorage.setItem("name", "");
             }*/
-            console.log("Success");
+                console.log("Success");
             }
 
             else {
@@ -87,45 +87,19 @@ function App() {
                         <input type="text"
                             onChange={(event) => { setcapcthaEntered(event.target.value) }}></input>
                     </div>
-                    </div>
-                    
-                   <div id='detailsnew'>
+                </div>
+
+                <div id='detailsnew2'>
                     <center>
                         <button className="button-methish" onClick={savedetail}>Login</button>
                     </center>
                 </div>
-                
-                <div>
-                  {/*  <center>
-                        <h3>Don't have an account</h3>
-                        <h4><Link to='/signup'>Sign Up !!</Link></h4>
-                        <br></br>
-                    </center>
-    */}
+
+                <div id="addspace">
+                    
                 </div>
-                {/*userdetails.map((value, key) => {
-                    return <div>
-                        <Display
-                            Email={value.Email}
-                            Password={value.Password} />
-                    </div>
-                })*/}
-                {/* <table border='10px'>
-                        <tr>
-                            <th>Email</th>
-                            <th>Password</th>
-                        </tr>
-                    {userdetails.map((value, key) => {
-                        return <>
-                        <tr>
-                            <td>{value.email}</td>
-                            <td>{value.password}</td>
-                        </tr>
-                        </>
-                    })}
-                    </table> */}
             </div>
-        <Footer /></>
+            <Footer /></>
 
     );
 }

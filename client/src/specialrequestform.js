@@ -29,10 +29,7 @@ function App1() {
             quality3: q3,*/
         }).then((response) => {
             // setUserdetails(response.data);
-            console.log(response)
-            if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
-            }
+            console.log(response);
         });
     }
 

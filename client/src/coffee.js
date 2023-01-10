@@ -33,7 +33,7 @@ function App() {
     
   }
     function Check1() {
-        if((q1>1 && q1<100)){
+        if((q1>=1 && q1<=100)){
             Check2()
             return true;
 
@@ -44,7 +44,7 @@ function App() {
 
         }}
     function Check2(){
-        if((q2>1 && q2<100)){
+        if((q2>=1 && q2<=100)){
             Check3()
             return true;
 
@@ -56,7 +56,7 @@ function App() {
         }
     }
     function Check3(){
-        if((q3>1 && q3<100)){
+        if((q3>=1 && q3<=100)){
             Checkqty()
             return true;
 

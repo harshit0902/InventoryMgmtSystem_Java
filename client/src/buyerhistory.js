@@ -48,7 +48,7 @@ function App() {
                             </h5>
                             <h5 id="Items_new_sell"> Total Amount: {bill.totalAmt}</h5>
                             <h5 id="Items_new_sell"> Status: {bill.status}</h5>
-                            -------------------------------------
+                            <div id="dash">---------------------------------------------------------------------------------------------------------------------------------------------------</div>
                         </div>
                     )
                 )}
@@ -62,7 +62,7 @@ function App() {
                 }}>Add to cart</button>
                 <button>Special Request?</button>
 
-            </div>*/}<Footer/></>
+            </div>*/}</>
 
     )
 }
