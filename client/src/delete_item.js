@@ -10,13 +10,14 @@ function App() {
     const {ID} = useParams();
 
     const savedetail = (ID) => {
+      console.log(ID);
         Axios.delete('http://localhost:9091/api/admin/deleteitem/${ID}', {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
-            if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
-            }
+            // if (response.data == 'success') {
+            //     window.location.href = "http://localhost:3000/login";
+            // }
         });
     }
 
@@ -35,7 +36,7 @@ function App() {
              <br></br>
         </div><div id='detailsnew'>
       <center>
-     <button className="button-methish" onClick={savedetail}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
+     <button className="button-methish" onClick={() => savedetail(id)}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
      </center>
      </div>
 

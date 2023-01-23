@@ -67,7 +67,7 @@ function Cart() {
                             <h5  id="Items_new_sell">
                                 <button  id='button-result' onClick={() => {
                                     Del(bill.billNo)
-                                }}>Delete
+                                }}>Deliver
                                 </button>
                             </h5>
                             -------------------------------------

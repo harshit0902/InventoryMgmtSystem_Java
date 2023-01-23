@@ -51,9 +51,9 @@ useEffect(() => {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
-            if (response.data == 'success') {
-                window.location.href = "http://localhost:3000/login";
-            }
+            // if (response.data == 'success') {
+            //     window.location.href = "http://localhost:3000/login";
+            // }
         });
     }
 

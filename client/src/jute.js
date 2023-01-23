@@ -67,7 +67,6 @@ function Check3(){
 }
 function Checkqty(){
     if((qty1>0 && qty1 <=25)){
-        localstorage3()
         return true;
 
 

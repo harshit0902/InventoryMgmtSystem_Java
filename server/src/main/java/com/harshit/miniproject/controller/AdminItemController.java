@@ -30,7 +30,7 @@ public class AdminItemController {
 
     private final AdminItemJpaRepository adminItemJpaRepository;
 
-    static int val=11;
+    static int val=14;
 
     @Autowired
     public AdminItemController(AdminItemService adminItemService, AdminItemJpaRepository adminItemJpaRepository) {
@@ -58,7 +58,7 @@ public class AdminItemController {
             return "failure";
     }
 
-    @PostMapping("/deleteitem")
+    @DeleteMapping("/deleteitem")
     public String deleteItem(@PathVariable int id){
         int ans = adminItemService.deleteIntoItem(id);
         if(ans == 1)
