@@ -1,6 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import { NavLink, Link } from 'react-router-dom'
 import Axios from "axios";
+import Header from './navbar'
+import Footer from './footer'
 
 // import Display from "./display";
 
@@ -17,30 +20,32 @@ function App() {
         setCaptcha(Math.random().toString(36).substring(2, 8))
     }
     const savedetail = () => {
-        Axios.post('http://localhost:9090/api/credentials/login', {
+        Axios.post('http://localhost:9091/api/credentials/login', {
             email: email,
             password: password
         }).then((response) => {
             // setUserdetails(response.data);
             //console.log(response.data)
-            if (response.data === "Success" && capcthaEntered === capctha) {
-                /*obj = Object.values(response.data);
+            if (response.data !== null && capcthaEntered === capctha) {
+                /*obj = Object.values(response.data);*/
                 localStorage.setItem("email", email);
-                localStorage.setItem("name", obj[0].name);
-                localStorage.setItem("uid", obj[0].uid);
+                /*localStorage.setItem("name", obj[0].name);
+                localStorage.setItem("uid", obj[0].uid);*/
 
-                if (obj[0].type === 'admin') {
+                if (response.data === "Admin") {
                     window.location.href = "http://localhost:3000/admin_homepage"
-                } else {
+                } else if (response.data === "Buyer") {
                     window.location.href = "http://localhost:3000/homepage2"
+                } else if (response.data === "Seller") {
+                    window.location.href = "http://localhost:3000/homepage3"
                 }
 
-            } else if (response.data === 'invalid') {
+            } else if (response.data === null) {
                 console.log("Invalid Email/Password")
                 localStorage.setItem("email", "");
-                localStorage.setItem("name", "");
+                /*localStorage.setItem("name", "");
             }*/
-            console.log("Success");
+                console.log("Success");
             }
 
             else {
@@ -52,7 +57,7 @@ function App() {
     }
 
     return (
-        <>
+        <><Header />
             <div id="Users">
                 <div>
                     <center>
@@ -75,55 +80,26 @@ function App() {
                     </div>
                     <center><div id="captcha-string">{capctha}</div>
                         <br></br>
-                        <button onClick={changecaptcha}>Change Captcha</button></center>
+                        <button className="button-methish" onClick={changecaptcha}>Change Captcha</button></center>
                     <br></br>
                     <div>
                         <label>Enter Captcha : </label>
                         <input type="text"
                             onChange={(event) => { setcapcthaEntered(event.target.value) }}></input>
                     </div>
-                    <br></br>
-                    <div>
-                    </div>
+                </div>
 
-                </div>
-                <br></br>
-                <div>
+                <div id='detailsnew2'>
                     <center>
-                        <button onClick={savedetail}>Login</button>
+                        <button className="button-methish" onClick={savedetail}>Login</button>
                     </center>
                 </div>
-                <div>
-                  {/*  <center>
-                        <h3>Don't have an account</h3>
-                        <h4><Link to='/signup'>Sign Up !!</Link></h4>
-                        <br></br>
-                    </center>
-    */}
+
+                <div id="addspace">
+                    
                 </div>
-                {/*userdetails.map((value, key) => {
-                    return <div>
-                        <Display
-                            Email={value.Email}
-                            Password={value.Password} />
-                    </div>
-                })*/}
-                {/* <table border='10px'>
-                        <tr>
-                            <th>Email</th>
-                            <th>Password</th>
-                        </tr>
-                    {userdetails.map((value, key) => {
-                        return <>
-                        <tr>
-                            <td>{value.email}</td>
-                            <td>{value.password}</td>
-                        </tr>
-                        </>
-                    })}
-                    </table> */}
             </div>
-        </>
+            <Footer /></>
 
     );
 }

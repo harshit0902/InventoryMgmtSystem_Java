@@ -1,25 +1,28 @@
 package com.harshit.miniproject.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Shipping")
 public class Shipping {
-    private int custID;
+    private String custEmail;
     private int billID;
 
     public Shipping() {
-        custID = 0;
+        custEmail = "";
         billID = 0;
     }
 
-    public Shipping(int custID, int billID) {
-        this.custID = custID;
+    public Shipping(String custEmail, int billID) {
+        this.custEmail = custEmail;
         this.billID = billID;
     }
 
-    public int getCustID() {
-        return custID;
+    public String getCustEmail() {
+        return custEmail;
     }
 
-    public void setCustID(int custID) {
-        this.custID = custID;
+    public void setCustEmail(String custEmail) {
+        this.custEmail = custEmail;
     }
 
     public int getBillID() {
@@ -28,10 +31,5 @@ public class Shipping {
 
     public void setBillID(int billID) {
         this.billID = billID;
-    }
-
-    public String shipConfirmed() {
-        String status = null;
-        return status;
     }
 }

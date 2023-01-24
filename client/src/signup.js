@@ -1,6 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import Axios from "axios";
 import Display from "./display";
+import Header from './navbar'
+import Footer from './footer'
 
 function App() {
     const emailregex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
@@ -16,7 +19,7 @@ function App() {
     const [account, setAcc]= useState("");
     const savedetail = () => {
         if (emailregex.test(email) && mobno.length == 10 &&  password===confpassword) {
-            Axios.post('http://localhost:9090/api/credentials/signup', {
+            Axios.post('http://localhost:9091/api/credentials/signup', {
                 username: name,
                 email: email,
                 password: password,
@@ -38,7 +41,7 @@ function App() {
 
     return (
         <div id="Users">
-            
+            <Header />
             <div>
                 <center>
                     <h1 id="title">
@@ -54,9 +57,9 @@ function App() {
                 </div>
                 <div>
                     <label>Enter Account type: </label>
-                    <label for="buy">Buyer </label>
+                    <label for="buy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buyer </label>
                     <input type="radio" id="buy" name="account" value="Buyer" onChange={(event) => { setAcc(event.target.value) }}></input>
-                    <label for="sell">Seller</label>
+                    <label for="sell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seller</label>
                     <input type="radio" id="sell" name="account" value="Seller" onChange={(event) => { setAcc(event.target.value) }}></input>
                 </div>
                 <div>
@@ -90,27 +93,16 @@ function App() {
                     <br></br>
                 </div>
             </div>
-            <br></br>
-            <div>
+            
+            <div id='detailsnew'>
                 <center>
                     {/* <Link id="linking" to='/login'>Sign Up</Link> */}
-                <button onClick={savedetail}>signup</button>
+                <button className="button-methish" onClick={savedetail}>Signup</button>
                 </center>
-                {message}
+                
             </div>
-            {/*userdetails.map((value, key) => {
-                return <div>
-                    <Display
-                        Name={value.Name}
-                        Email={value.Email}
-                        Password={value.Password}
-                        Conf_Password={value.Conf_Password}
-                        Mob_No={value.Mobile_Number}
-                        Address={value.Address} 
-                        Account={value.Account}/>
-                </div>
-            })*/}
-            
+           
+            <Footer />
         </div>
     );
 }

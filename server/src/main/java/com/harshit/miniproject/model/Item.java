@@ -23,6 +23,10 @@ public class Item {
         quality3 = 0;
     }
 
+    public Item(String itemName) {
+        this.itemName = itemName;
+    }
+
     public Item(String itemName, int quantity) {
         this.itemName = itemName;
         this.quantity = quantity;
@@ -49,6 +53,20 @@ public class Item {
         this.quality1 = quality1;
         this.quality2 = quality2;
         this.quality3 = quality3;
+    }
+
+    public Item(int itemID, String itemName, int quantity, double price, int quality1, int quality2, int quality3) {
+        this.itemID = itemID;
+        this.itemName = itemName;
+        this.quantity = quantity;
+        this.price = price;
+        this.quality1 = quality1;
+        this.quality2 = quality2;
+        this.quality3 = quality3;
+    }
+
+    public Item(int itemID) {
+        this.itemID = itemID;
     }
 
     public int getItemID() {
