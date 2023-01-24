@@ -34,7 +34,7 @@ function App() {
           <input type="number" placeholder='Item Id'
             onChange={(event) => { setid(parseInt(event.target.value)); } }></input>
              <br></br>
-        </div><div id='detailsnew'>
+        </div><div>
       <center>
      <button className="button-methish" onClick={() => savedetail(id)}><Link id="sign" to='/admin_homepage'>Delete Item</Link></button>
      </center>
