@@ -30,7 +30,7 @@ public class AdminItemController {
 
     private final AdminItemJpaRepository adminItemJpaRepository;
 
-    static int val=14;
+    static int val=11;
 
     @Autowired
     public AdminItemController(AdminItemService adminItemService, AdminItemJpaRepository adminItemJpaRepository) {
@@ -40,8 +40,9 @@ public class AdminItemController {
 
     @PostMapping("/additem")
     public String addItem(@RequestBody Item special){
-        Item it = new Item(val++, special.getItemName(), special.getQuantity(), special.getPrice(), special.getQuality1(), special.getQuality2(), special.getQuality3());
-
+        Item it = new Item(val, special.getItemName(), special.getQuantity(), special.getPrice(), special.getQuality1(), special.getQuality2(), special.getQuality3());
+        val = val+1;
+        System.out.println(val);
         int ans = adminItemService.insertIntoItem(it);
         if(ans == 1)
             return "success";
@@ -58,7 +59,7 @@ public class AdminItemController {
             return "failure";
     }
 
-    @DeleteMapping("/deleteitem")
+    @DeleteMapping("/deleteitem/{id}")
     public String deleteItem(@PathVariable int id){
         int ans = adminItemService.deleteIntoItem(id);
         if(ans == 1)

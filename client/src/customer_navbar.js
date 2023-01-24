@@ -10,7 +10,7 @@ function CustomerNavbar() {
     return (
         <nav id="navbar2">
             <div class="navelement-img">
-                <img src="logonew.jpg" alt="Logo"></img>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/012/893/214/small/eps10-white-inventory-abstract-line-icon-isolated-on-black-background-stack-of-boxes-outline-symbols-in-a-simple-flat-trendy-modern-style-for-your-website-design-logo-and-mobile-application-vector.jpg" alt="Logo"></img>
             </div>
             {/*<div class="navelement">
                 <NavLink to='/profile'><div class="navelement">PROFILE</div></NavLink>

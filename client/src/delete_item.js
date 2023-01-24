@@ -11,7 +11,7 @@ function App() {
 
     const savedetail = (ID) => {
       console.log(ID);
-        Axios.delete('http://localhost:9091/api/admin/deleteitem/${ID}', {
+        Axios.delete(`http://localhost:9091/api/admin/deleteitem/${ID}`, {
         }).then((response) => {
             // setUserdetails(response.data);
             console.log(response)
