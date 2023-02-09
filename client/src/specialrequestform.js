@@ -37,19 +37,19 @@ function App1() {
         //console.log(itemname);
         if(text === "Cotton") {
             const cq1 = <div>
-                <label>Enter CQ1: </label>
+                <label>Enter Uniformity Index: </label>
                 <input type="number" placeholder='Enter Value Here'
                        onChange={(event) => { setQ1(event.target.value) }}></input>
             </div>
 
             const cq2 = <div>
-                <label>Enter CQ2: </label>
+                <label>Enter Strength: </label>
                 <input type="number" placeholder='Enter Value Here'
                        onChange={(event) => { setQ2(event.target.value) }}></input>
             </div>
 
             const cq3 = <div>
-                <label>Enter CQ3: </label>
+                <label>Enter Elongation: </label>
                 <input type="number" placeholder='Enter Value Here'
                        onChange={(event) => { setQ3(event.target.value) }}></input>
             </div>
@@ -59,19 +59,19 @@ function App1() {
 
         else if(text === "Jute") {
             const jq1 =  <div>
-                    <label>Enter JQ1: </label>
+                    <label>Enter Root Content: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
             </div>
 
             const jq2 = <div>
-                <label>Enter JQ2: </label>
+                <label>Enter Fineness: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ2(event.target.value) }}></input>
             </div>
 
             const jq3 = <div>
-                <label>Enter JQ3: </label>
+                <label>Enter Bulk Density: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ3(event.target.value) }}></input>
                 </div>
@@ -80,19 +80,19 @@ function App1() {
 
         else if(text === "Coffee") {
                 const cfq1 = <div>
-                    <label>Enter CfQ1: </label>
+                    <label>Enter Sweetness: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                 const cfq2 = <div>
-                     <label>Enter CfQ2: </label>
+                     <label>Enter Moisture Content: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const cfq3 = <div>
-                     <label>Enter CfQ3: </label>
+                     <label>Enter Acidity: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -101,19 +101,19 @@ function App1() {
 
         else if(text === "Steel") {
                 const sq1 = <div>
-                    <label>Enter SQ1: </label>
+                    <label>Enter Hardenability: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                 const sq2 = <div>
-                     <label>Enter SQ2: </label>
+                     <label>Enter Ductility: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                 const sq3 = <div>
-                     <label>Enter SQ3: </label>
+                     <label>Enter Compression: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -122,19 +122,19 @@ function App1() {
 
         else if(itemname === "Aluminium") {
                 const aq1 = <div>
-                    <label>Enter AQ1: </label>
+                    <label>Enter Thermal Conductivity: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                const aq2 = <div>
-                     <label>Enter AQ2: </label>
+                     <label>Enter Density: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                const aq3 = <div>
-                     <label>Enter AQ3: </label>
+                     <label>Enter Corrosion Resistance: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -143,19 +143,19 @@ function App1() {
 
         else if(itemname === "Copper") {
                 const cpq1 = <div>
-                    <label>Enter CpQ1: </label>
+                    <label>Enter Electrical Conductivity: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                 const cpq2 = <div>
-                     <label>Enter CpQ2: </label>
+                     <label>Enter Biofouling Resistance: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const cpq3 = <div>
-                     <label>Enter CpQ3: </label>
+                     <label>Enter Magnetizability: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -164,19 +164,19 @@ function App1() {
 
         else if(itemname === "Wood") {
                 const wq1 = <div>
-                    <label>Enter WQ1: </label>
+                    <label>Enter Shear: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                  const wq2 = <div>
-                     <label>Enter WQ2: </label>
+                     <label>Enter Cell Wall Thickness: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const wq3 = <div>
-                     <label>Enter WQ3: </label>
+                     <label>Enter Coarseness: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -185,19 +185,19 @@ function App1() {
 
         else if(itemname === "Wheat") {
                 const whq1 = <div>
-                    <label>Enter WhQ1: </label>
+                    <label>Enter Grain Hardness: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                  const whq2 = <div>
-                     <label>Enter WhQ2: </label>
+                     <label>Enter Protein Content: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const whq3 = <div>
-                     <label>Enter WhQ3: </label>
+                     <label>Enter Gluten Strength: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -206,19 +206,19 @@ function App1() {
 
         else if(itemname === "Bajra") {
                 const bq1 = <div>
-                    <label>Enter BQ1: </label>
+                    <label>Enter Moisture Content: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                  const bq2 = <div>
-                     <label>Enter BQ2: </label>
+                     <label>Enter Damaged Grains: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const bq3 = <div>
-                     <label>Enter BQ3: </label>
+                     <label>Enter Immature Grains: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
@@ -227,19 +227,19 @@ function App1() {
 
         else if(itemname === "Ragi") {
                 const rq1 = <div>
-                    <label>Enter RQ1: </label>
+                    <label>Enter Fatty Acid Content: </label>
                     <input type="number" placeholder='Enter Value Here'
                            onChange={(event) => { setQ1(event.target.value) }}></input>
                 </div>
 
                  const rq2 = <div>
-                     <label>Enter RQ2: </label>
+                     <label>Enter Crude Fibre Content: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ2(event.target.value) }}></input>
                  </div>
 
                  const rq3 = <div>
-                     <label>Enter RQ3: </label>
+                     <label>Enter Crude Protein Content: </label>
                      <input type="number" placeholder='Enter Value Here'
                             onChange={(event) => { setQ3(event.target.value) }}></input>
                  </div>
